@@ -1,0 +1,6 @@
+Compiled from "AepsController.java"
+public class com.example.UJJWALPAY.Fingpay.controller.AepsController {
+  private final com.example.UJJWALPAY.Fingpay.service.OnboardService service;
+  public java.lang.String onboard(com.example.UJJWALPAY.Fingpay.dto.OnboardRequestDTO, java.lang.Long);
+  public com.example.UJJWALPAY.Fingpay.controller.AepsController(com.example.UJJWALPAY.Fingpay.service.OnboardService);
+}

@@ -1,0 +1,595 @@
+﻿
+D:\ujjwalpay\src\admin\components\LiveDashboard.jsx
+  159:39  error    'localUsers' is defined but never used. Allowed unused args must match /^_/u                                        unused-imports/no-unused-vars
+  225:12  error    'prevData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                            unused-imports/no-unused-vars
+  274:18  error    'err' is defined but never used                                                                                     unused-imports/no-unused-vars
+  295:8   warning  React Hook useCallback has a missing dependency: 'allLocalUsers'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\admin\components\Overview.jsx
+   10:7   error  'fmtK' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  297:43  error  'gIdx' is defined but never used. Allowed unused args must match /^_/u                unused-imports/no-unused-vars
+  308:54  error  'mIdx' is defined but never used. Allowed unused args must match /^_/u                unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\admin\components\ReportsAnalyst.jsx
+  43:8  warning  React Hook useEffect has a missing dependency: 'fetchTopMerchants'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\admin\components\RetailerDetails.jsx
+  42:11  error  'getInitials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\admin\components\WalletManager.jsx
+   77:108  warning  React Hook useEffect has a missing dependency: 'onClose'. Either include it or remove the dependency array       react-hooks/exhaustive-deps
+  312:17   error    Empty block statement                                                                                            no-empty
+  315:42   warning  React Hook useEffect has a missing dependency: 'loadRequests'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  505:11   error    'color' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                            unused-imports/no-unused-vars
+  724:12   error    'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                          unused-imports/no-unused-vars
+  731:17   error    Empty block statement                                                                                            no-empty
+  780:17   error    Empty block statement                                                                                            no-empty
+  783:41   warning  React Hook useEffect has a missing dependency: 'loadWallets'. Either include it or remove the dependency array   react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\components\HeadphoneSlider.jsx
+  39:6  warning  React Hook useEffect has a missing dependency: 'images.length'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\components\admin\UserProfileCard.jsx
+   29:43  error    'compact' is assigned a value but never used. Allowed unused args must match /^_/u                            unused-imports/no-unused-vars
+   44:14  error    'err' is defined but never used                                                                               unused-imports/no-unused-vars
+   44:19  error    Empty block statement                                                                                         no-empty
+   56:6   warning  React Hook useEffect has a missing dependency: 'fetchUser'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  224:14  error    'err' is defined but never used                                                                               unused-imports/no-unused-vars
+  224:19  error    Empty block statement                                                                                         no-empty
+
+D:\ujjwalpay\src\components\permissions\PermissionEditor.jsx
+  7:17  error  'currentUser' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\components\shared\DashboardCards.jsx
+   89:14  error    'err' is defined but never used                                                                               unused-imports/no-unused-vars
+   89:19  error    Empty block statement                                                                                         no-empty
+  100:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\context\AuthContext.jsx
+  32:10  error  'socket' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  60:16  error  'e' is defined but never used                                                           unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\distributor\components\DistributorLogin.jsx
+  115:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+  139:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+  163:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\DistributorDashboard.jsx
+   29:7   error  'recentTxns' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u          unused-imports/no-unused-vars
+   37:7   error  'quickContacts' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u       unused-imports/no-unused-vars
+   88:12  error  'transferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         unused-imports/no-unused-vars
+   88:25  error  'setTransferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      unused-imports/no-unused-vars
+   89:12  error  'selectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+   89:29  error  'setSelectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+   93:12  error  'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u             unused-imports/no-unused-vars
+  125:11  error  'activeUsers' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\Reports.jsx
+    4:52  error  'Icon' is defined but never used. Allowed unused args must match /^_/u                         unused-imports/no-unused-vars
+    5:12  error  'searchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+    5:24  error  'setSearchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  100:56  error  'v' is defined but never used. Allowed unused args must match /^_/u                            unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\Retailers.jsx
+  22:11  error  'generatePassword' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  94:18  error  'err' is defined but never used                                                                   unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\reports\CommissionReport.jsx
+  13:56  error  'v' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\reports\ReportTable.jsx
+  4:52  error  'Icon' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\landing\About.jsx
+  606:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  607:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\landing\LandingPageFull.jsx
+  386:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\landing\Leadership.jsx
+  10:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  11:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\landing\ServicesPageFull.jsx
+  143:27  error  'i' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\pages\AboutPage.jsx
+  695:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  696:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\pages\LandingPage.jsx
+  382:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\pages\ServicesPage.jsx
+  143:27  error  'i' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\RetailerDashboard.jsx
+  32:24  error  'iconPath' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\TransactionsPage.jsx
+  26:12  error  'searchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+  26:24  error  'setSearchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\pages\super-distributor\SuperDistributorUserManagement.jsx
+  31:12  error  'isAddModalOpen' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\BankingDetails.jsx
+  51:14  error  'e' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\Payout.jsx
+  191:65  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  189 |                   </div>
+  190 |                   <div>
+> 191 |                     <p className="font-medium text-gray-800">Γé╣{(Math.random() * 1000 + 100).toFixed(2)}</p>
+      |                                                                 ^^^^^^^^^^^^^ Cannot call impure function
+  192 |                     <p className="text-xs text-gray-500">To: ****{Math.floor(1000 + Math.random() * 9000)}</p>
+  193 |                   </div>
+  194 |                 </div>                                          react-hooks/purity
+  192:85  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  190 |                   <div>
+  191 |                     <p className="font-medium text-gray-800">Γé╣{(Math.random() * 1000 + 100).toFixed(2)}</p>
+> 192 |                     <p className="text-xs text-gray-500">To: ****{Math.floor(1000 + Math.random() * 9000)}</p>
+      |                                                                                     ^^^^^^^^^^^^^ Cannot call impure function
+  193 |                   </div>
+  194 |                 </div>
+  195 |                 <div className="text-right">  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\components\ProfileDetails.jsx
+   40:12  error  'generatedOtp' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+   40:26  error  'setGeneratedOtp' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  215:18  error  'error' is defined but never used                                                                unused-imports/no-unused-vars
+  292:11  error  'indianBanks' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      unused-imports/no-unused-vars
+  319:22  error  'err' is defined but never used                                                                  unused-imports/no-unused-vars
+  357:22  error  'error' is defined but never used                                                                unused-imports/no-unused-vars
+  676:58  error  'err' is defined but never used                                                                  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\RetailerLayout.jsx
+  152:11  error  'isStaff' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\RetailerLogin.jsx
+  113:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+  162:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\Sidebar.jsx
+   12:13   error  't' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         unused-imports/no-unused-vars
+  141:139  error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             unused-imports/no-unused-vars
+  141:142  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  145:140  error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             unused-imports/no-unused-vars
+  145:143  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  198:22   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  196 |                 {/* Main Navigation List */}
+  197 |                 <div className="flex flex-col px-1">
+> 198 |                     <MenuItem
+      |                      ^^^^^^^^ This component is created during render
+  199 |                         item={{ id: 'dashboard', label: 'Dashboard', icon: LayoutGrid }}
+  200 |                         isActive={activeTab === 'dashboard'}
+  201 |                         onClick={() => setActiveTab('dashboard')}
+
+   74 |     ];
+   75 |
+>  76 |     const MenuItem = ({ item, isActive, onClick }) => {
+      |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  77 |         const isExpanded = expandedItems[item.id];
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  78 |
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |         );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |     };
+      | ^^^^^^ The component is created during render here
+  167 |
+  168 |     const currentUser = appData.currentUser;
+  169 |     const getInitials = () => {     react-hooks/static-components
+  203:22   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  201 |                         onClick={() => setActiveTab('dashboard')}
+  202 |                     />
+> 203 |                     <MenuItem
+      |                      ^^^^^^^^ This component is created during render
+  204 |                         item={{ id: 'all_services', label: 'All Services', icon: Smartphone }}
+  205 |                         isActive={activeTab === 'all_services'}
+  206 |                         onClick={() => setActiveTab('all_services')}
+
+   74 |     ];
+   75 |
+>  76 |     const MenuItem = ({ item, isActive, onClick }) => {
+      |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  77 |         const isExpanded = expandedItems[item.id];
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  78 |
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |         );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |     };
+      | ^^^^^^ The component is created during render here
+  167 |
+  168 |     const currentUser = appData.currentUser;
+  169 |     const getInitials = () => {  react-hooks/static-components
+
+D:\ujjwalpay\src\retailer\components\banking\AddMoney.jsx
+    9:12  error  'orderData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+    9:23  error  'setOrderData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  130:18  error  'error' is defined but never used                                                             unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\banking\RetailerEKYC.jsx
+  12:12  error  'verifyingAadhaar' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u        unused-imports/no-unused-vars
+  12:30  error  'setVerifyingAadhaar' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+  15:12  error  'aadhaarData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u             unused-imports/no-unused-vars
+  16:12  error  'pidData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                 unused-imports/no-unused-vars
+  16:21  error  'setPidData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u              unused-imports/no-unused-vars
+  70:11  error  'handleDigiLockerVerify' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\profile\BankingInfo.jsx
+  5:53  error  'handleSave' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+  5:65  error  'isSaving' is defined but never used. Allowed unused args must match /^_/u    unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\profile\Documents.jsx
+  54:38  error  'i' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\profile\PersonalInfo.jsx
+  4:76   error  'isSendingOtp' is defined but never used. Allowed unused args must match /^_/u   unused-imports/no-unused-vars
+  4:137  error  'onVerifyEmail' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\AEPS.jsx
+  157:24  error    'setDeviceMode' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                    unused-imports/no-unused-vars
+  177:12  error    'otpSent' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                          unused-imports/no-unused-vars
+  178:12  error    'otp' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                              unused-imports/no-unused-vars
+  179:12  error    'otpRefId' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                         unused-imports/no-unused-vars
+  179:22  error    'setOtpRefId' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                      unused-imports/no-unused-vars
+  180:12  error    'otpMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                        unused-imports/no-unused-vars
+  180:23  error    'setOtpMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                     unused-imports/no-unused-vars
+  200:20  error    'err' is defined but never used. Allowed unused args must match /^_/u                                            unused-imports/no-unused-vars
+  201:8   warning  React Hook useEffect has a missing dependency: 'navigate'. Either include it or remove the dependency array      react-hooks/exhaustive-deps
+  208:18  error    'e' is defined but never used                                                                                    unused-imports/no-unused-vars
+  208:21  error    Empty block statement                                                                                            no-empty
+  213:8   warning  React Hook useEffect has a missing dependency: 'fetchHistory'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  219:38  error    'overridePid' is assigned a value but never used. Allowed unused args must match /^_/u                           unused-imports/no-unused-vars
+  340:18  error    'e' is defined but never used                                                                                    unused-imports/no-unused-vars
+  357:18  error    'e' is defined but never used                                                                                    unused-imports/no-unused-vars
+  380:18  error    'e' is defined but never used                                                                                    unused-imports/no-unused-vars
+  951:42  error    'e' is defined but never used                                                                                    unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\AEPSKycForm.jsx
+  70:19  error  'setUser' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\CMS.jsx
+  54:20  error  'err' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\Dashboard.jsx
+  120:21  error  'setAppData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        unused-imports/no-unused-vars
+  121:12  error  'activeWallet' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      unused-imports/no-unused-vars
+  121:26  error  'setActiveWallet' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   unused-imports/no-unused-vars
+  122:12  error  'balance' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           unused-imports/no-unused-vars
+  212:37  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  210 |     const mkPoint = () => ({
+  211 |         t: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+> 212 |         revenue: Math.floor(15000 + Math.random() * 25000)
+      |                                     ^^^^^^^^^^^^^ Cannot call impure function
+  213 |     });
+  214 |     const [liveData, setLiveData] = useState(Array.from({ length: 12 }, mkPoint));
+  215 |  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\pages\Loans.jsx
+   34:34  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  32 |                 <div key={i} className="absolute animate-bounce"
+  33 |                     style={{
+> 34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+     |                                  ^^^^^^^^^^^^^ Cannot call impure function
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,                                                    react-hooks/purity
+   34:67  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  32 |                 <div key={i} className="absolute animate-bounce"
+  33 |                     style={{
+> 34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+     |                                                                   ^^^^^^^^^^^^^ Cannot call impure function
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,                   react-hooks/purity
+   35:39  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  33 |                     style={{
+  34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+> 35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+     |                                       ^^^^^^^^^^^^^ Cannot call impure function
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,                                        react-hooks/purity
+   35:77  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  33 |                     style={{
+  34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+> 35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+     |                                                                             ^^^^^^^^^^^^^ Cannot call impure function
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,  react-hooks/purity
+   36:78  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+> 36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+     |                                                                              ^^^^^^^^^^^^^ Cannot call impure function
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+  39 |                     }} />    react-hooks/purity
+   37:51  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+> 37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+     |                                                   ^^^^^^^^^^^^^ Cannot call impure function
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+  39 |                     }} />
+  40 |             ))}                                                                                                        react-hooks/purity
+   37:92  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+> 37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+     |                                                                                            ^^^^^^^^^^^^^ Cannot call impure function
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+  39 |                     }} />
+  40 |             ))}                                                               react-hooks/purity
+   38:46  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+> 38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+     |                                              ^^^^^^^^^^^^^ Cannot call impure function
+  39 |                     }} />
+  40 |             ))}
+  41 |         </div>                                                                                                                                                                                                 react-hooks/purity
+   51:12  error  'success' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   unused-imports/no-unused-vars
+  132:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           unused-imports/no-unused-vars
+  149:38  error  'offer' is defined but never used. Allowed unused args must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   unused-imports/no-unused-vars
+  154:18  error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             unused-imports/no-unused-vars
+  154:21  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  189:34  error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             unused-imports/no-unused-vars
+  189:37  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  196:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\MATM.jsx
+  154:22  error  'e' is defined but never used  unused-imports/no-unused-vars
+  154:25  error  Empty block statement          no-empty
+
+D:\ujjwalpay\src\retailer\pages\Reports.jsx
+  315:22   error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               unused-imports/no-unused-vars
+  429:154  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  427 |                                     {filtered.map((row, i) => (
+  428 |                                         <tr key={i} className="hover:bg-slate-50/80 transition-colors group">
+> 429 |                                             <td className="px-8 py-5 text-[11px] font-bold text-slate-500 whitespace-nowrap">{new Date(row.created_at || Date.now()).toLocaleDateString('en-GB').replace(/\//g, '-')}</td>
+      |                                                                                                                                                          ^^^^^^^^^^ Cannot call impure function
+  430 |                                             <td className="px-8 py-5">
+  431 |                                                 <div className="flex flex-col">
+  432 |                                                     <span className="text-[11px] font-black text-slate-800 uppercase tracking-tight group-hover:text-blue-600 transition-colors">{row.description || 'Service Transaction'}</span>                                   react-hooks/purity
+  479:22   error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               unused-imports/no-unused-vars
+  592:143  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  590 |                                     {filtered.map((row, i) => (
+  591 |                                         <tr key={i} className="hover:bg-slate-50/50 transition-colors group">
+> 592 |                                             <td className="px-8 py-6 text-[11px] font-bold text-slate-500 italic">{new Date(row.created_at || Date.now()).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short' })}</td>
+      |                                                                                                                                               ^^^^^^^^^^ Cannot call impure function
+  593 |                                             <td className="px-8 py-6">
+  594 |                                                 <span className="text-[11px] font-black text-slate-800 uppercase tracking-widest bg-slate-100 px-3 py-1.5 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">#{row.id}</span>
+  595 |                                             </td>  react-hooks/purity
+  652:30   error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               unused-imports/no-unused-vars
+  677:22   error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\Travel.jsx
+  25:12  error  'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+  25:21  error  'setLoading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\Utility.jsx
+   171:47  error    'opColor' is defined but never used. Allowed unused args must match /^_/u                                   unused-imports/no-unused-vars
+   214:23  error    'setDetecting' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                unused-imports/no-unused-vars
+   219:12  error    'walletBalance' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u               unused-imports/no-unused-vars
+   304:22  error    'e' is defined but never used                                                                               unused-imports/no-unused-vars
+   345:26  error    'e' is defined but never used                                                                               unused-imports/no-unused-vars
+   345:29  error    Empty block statement                                                                                       no-empty
+   570:18  error    'e' is defined but never used                                                                               unused-imports/no-unused-vars
+   716:12  error    'fetchError' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                  unused-imports/no-unused-vars
+   731:8   warning  React Hook useEffect has a missing dependency: 'doFetch'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   782:18  error    'e' is defined but never used                                                                               unused-imports/no-unused-vars
+   825:18  error    'err' is defined but never used                                                                             unused-imports/no-unused-vars
+   825:23  error    Empty block statement                                                                                       no-empty
+  1157:67  error    'i' is defined but never used. Allowed unused args must match /^_/u                                         unused-imports/no-unused-vars
+  1212:56  error    'k' is defined but never used. Allowed unused args must match /^_/u                                         unused-imports/no-unused-vars
+  1236:12  error    'user' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                        unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\UtilityBill.jsx
+  305:8   warning  React Hook useEffect has missing dependencies: 'billMobile' and 'consumerNo'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  381:18  error    'err' is defined but never used                                                                                                   unused-imports/no-unused-vars
+  436:26  error    'e' is defined but never used                                                                                                     unused-imports/no-unused-vars
+  436:29  error    Empty block statement                                                                                                             no-empty
+  468:18  error    'err' is defined but never used                                                                                                   unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\reports\AuditReport.jsx
+  26:26  error  'e' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\reports\ConsolidatedLedger.jsx
+   24:22   error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              unused-imports/no-unused-vars
+  138:154  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  136 |                                     {filtered.map((row, i) => (
+  137 |                                         <tr key={i} className="hover:bg-slate-50/80 transition-colors group">
+> 138 |                                             <td className="px-8 py-5 text-[11px] font-bold text-slate-500 whitespace-nowrap">{new Date(row.created_at || Date.now()).toLocaleDateString('en-GB').replace(/\//g, '-')}</td>
+      |                                                                                                                                                          ^^^^^^^^^^ Cannot call impure function
+  139 |                                             <td className="px-8 py-5">
+  140 |                                                 <div className="flex flex-col">
+  141 |                                                     <span className="text-[11px] font-black text-slate-800 uppercase tracking-tight group-hover:text-blue-600 transition-colors">{row.description || 'Service Transaction'}</span>  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\pages\reports\DailyLedger.jsx
+   24:22   error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               unused-imports/no-unused-vars
+  137:143  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  135 |                                     {filtered.map((row, i) => (
+  136 |                                         <tr key={i} className="hover:bg-slate-50/50 transition-colors group">
+> 137 |                                             <td className="px-8 py-6 text-[11px] font-bold text-slate-500 italic">{new Date(row.created_at || Date.now()).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short' })}</td>
+      |                                                                                                                                               ^^^^^^^^^^ Cannot call impure function
+  138 |                                             <td className="px-8 py-6">
+  139 |                                                 <span className="text-[11px] font-black text-slate-800 uppercase tracking-widest bg-slate-100 px-3 py-1.5 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">#{row.id}</span>
+  140 |                                             </td>  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\pages\reports\SaleReport.jsx
+  22:22  error  'e' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\utilityData.js
+  23:46  error  Duplicate key '9419'  no-dupe-keys
+  49:5   error  Duplicate key '6261'  no-dupe-keys
+  68:5   error  Duplicate key '9773'  no-dupe-keys
+  69:5   error  Duplicate key '9829'  no-dupe-keys
+  72:5   error  Duplicate key '9827'  no-dupe-keys
+  78:48  error  Duplicate key '9412'  no-dupe-keys
+  80:5   error  Duplicate key '9419'  no-dupe-keys
+
+D:\ujjwalpay\src\services\dataService.js
+    21:7   error  'isLocalhost' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+   168:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   256:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   385:39  error  'userId' is defined but never used. Allowed unused args must match /^_/u                     unused-imports/no-unused-vars
+   406:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   458:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   469:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   482:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   491:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   648:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   869:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   877:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   886:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   894:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   905:22  error  'e' is defined but never used. Allowed unused args must match /^_/u                          unused-imports/no-unused-vars
+   953:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   953:21  error  Empty block statement                                                                        no-empty
+   984:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+   984:21  error  Empty block statement                                                                        no-empty
+   996:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  1005:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  1145:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  1161:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  1177:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  1197:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\services\emailService.js
+  22:14  error  'err' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\services\landingContentService.js
+  99:18  error  'e' is defined but never used  unused-imports/no-unused-vars
+  99:21  error  Empty block statement          no-empty
+
+D:\ujjwalpay\src\services\sharedDataService.js
+    5:7   error  'isLocalhost' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+   34:18  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  267:22  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  267:25  error  Empty block statement                                                                        no-empty
+  309:26  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  309:29  error  Empty block statement                                                                        no-empty
+  331:22  error  'e' is defined but never used                                                                unused-imports/no-unused-vars
+  331:25  error  Empty block statement                                                                        no-empty
+
+D:\ujjwalpay\src\services\speechService.js
+   93:56  error  '_' is defined but never used                                        unused-imports/no-unused-vars
+   93:59  error  Empty block statement                                                no-empty
+  153:26  error  'i' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\components\SuperAdminLogin.jsx
+  112:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+  136:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+  160:18  error  'err' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\Approvals.jsx
+  489:18  error  'e' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\Distributors.jsx
+   44:32  error  'setCreatedCredentials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  101:18  error  'err' is defined but never used                                                                        unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\LoanApprovals.jsx
+  38:18  error  'e' is defined but never used  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\OurMap.jsx
+  47:12  error    'showAdminInfo' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                  unused-imports/no-unused-vars
+  47:27  error    'setShowAdminInfo' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u               unused-imports/no-unused-vars
+  71:8   warning  React Hook useEffect has a missing dependency: 'fetchUsers'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  91:17  error    Empty block statement                                                                                          no-empty
+
+D:\ujjwalpay\src\superadmin\pages\PlansRates.jsx
+  151:12  error    'hasFetched' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                      unused-imports/no-unused-vars
+  218:8   warning  React Hook useEffect has a missing dependency: 'fetchLedger'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\superadmin\pages\Reports.jsx
+    5:24  error    'title' is defined but never used. Allowed unused args must match /^_/u                                       unused-imports/no-unused-vars
+    5:52  error    'Icon' is defined but never used. Allowed unused args must match /^_/u                                        unused-imports/no-unused-vars
+  144:8   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  194:64  error    'v' is defined but never used. Allowed unused args must match /^_/u                                           unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\ReportsAnalyst.jsx
+  35:8  warning  React Hook useEffect has a missing dependency: 'fetchTopMerchants'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\superadmin\pages\Retailers.jsx
+   44:18  error  'err' is defined but never used                                         unused-imports/no-unused-vars
+   44:23  error  Empty block statement                                                   no-empty
+  141:26  error  'emailErr' is defined but never used                                    unused-imports/no-unused-vars
+  141:36  error  Empty block statement                                                   no-empty
+  548:69  error  'Icon' is defined but never used. Allowed unused args must match /^_/u  unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\SuperAdminDashboard.jsx
+  26:7   error  'recentTxns' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u          unused-imports/no-unused-vars
+  34:7   error  'quickContacts' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u       unused-imports/no-unused-vars
+  80:12  error  'transferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u         unused-imports/no-unused-vars
+  80:25  error  'setTransferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      unused-imports/no-unused-vars
+  81:12  error  'selectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     unused-imports/no-unused-vars
+  81:29  error  'setSelectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+  85:12  error  'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u             unused-imports/no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\SuperDistributors.jsx
+   44:32  error  'setCreatedCredentials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  unused-imports/no-unused-vars
+   71:19  error  'sa' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                     unused-imports/no-unused-vars
+  101:18  error  'err' is defined but never used                                                                        unused-imports/no-unused-vars
+
+Γ£û 252 problems (236 errors, 16 warnings)
+

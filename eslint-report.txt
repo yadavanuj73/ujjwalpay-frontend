@@ -1,0 +1,976 @@
+﻿
+D:\ujjwalpay\src\admin\components\DistributorDetails.jsx
+   6:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        no-unused-vars
+  18:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  16 |         const found = sharedDataService.getDistributorById(id);
+  17 |         if (found) {
+> 18 |             setDist(found);
+     |             ^^^^^^^ Avoid calling setState() directly within an effect
+  19 |         }
+  20 |     }, [id]);
+  21 |  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\admin\components\EmployeeManager.jsx
+  72:23  error  Error: Cannot access variable before it is declared
+
+`loadEmployees` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  70 |     const [isVerifying, setIsVerifying] = useState(false);
+  71 |
+> 72 |     useEffect(() => { loadEmployees(); }, []);
+     |                       ^^^^^^^^^^^^^ `loadEmployees` accessed before it is declared
+  73 |
+  74 |     const loadEmployees = async () => {
+  75 |         const allUsers = await dataService.getAllUsers();
+
+  72 |     useEffect(() => { loadEmployees(); }, []);
+  73 |
+> 74 |     const loadEmployees = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 75 |         const allUsers = await dataService.getAllUsers();
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 76 |         const headers = allUsers.filter(u => ['NATIONAL_HEADER', 'STATE_HEADER', 'REGIONAL_HEADER'].includes(u.role));
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 77 |         setEmployees(headers);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 78 |     };
+     | ^^^^^^^ `loadEmployees` is declared here
+  79 |
+  80 |     const roleLabels = { NATIONAL_HEADER: 'National Header', STATE_HEADER: 'State Header', REGIONAL_HEADER: 'Regional Header' };
+  81 |     const getAvailableRoles = () => {  react-hooks/immutability
+
+D:\ujjwalpay\src\admin\components\LiveDashboard.jsx
+    3:10  error    'sharedDataService' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                            no-unused-vars
+  160:39  error    'localUsers' is defined but never used                                                                              no-unused-vars
+  226:12  error    'prevData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                            no-unused-vars
+  275:18  error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                                      no-unused-vars
+  296:8   warning  React Hook useCallback has a missing dependency: 'allLocalUsers'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\admin\components\Overview.jsx
+   12:7   error  'fmtK' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  133:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  131 |
+  132 |     useEffect(() => {
+> 133 |         setAnimIn(true);
+      |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  134 |     }, []);
+  135 |
+  136 |     // ΓöÇΓöÇ Data Processing ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ  react-hooks/set-state-in-effect
+  299:43  error  'gIdx' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+  310:54  error  'mIdx' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+
+D:\ujjwalpay\src\admin\components\ReportsAnalyst.jsx
+   6:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                         no-unused-vars
+   7:10  error    'dataService' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                    no-unused-vars
+  45:8   warning  React Hook useEffect has a missing dependency: 'fetchTopMerchants'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\admin\components\RetailerDetails.jsx
+  42:11  error  'getInitials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\admin\components\WalletManager.jsx
+   78:108  warning  React Hook useEffect has a missing dependency: 'onClose'. Either include it or remove the dependency array       react-hooks/exhaustive-deps
+  313:17   error    Empty block statement                                                                                            no-empty
+  316:42   warning  React Hook useEffect has a missing dependency: 'loadRequests'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  506:11   error    'color' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                            no-unused-vars
+  725:12   error    'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                          no-unused-vars
+  732:17   error    Empty block statement                                                                                            no-empty
+  781:17   error    Empty block statement                                                                                            no-empty
+  784:41   warning  React Hook useEffect has a missing dependency: 'loadWallets'. Either include it or remove the dependency array   react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\components\DistributorLayout.jsx
+  10:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\components\HeadphoneSlider.jsx
+  39:6  warning  React Hook useEffect has a missing dependency: 'images.length'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\components\LockScreen.jsx
+  1:27  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\components\RetailerLayout.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\components\SuperDistributorLayout.jsx
+  11:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\components\admin\UserProfileCard.jsx
+   29:43  error    'compact' is assigned a value but never used                                                                  no-unused-vars
+   44:14  error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+   44:19  error    Empty block statement                                                                                         no-empty
+   56:6   warning  React Hook useEffect has a missing dependency: 'fetchUser'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  224:14  error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+  224:19  error    Empty block statement                                                                                         no-empty
+
+D:\ujjwalpay\src\components\permissions\PermissionEditor.jsx
+  7:17  error  'currentUser' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\components\shared\DashboardCards.jsx
+   89:14  error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+   89:19  error    Empty block statement                                                                                         no-empty
+  100:6   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\context\AuthContext.jsx
+   32:10  error  'socket' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+   51:13  error  Error: Cannot access variable before it is declared
+
+`logout` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  49 |           const elapsed = now - parseInt(lastActivity);
+  50 |           if (elapsed >= LOGOUT_TIMEOUT) {
+> 51 |             logout();
+     |             ^^^^^^ `logout` accessed before it is declared
+  52 |           } else if (elapsed >= LOCK_TIMEOUT) {
+  53 |             // No lock for admin/employee roles and Retailers
+  54 |             const isExempt = ['ADMIN', 'DISTRIBUTOR', 'SUPER_DISTRIBUTOR', 'SUPERADMIN', 'NATIONAL_HEADER', 'STATE_HEADER', 'REGIONAL_HEADER', 'EMPLOYEE', 'RETAILER'].includes(parsedUser.role);
+
+  165 |   };
+  166 |
+> 167 |   const logout = () => {
+      |   ^^^^^^^^^^^^^^^^^^^^^^
+> 168 |     localStorage.removeItem("UjjwalPay_token");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 169 |     localStorage.removeItem("UjjwalPay_user");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 170 |     localStorage.removeItem("last_activity");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 171 |     setUser(null);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |     setPermissions([]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 173 |     setIsLocked(false);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 174 |   };
+      | ^^^^^ `logout` is declared here
+  175 |
+  176 |   const hasPermission = (module, action) => {
+  177 |     if (user?.role === "ADMIN") return true;  react-hooks/immutability
+   60:16  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  192:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             react-refresh/only-export-components
+
+D:\ujjwalpay\src\context\LanguageContext.jsx
+  33:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\ujjwalpay\src\context\PermissionContext.jsx
+    7:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+  128:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\ujjwalpay\src\context\ThemeContext.jsx
+  5:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\ujjwalpay\src\distributor\components\DistributorLogin.jsx
+    1:27  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  115:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+  139:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+  163:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+
+D:\ujjwalpay\src\distributor\components\DistributorTopBar.jsx
+  23:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  21 |
+  22 |     useEffect(() => {
+> 23 |         loadDist();
+     |         ^^^^^^^^ Avoid calling setState() directly within an effect
+  24 |         window.addEventListener('distributorDataUpdated', loadDist);
+  25 |         return () => window.removeEventListener('distributorDataUpdated', loadDist);
+  26 |     }, []);  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\distributor\pages\Accounts.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\DistributorDashboard.jsx
+   29:7   error  'recentTxns' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   37:7   error  'quickContacts' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+   88:12  error  'transferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+   88:25  error  'setTransferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+   89:12  error  'selectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+   89:29  error  'setSelectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+   93:12  error  'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  120:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  118 |
+  119 |     useEffect(() => {
+> 120 |         load();
+      |         ^^^^ Avoid calling setState() directly within an effect
+  121 |         window.addEventListener('distributorDataUpdated', load);
+  122 |         return () => window.removeEventListener('distributorDataUpdated', load);
+  123 |     }, []);  react-hooks/set-state-in-effect
+  125:11  error  'activeUsers' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\PlansRates.jsx
+  45:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  43 |         if (session) {
+  44 |             const fresh = sharedDataService.getDistributorById(session.id) || session;
+> 45 |             setDist(fresh);
+     |             ^^^^^^^ Avoid calling setState() directly within an effect
+  46 |         }
+  47 |     }, []);
+  48 |  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\distributor\pages\Receipts.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\Reports.jsx
+    2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                  no-unused-vars
+    5:52  error  'Icon' is defined but never used                                                               no-unused-vars
+    6:12  error  'searchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+    6:24  error  'setSearchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  101:56  error  'v' is defined but never used                                                                  no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\Retailers.jsx
+  23:11  error  'generatePassword' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  95:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                    no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\reports\CommissionReport.jsx
+  14:56  error  'v' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\distributor\pages\reports\ReportTable.jsx
+  4:52  error  'Icon' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\landing\About.jsx
+  460:21  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  458 |     const containerRef = useRef(null);
+  459 |
+> 460 |     useEffect(() => setMounted(true), []);
+      |                     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  461 |
+  462 |     const handleMouseMove = (e) => {
+  463 |         setMouse({ x: e.clientX, y: e.clientY });  react-hooks/set-state-in-effect
+  606:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  607:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+
+D:\ujjwalpay\src\landing\LandingPageFull.jsx
+  205:14  error  Fast refresh only works when a file only exports components. Move your React context(s) to a separate file  react-refresh/only-export-components
+  386:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                    no-unused-vars
+
+D:\ujjwalpay\src\landing\Leadership.jsx
+   3:8   error  'logo' is defined but never used. Allowed unused vars must match /^[A-Z_]/u               no-unused-vars
+   4:8   error  'genesisImg' is defined but never used. Allowed unused vars must match /^[A-Z_]/u         no-unused-vars
+  12:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  13:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\landing\ServicesPageFull.jsx
+    1:38  error  'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  145:27  error  'i' is defined but never used                                                  no-unused-vars
+
+D:\ujjwalpay\src\pages\AboutPage.jsx
+    8:8   error  'logo' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+  494:21  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  492 |     const containerRef = useRef(null);
+  493 |
+> 494 |     useEffect(() => setMounted(true), []);
+      |                     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  495 |
+  496 |     const handleMouseMove = (e) => {
+  497 |         setMouse({ x: e.clientX, y: e.clientY });  react-hooks/set-state-in-effect
+  696:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  697:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+
+D:\ujjwalpay\src\pages\LandingPage.jsx
+    3:35  error  'useScroll' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                            no-unused-vars
+    3:46  error  'useTransform' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                         no-unused-vars
+    3:60  error  'useSpring' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                            no-unused-vars
+    4:8   error  'logo' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                 no-unused-vars
+    5:8   error  'characterImg' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                         no-unused-vars
+    6:8   error  'connectingBharatImg' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                  no-unused-vars
+  204:14  error  Fast refresh only works when a file only exports components. Move your React context(s) to a separate file  react-refresh/only-export-components
+  385:11  error  'navigate' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                    no-unused-vars
+
+D:\ujjwalpay\src\pages\ServicesPage.jsx
+    1:38  error  'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  145:27  error  'i' is defined but never used                                                  no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\AepsPage.jsx
+  7:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\RetailerDashboard.jsx
+  32:24  error  'iconPath' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\RetailerServicesPage.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\TransactionsPage.jsx
+  26:12  error  'searchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+  26:24  error  'setSearchTerm' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\pages\retailer\WalletPage.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\pages\super-distributor\SuperDistributorUserManagement.jsx
+   4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                   no-unused-vars
+  32:12  error  'isAddModalOpen' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\BankingDetails.jsx
+  49:16  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  47 |     try {
+  48 |       const raw = localStorage.getItem(STORAGE_KEY);
+> 49 |       if (raw) setBanks(JSON.parse(raw));
+     |                ^^^^^^^^ Avoid calling setState() directly within an effect
+  50 |       else setBanks(sampleBanks);
+  51 |     } catch (e) {
+  52 |       setBanks(sampleBanks);  react-hooks/set-state-in-effect
+  51:14  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\Payout.jsx
+  191:65  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  189 |                   </div>
+  190 |                   <div>
+> 191 |                     <p className="font-medium text-gray-800">Γé╣{(Math.random() * 1000 + 100).toFixed(2)}</p>
+      |                                                                 ^^^^^^^^^^^^^ Cannot call impure function
+  192 |                     <p className="text-xs text-gray-500">To: ****{Math.floor(1000 + Math.random() * 9000)}</p>
+  193 |                   </div>
+  194 |                 </div>                                          react-hooks/purity
+  192:85  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  190 |                   <div>
+  191 |                     <p className="font-medium text-gray-800">Γé╣{(Math.random() * 1000 + 100).toFixed(2)}</p>
+> 192 |                     <p className="text-xs text-gray-500">To: ****{Math.floor(1000 + Math.random() * 9000)}</p>
+      |                                                                                     ^^^^^^^^^^^^^ Cannot call impure function
+  193 |                   </div>
+  194 |                 </div>
+  195 |                 <div className="text-right">  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\components\ProfileDetails.jsx
+   12:8   error  'mainLogo' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                  no-unused-vars
+   43:12  error  'generatedOtp' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+   43:26  error  'setGeneratedOtp' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  218:18  error  'error' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  295:11  error  'indianBanks' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      no-unused-vars
+  322:22  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                   no-unused-vars
+  360:22  error  'error' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  679:58  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                   no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\RetailerLayout.jsx
+   77:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  75 |     // Close sidebar on route change (mobile)
+  76 |     useEffect(() => {
+> 77 |         setShowMobileSidebar(false);
+     |         ^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  78 |     }, [location.pathname]);
+  79 |
+  80 |     const handleTabChange = (tab) => {  react-hooks/set-state-in-effect
+  154:11  error  'isStaff' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\RetailerLogin.jsx
+    1:27  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  113:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+  162:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\Sidebar.jsx
+   12:13   error  't' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  141:139  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+  141:142  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  145:140  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+  145:143  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  198:22   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  196 |                 {/* Main Navigation List */}
+  197 |                 <div className="flex flex-col px-1">
+> 198 |                     <MenuItem
+      |                      ^^^^^^^^ This component is created during render
+  199 |                         item={{ id: 'dashboard', label: 'Dashboard', icon: LayoutGrid }}
+  200 |                         isActive={activeTab === 'dashboard'}
+  201 |                         onClick={() => setActiveTab('dashboard')}
+
+   74 |     ];
+   75 |
+>  76 |     const MenuItem = ({ item, isActive, onClick }) => {
+      |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  77 |         const isExpanded = expandedItems[item.id];
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  78 |
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |         );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |     };
+      | ^^^^^^ The component is created during render here
+  167 |
+  168 |     const currentUser = appData.currentUser;
+  169 |     const getInitials = () => {     react-hooks/static-components
+  203:22   error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  201 |                         onClick={() => setActiveTab('dashboard')}
+  202 |                     />
+> 203 |                     <MenuItem
+      |                      ^^^^^^^^ This component is created during render
+  204 |                         item={{ id: 'all_services', label: 'All Services', icon: Smartphone }}
+  205 |                         isActive={activeTab === 'all_services'}
+  206 |                         onClick={() => setActiveTab('all_services')}
+
+   74 |     ];
+   75 |
+>  76 |     const MenuItem = ({ item, isActive, onClick }) => {
+      |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  77 |         const isExpanded = expandedItems[item.id];
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  78 |
+      ΓÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |         );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |     };
+      | ^^^^^^ The component is created during render here
+  167 |
+  168 |     const currentUser = appData.currentUser;
+  169 |     const getInitials = () => {  react-hooks/static-components
+
+D:\ujjwalpay\src\retailer\components\banking\AddMoney.jsx
+    9:12  error  'orderData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+    9:23  error  'setOrderData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  130:18  error  'error' is defined but never used. Allowed unused caught errors must match /^_/u              no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\banking\PanVerification.jsx
+  4:10  error  'dataService' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\banking\RetailerEKYC.jsx
+  12:12  error  'verifyingAadhaar' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+  12:30  error  'setVerifyingAadhaar' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+  15:12  error  'aadhaarData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u             no-unused-vars
+  16:12  error  'pidData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                 no-unused-vars
+  16:21  error  'setPidData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u              no-unused-vars
+  70:11  error  'handleDigiLockerVerify' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\profile\BankingInfo.jsx
+  5:53  error  'handleSave' is defined but never used  no-unused-vars
+  5:65  error  'isSaving' is defined but never used    no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\profile\Documents.jsx
+  54:38  error  'i' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\retailer\components\profile\PersonalInfo.jsx
+  5:76   error  'isSendingOtp' is defined but never used   no-unused-vars
+  5:137  error  'onVerifyEmail' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\AEPS.jsx
+    1:38  error    'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                    no-unused-vars
+   10:46  error    'announceFailure' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                           no-unused-vars
+  158:24  error    'setDeviceMode' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                    no-unused-vars
+  178:12  error    'otpSent' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                          no-unused-vars
+  179:12  error    'otp' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                              no-unused-vars
+  180:12  error    'otpRefId' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                         no-unused-vars
+  180:22  error    'setOtpRefId' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                      no-unused-vars
+  181:12  error    'otpMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                        no-unused-vars
+  181:23  error    'setOtpMethod' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                     no-unused-vars
+  201:20  error    'err' is defined but never used                                                                                  no-unused-vars
+  202:8   warning  React Hook useEffect has a missing dependency: 'navigate'. Either include it or remove the dependency array      react-hooks/exhaustive-deps
+  209:18  error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                     no-unused-vars
+  209:21  error    Empty block statement                                                                                            no-empty
+  214:8   warning  React Hook useEffect has a missing dependency: 'fetchHistory'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  220:38  error    'overridePid' is assigned a value but never used                                                                 no-unused-vars
+  341:18  error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                     no-unused-vars
+  358:18  error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                     no-unused-vars
+  381:18  error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                     no-unused-vars
+  952:42  error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                     no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\AEPSKycForm.jsx
+  71:19  error  'setUser' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\CMS.jsx
+  54:20  error  'err' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\Dashboard.jsx
+  123:21  error  'setAppData' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        no-unused-vars
+  124:12  error  'activeWallet' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+  124:26  error  'setActiveWallet' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+  125:12  error  'balance' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           no-unused-vars
+  215:37  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  213 |     const mkPoint = () => ({
+  214 |         t: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+> 215 |         revenue: Math.floor(15000 + Math.random() * 25000)
+      |                                     ^^^^^^^^^^^^^ Cannot call impure function
+  216 |     });
+  217 |     const [liveData, setLiveData] = useState(Array.from({ length: 12 }, mkPoint));
+  218 |  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\pages\Loans.jsx
+    1:38  error  'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+   34:34  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  32 |                 <div key={i} className="absolute animate-bounce"
+  33 |                     style={{
+> 34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+     |                                  ^^^^^^^^^^^^^ Cannot call impure function
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,                                                    react-hooks/purity
+   34:67  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  32 |                 <div key={i} className="absolute animate-bounce"
+  33 |                     style={{
+> 34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+     |                                                                   ^^^^^^^^^^^^^ Cannot call impure function
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,                   react-hooks/purity
+   35:39  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  33 |                     style={{
+  34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+> 35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+     |                                       ^^^^^^^^^^^^^ Cannot call impure function
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,                                        react-hooks/purity
+   35:77  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  33 |                     style={{
+  34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+> 35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+     |                                                                             ^^^^^^^^^^^^^ Cannot call impure function
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,  react-hooks/purity
+   36:78  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  34 |                         left: `${Math.random() * 100}%`, top: `-${Math.random() * 20}%`,
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+> 36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+     |                                                                              ^^^^^^^^^^^^^ Cannot call impure function
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+  39 |                     }} />    react-hooks/purity
+   37:51  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+> 37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+     |                                                   ^^^^^^^^^^^^^ Cannot call impure function
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+  39 |                     }} />
+  40 |             ))}                                                                                                        react-hooks/purity
+   37:92  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  35 |                         width: `${6 + Math.random() * 8}px`, height: `${6 + Math.random() * 8}px`,
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+> 37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+     |                                                                                            ^^^^^^^^^^^^^ Cannot call impure function
+  38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+  39 |                     }} />
+  40 |             ))}                                                               react-hooks/purity
+   38:46  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  36 |                         background: colors[i % colors.length], borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+  37 |                         animationDuration: `${1 + Math.random() * 2}s`, animationDelay: `${Math.random()}s`,
+> 38 |                         transform: `rotate(${Math.random() * 360}deg)`,
+     |                                              ^^^^^^^^^^^^^ Cannot call impure function
+  39 |                     }} />
+  40 |             ))}
+  41 |         </div>                                                                                                                                                                                                 react-hooks/purity
+   51:12  error  'success' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+  132:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+  149:38  error  'offer' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  154:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+  154:21  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  189:34  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              no-unused-vars
+  189:37  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-empty
+  196:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\MATM.jsx
+    9:22  error  'speak' is defined but never used. Allowed unused vars must match /^[A-Z_]/u            no-unused-vars
+    9:29  error  'announceSuccess' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+    9:46  error  'announceFailure' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+    9:83  error  'announceError' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+  155:22  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u            no-unused-vars
+  155:25  error  Empty block statement                                                                   no-empty
+
+D:\ujjwalpay\src\retailer\pages\Reports.jsx
+  316:22   error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+  430:154  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  428 |                                     {filtered.map((row, i) => (
+  429 |                                         <tr key={i} className="hover:bg-slate-50/80 transition-colors group">
+> 430 |                                             <td className="px-8 py-5 text-[11px] font-bold text-slate-500 whitespace-nowrap">{new Date(row.created_at || Date.now()).toLocaleDateString('en-GB').replace(/\//g, '-')}</td>
+      |                                                                                                                                                          ^^^^^^^^^^ Cannot call impure function
+  431 |                                             <td className="px-8 py-5">
+  432 |                                                 <div className="flex flex-col">
+  433 |                                                     <span className="text-[11px] font-black text-slate-800 uppercase tracking-tight group-hover:text-blue-600 transition-colors">{row.description || 'Service Transaction'}</span>                                   react-hooks/purity
+  480:22   error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+  593:143  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  591 |                                     {filtered.map((row, i) => (
+  592 |                                         <tr key={i} className="hover:bg-slate-50/50 transition-colors group">
+> 593 |                                             <td className="px-8 py-6 text-[11px] font-bold text-slate-500 italic">{new Date(row.created_at || Date.now()).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short' })}</td>
+      |                                                                                                                                               ^^^^^^^^^^ Cannot call impure function
+  594 |                                             <td className="px-8 py-6">
+  595 |                                                 <span className="text-[11px] font-black text-slate-800 uppercase tracking-widest bg-slate-100 px-3 py-1.5 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">#{row.id}</span>
+  596 |                                             </td>  react-hooks/purity
+  653:30   error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+  678:22   error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\Travel.jsx
+  27:12  error  'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  27:21  error  'setLoading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+  33:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  31 |     useEffect(() => {
+  32 |         const currentUser = dataService.getCurrentUser();
+> 33 |         setUser(currentUser);
+     |         ^^^^^^^ Avoid calling setState() directly within an effect
+  34 |         dataService.verifyLocation().then(loc => setLocation(loc));
+  35 |     }, []);
+  36 |  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\retailer\pages\Utility.jsx
+    14:22   error    'announceSuccess' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                      no-unused-vars
+    14:39   error    'announceFailure' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                      no-unused-vars
+    14:137  error    'playApplause' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                         no-unused-vars
+   171:47   error    'opColor' is defined but never used                                                                         no-unused-vars
+   214:23   error    'setDetecting' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                no-unused-vars
+   219:12   error    'walletBalance' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u               no-unused-vars
+   304:22   error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+   345:26   error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+   345:29   error    Empty block statement                                                                                       no-empty
+   570:18   error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+   716:12   error    'fetchError' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                  no-unused-vars
+   731:8    warning  React Hook useEffect has a missing dependency: 'doFetch'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+   782:18   error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                no-unused-vars
+   825:18   error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                              no-unused-vars
+   825:23   error    Empty block statement                                                                                       no-empty
+  1157:67   error    'i' is defined but never used                                                                               no-unused-vars
+  1212:56   error    'k' is defined but never used                                                                               no-unused-vars
+  1236:12   error    'user' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                        no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\UtilityBill.jsx
+   11:22  error    'announceSuccess' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                            no-unused-vars
+   11:39  error    'announceFailure' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                            no-unused-vars
+   11:98  error    'announceWarning' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                            no-unused-vars
+  305:8   warning  React Hook useEffect has missing dependencies: 'billMobile' and 'consumerNo'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  381:18  error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                                                    no-unused-vars
+  436:26  error    'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                      no-unused-vars
+  436:29  error    Empty block statement                                                                                                             no-empty
+  468:18  error    'err' is defined but never used. Allowed unused caught errors must match /^_/u                                                    no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\reports\AuditReport.jsx
+  26:26  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\reports\ConsolidatedLedger.jsx
+   24:22   error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  138:154  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  136 |                                     {filtered.map((row, i) => (
+  137 |                                         <tr key={i} className="hover:bg-slate-50/80 transition-colors group">
+> 138 |                                             <td className="px-8 py-5 text-[11px] font-bold text-slate-500 whitespace-nowrap">{new Date(row.created_at || Date.now()).toLocaleDateString('en-GB').replace(/\//g, '-')}</td>
+      |                                                                                                                                                          ^^^^^^^^^^ Cannot call impure function
+  139 |                                             <td className="px-8 py-5">
+  140 |                                                 <div className="flex flex-col">
+  141 |                                                     <span className="text-[11px] font-black text-slate-800 uppercase tracking-tight group-hover:text-blue-600 transition-colors">{row.description || 'Service Transaction'}</span>  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\pages\reports\DailyLedger.jsx
+   24:22   error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+  137:143  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  135 |                                     {filtered.map((row, i) => (
+  136 |                                         <tr key={i} className="hover:bg-slate-50/50 transition-colors group">
+> 137 |                                             <td className="px-8 py-6 text-[11px] font-bold text-slate-500 italic">{new Date(row.created_at || Date.now()).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short' })}</td>
+      |                                                                                                                                               ^^^^^^^^^^ Cannot call impure function
+  138 |                                             <td className="px-8 py-6">
+  139 |                                                 <span className="text-[11px] font-black text-slate-800 uppercase tracking-widest bg-slate-100 px-3 py-1.5 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">#{row.id}</span>
+  140 |                                             </td>  react-hooks/purity
+
+D:\ujjwalpay\src\retailer\pages\reports\GstInvoiceReport.jsx
+  1:27  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\reports\SaleReport.jsx
+  22:22  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u  no-unused-vars
+
+D:\ujjwalpay\src\retailer\pages\utilityData.js
+  23:46  error  Duplicate key '9419'  no-dupe-keys
+  49:5   error  Duplicate key '6261'  no-dupe-keys
+  68:5   error  Duplicate key '9773'  no-dupe-keys
+  69:5   error  Duplicate key '9829'  no-dupe-keys
+  72:5   error  Duplicate key '9827'  no-dupe-keys
+  78:48  error  Duplicate key '9412'  no-dupe-keys
+  80:5   error  Duplicate key '9419'  no-dupe-keys
+
+D:\ujjwalpay\src\services\dataService.js
+    21:7   error  'isLocalhost' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+   168:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   256:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   385:39  error  'userId' is defined but never used                                                           no-unused-vars
+   406:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   458:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   469:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   482:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   491:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   648:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   869:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   877:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   886:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   894:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   905:22  error  'e' is defined but never used                                                                no-unused-vars
+   953:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   953:21  error  Empty block statement                                                                        no-empty
+   984:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+   984:21  error  Empty block statement                                                                        no-empty
+   996:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  1005:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  1145:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  1161:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  1177:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  1197:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+
+D:\ujjwalpay\src\services\emailService.js
+  22:14  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u  no-unused-vars
+
+D:\ujjwalpay\src\services\landingContentService.js
+  99:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u  no-unused-vars
+  99:21  error  Empty block statement                                                         no-empty
+
+D:\ujjwalpay\src\services\sharedDataService.js
+    5:7   error  'isLocalhost' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+   34:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  267:22  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  267:25  error  Empty block statement                                                                        no-empty
+  309:26  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  309:29  error  Empty block statement                                                                        no-empty
+  331:22  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                 no-unused-vars
+  331:25  error  Empty block statement                                                                        no-empty
+
+D:\ujjwalpay\src\services\speechService.js
+   93:59  error  Empty block statement          no-empty
+  153:26  error  'i' is defined but never used  no-unused-vars
+
+D:\ujjwalpay\src\superadmin\components\SuperAdminLogin.jsx
+    1:27  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  112:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+  136:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+  160:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u    no-unused-vars
+
+D:\ujjwalpay\src\superadmin\components\SuperAdminSidebar.jsx
+  6:10  error  'sharedDataService' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\superadmin\components\SuperAdminTopBar.jsx
+  23:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  21 |
+  22 |     useEffect(() => {
+> 23 |         loadDist();
+     |         ^^^^^^^^ Avoid calling setState() directly within an effect
+  24 |         window.addEventListener('SuperAdminDataUpdated', loadDist);
+  25 |         return () => window.removeEventListener('SuperAdminDataUpdated', loadDist);
+  26 |     }, []);  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\superadmin\pages\Accounts.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\AllMembers.jsx
+  10:10  error  'sharedDataService' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\Approvals.jsx
+  490:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u  no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\Distributors.jsx
+   45:32  error  'setCreatedCredentials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  102:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                         no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\LoanApprovals.jsx
+  39:18  error  'e' is defined but never used. Allowed unused caught errors must match /^_/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+  46:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  44 |
+  45 |     useEffect(() => {
+> 46 |         fetchLoans();
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  47 |     }, []);
+  48 |
+  49 |     const filteredLoans = loans.filter(l => {  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\superadmin\pages\OurMap.jsx
+   1:38  error    'useCallback' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                             no-unused-vars
+   1:51  error    'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                  no-unused-vars
+  47:12  error    'showAdminInfo' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                  no-unused-vars
+  47:27  error    'setShowAdminInfo' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u               no-unused-vars
+  71:8   warning  React Hook useEffect has a missing dependency: 'fetchUsers'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  91:17  error    Empty block statement                                                                                          no-empty
+
+D:\ujjwalpay\src\superadmin\pages\PlansRates.jsx
+  152:12  error    'hasFetched' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                      no-unused-vars
+  219:8   warning  React Hook useEffect has a missing dependency: 'fetchLedger'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\superadmin\pages\Receipts.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\Reports.jsx
+    2:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                 no-unused-vars
+    6:24  error    'title' is defined but never used                                                                             no-unused-vars
+    6:52  error    'Icon' is defined but never used                                                                              no-unused-vars
+  145:8   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  195:64  error    'v' is defined but never used                                                                                 no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\ReportsAnalyst.jsx
+  35:9  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  33 |
+  34 |     useEffect(() => {
+> 35 |         fetchTopMerchants();
+     |         ^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |     }, [period, state]);
+  37 |
+  38 |     return (  react-hooks/set-state-in-effect
+  36:8  warning  React Hook useEffect has a missing dependency: 'fetchTopMerchants'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/exhaustive-deps
+
+D:\ujjwalpay\src\superadmin\pages\Retailers.jsx
+   44:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u       no-unused-vars
+   44:23  error  Empty block statement                                                                no-empty
+  141:26  error  'emailErr' is defined but never used. Allowed unused caught errors must match /^_/u  no-unused-vars
+  141:36  error  Empty block statement                                                                no-empty
+  548:69  error  'Icon' is defined but never used                                                     no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\SuperAdminDashboard.jsx
+   26:7   error  'recentTxns' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    no-unused-vars
+   34:7   error  'quickContacts' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+   80:12  error  'transferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+   80:25  error  'setTransferAmt' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                no-unused-vars
+   81:12  error  'selectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+   81:29  error  'setSelectedContact' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+   85:12  error  'loading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       no-unused-vars
+  103:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  101 |
+  102 |     useEffect(() => {
+> 103 |         load();
+      |         ^^^^ Avoid calling setState() directly within an effect
+  104 |         window.addEventListener('superadminDataUpdated', load);
+  105 |         return () => window.removeEventListener('superadminDataUpdated', load);
+  106 |     }, []);  react-hooks/set-state-in-effect
+
+D:\ujjwalpay\src\superadmin\pages\SuperAdminSettings.jsx
+  8:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ujjwalpay\src\superadmin\pages\SuperDistributors.jsx
+   45:32  error  'setCreatedCredentials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+   72:19  error  'sa' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                     no-unused-vars
+  102:18  error  'err' is defined but never used. Allowed unused caught errors must match /^_/u                         no-unused-vars
+
+Γ£û 331 problems (315 errors, 16 warnings)
+
