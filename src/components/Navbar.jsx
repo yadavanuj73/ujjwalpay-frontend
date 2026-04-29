@@ -41,7 +41,7 @@ export default function Navbar() {
                         decoding="async"
                     />
                     <div className="rp-nav__brand-text">
-                        <span className="rp-nav__brand-title">Ujjwal Pay</span>
+                        <span className="rp-nav__brand-title">UjjwalPay</span>
                         <span className="rp-nav__brand-sub">Fintech Pvt Ltd</span>
                         <span className="rp-nav__brand-tagline-hi">Har Transaction Mein Vishwas</span>
                     </div>

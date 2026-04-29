@@ -853,11 +853,6 @@ const AboutPage = () => {
                                                 <span style={{ fontSize: '1rem', fontWeight: '800', color: '#1e3a8a', letterSpacing: '3px', textTransform: 'uppercase' }}>FINTECH PVT LTD</span>
                                                 <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#64748b', letterSpacing: '1px' }}>Har Transaction Mein Vishwas</span>
                                             </div>
-                                            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                                                {['RBI Compliant', 'NPCI Partner', 'IRDAI Approved'].map(tag => (
-                                                    <span key={tag} style={{ background: '#eff6ff', color: '#1d4ed8', border: '1px solid #bfdbfe', borderRadius: '99px', padding: '6px 16px', fontSize: '0.78rem', fontWeight: '800' }}>{tag}</span>
-                                                ))}
-                                            </div>
                                         </motion.div>
                                     </div>
 
@@ -869,7 +864,7 @@ const AboutPage = () => {
                                         justifyContent: 'center',
                                         alignItems: 'flex-start'
                                     }}>
-                                        <span className="about-tag">Founded 2025</span>
+                                        <span className="about-tag">Founded 2026</span>
                                         <h1 className="about-h1 partners-title-glow" style={{ textAlign: 'left', fontSize: 'clamp(3rem, 5vw, 4.5rem)', margin: '20px 0' }}>
                                             Bharat's Leading<br />
                                             <span className="text-shimmer">Fintech Revolution</span>
@@ -907,10 +902,10 @@ const AboutPage = () => {
                                         <span className="section-label">The Journey</span>
                                         <h2 className="section-title-dissolve" style={{ textAlign: 'left', margin: '15px 0 25px' }}>Expanding Root to <span style={{ color: '#2563eb' }}>National Scale</span></h2>
                                         <p className="about-sub-plain" style={{ textAlign: 'left', margin: '0 0 20px', fontSize: '1.15rem', fontWeight: '500' }}>
-                                            Founded in 2025, <strong>Ujjwal Pay</strong> is currently focused on empowering <strong>Bihar</strong>. Operating from our main office in <strong>Muzaffarpur</strong>, we are working tirelessly to connect every community.
+                                            Founded in 2026, Operating from our main office in <strong>Delhi</strong>, we are working tirelessly to connect every community.
                                         </p>
                                         <p className="about-sub-plain" style={{ textAlign: 'left', margin: '0 0 20px', fontSize: '1.15rem' }}>
-                                            Our approach is deeply grassroots — moving <strong>village to village</strong> and city to city. While our heart is in Bihar today, we are gradually moving forward with a vision to bring our digital revolution to <strong>every corner of India</strong>.
+                                            Our approach is deeply grassroots — moving <strong>village to village</strong> and city to city. We are gradually moving forward with a vision to bring our digital revolution to <strong>every corner of India</strong>.
                                         </p>
                                         <div className="story-features-mini" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', margin: '30px 0' }}>
                                             <div className="s-feat" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '800', color: '#1a1f36' }}><Zap size={20} color="#2563eb" /> Innovation Driven</div>
