@@ -2,8 +2,58 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Zap, ShieldCheck, Users, Target, Eye, ArrowLeft } from 'lucide-react';
-import genesisImg from '../assets/images/connecting-bharat.jpg';
 import ujjwalPayLogo from '../assets/UjjwalPay_brand_logo.png';
+
+function IndiaMapSVG() {
+    return (
+        <div style={{ position: 'relative', width: '100%', maxWidth: '460px', filter: 'drop-shadow(0 20px 50px rgba(37,99,235,0.18))' }}>
+            <svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: 'auto' }}>
+                <defs>
+                    <linearGradient id="mapGrad2" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#e8eef8" />
+                        <stop offset="100%" stopColor="#d0daf0" />
+                    </linearGradient>
+                    <filter id="stateShadow2" x="-10%" y="-10%" width="120%" height="120%">
+                        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="rgba(0,0,0,0.15)" />
+                    </filter>
+                    <filter id="delhiGlow2">
+                        <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="rgba(220,38,38,0.7)" />
+                    </filter>
+                </defs>
+                <path d="M155,20 L175,15 L200,18 L215,30 L210,50 L195,55 L180,50 L160,55 L148,45 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M175,55 L195,55 L205,65 L200,78 L185,80 L172,72 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M148,55 L172,55 L172,72 L160,80 L145,75 L140,62 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M160,80 L172,72 L185,80 L182,98 L168,100 L158,92 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M185,80 L205,78 L220,85 L218,100 L200,105 L182,98 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M168,100 L182,98 L185,110 L175,116 L165,110 Z" fill="#dc2626" stroke="#fff" strokeWidth="1.5" filter="url(#delhiGlow2)">
+                    <animate attributeName="opacity" values="1;0.75;1" dur="2s" repeatCount="indefinite" />
+                </path>
+                <path d="M108,98 L140,95 L158,92 L168,100 L165,110 L162,140 L145,162 L118,168 L98,150 L92,125 L100,108 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M182,98 L218,100 L240,108 L255,125 L250,148 L230,158 L205,162 L185,155 L165,145 L162,140 L165,110 L175,116 L185,110 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M250,125 L278,128 L285,145 L275,162 L255,165 L240,155 L230,145 L250,148 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M278,128 L300,130 L308,150 L305,175 L290,185 L278,170 L275,155 L280,145 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M305,128 L330,122 L345,135 L340,155 L320,158 L308,148 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M145,162 L165,145 L185,155 L205,162 L215,175 L210,200 L190,210 L165,208 L145,195 L135,178 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M255,165 L280,162 L290,182 L282,200 L260,205 L245,190 L248,172 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M282,198 L305,195 L315,218 L305,240 L285,245 L268,228 L265,208 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M82,148 L108,148 L118,168 L112,195 L98,210 L78,218 L62,205 L58,185 L65,165 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M118,195 L145,195 L165,208 L172,230 L162,255 L142,260 L118,252 L100,235 L98,215 L112,198 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M210,200 L240,198 L248,220 L240,245 L218,250 L200,238 L195,215 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M165,258 L200,255 L225,260 L238,285 L228,310 L205,320 L180,315 L162,295 L158,270 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M135,265 L162,268 L165,295 L155,318 L135,325 L115,310 L108,288 L118,268 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M135,325 L158,322 L168,342 L162,370 L148,385 L132,378 L122,358 L122,338 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <path d="M118,318 L135,322 L132,350 L125,372 L112,365 L105,342 L108,325 Z" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" filter="url(#stateShadow2)" />
+                <ellipse cx="152" cy="400" rx="10" ry="14" fill="url(#mapGrad2)" stroke="#b0bcd8" strokeWidth="0.8" />
+                <circle cx="175" cy="108" r="3" fill="#fff" stroke="#dc2626" strokeWidth="1.5" />
+                <text x="185" y="104" fontSize="9" fontWeight="800" fill="#dc2626" fontFamily="Inter, sans-serif">Delhi</text>
+                <circle cx="175" cy="108" r="8" fill="none" stroke="#dc2626" strokeWidth="1" opacity="0.5">
+                    <animate attributeName="r" values="6;14;6" dur="2s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+        </div>
+    );
+}
 
 function FlipCard({ card }) {
     const [flipped, setFlipped] = useState(false);
@@ -894,8 +944,8 @@ const AboutPage = () => {
                                         flexWrap: 'wrap'
                                     }}
                                 >
-                                    <div className="genesis-image-side" style={{ flex: '1', minWidth: '400px', display: 'flex', justifyContent: 'center' }}>
-                                        <img src={genesisImg} alt="Genesis" style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', borderRadius: '24px' }} />
+                                    <div className="genesis-image-side" style={{ flex: '1', minWidth: '320px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <IndiaMapSVG />
                                     </div>
 
                                     <div className="genesis-text-side" style={{ flex: '1', minWidth: '350px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
