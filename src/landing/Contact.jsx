@@ -256,7 +256,7 @@ export default function Contact() {
                     <div className="space-y-3">
                         <div className="flex items-center gap-3 text-sm font-bold text-slate-800">
                             <Phone size={16} className="text-blue-500" />
-                            +91 88000 00000
+                            +91 9958835146
                         </div>
                         <div className="flex items-center gap-3 text-sm font-bold text-slate-800">
                             <Mail size={16} className="text-blue-500" />

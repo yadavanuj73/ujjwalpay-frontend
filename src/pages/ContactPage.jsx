@@ -131,13 +131,13 @@ const ContactPage = () => {
             Ujjwal Pay Pvt Ltd<br/>
             RZA-108, Shop No 01<br/>
             Nihal Vihar, Nangloi<br/>
-            New Delhi 110041
+            New Delhi - 110041
           </p>
           <div className="w-full h-px bg-slate-200 my-6"></div>
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-sm font-bold text-slate-800">
               <Phone size={16} className="text-blue-500" />
-              +91 88000 00000
+              +91 9958835146
             </div>
             <div className="flex items-center gap-3 text-sm font-bold text-slate-800">
               <Mail size={16} className="text-blue-500" />

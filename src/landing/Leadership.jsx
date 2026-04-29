@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-const jagdeoImg = 'https://ui-avatars.com/api/?name=Jagdeo+Prasad+Sah&size=400&background=1e3a8a&color=fff&bold=true&font-size=0.33';
+const samarendraImg = '/CO-FOUNDER SAMERNDER.jpeg';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-const AjayImg = 'https://ui-avatars.com/api/?name=Ajay+Kumar&size=400&background=1e40af&color=fff&bold=true&font-size=0.33';
-const SauravImg = 'https://ui-avatars.com/api/?name=Saurav+Anand&size=400&background=1d4ed8&color=fff&bold=true&font-size=0.33';
+const AjayImg = 'https://ui-avatars.com/api/?name=Parvin+Nagar&size=400&background=1e40af&color=fff&bold=true&font-size=0.33';
+
 
 const Leadership = () => {
     const navigate = useNavigate();
@@ -19,54 +19,21 @@ const Leadership = () => {
 
     const leaders = [
         {
-            name: "Jagdeo Prasad Sah",
-            role: "Managing Director",
-            image: jagdeoImg,
-            bio: "Being an Ex-Serviceman to With over years of experience in fintech and digital payments, leads our strategic vision and growth initiatives. His expertise in financial technology has been instrumental in shaping UjjwalPay into a leading digital payment solutions provider.",
+            name: "Samarendra Kumar",
+            role: "Co-Founder",
+            image: samarendraImg,
+            bio: "Co-founder of UjjwalPay Fintech Pvt Ltd, is a seasoned fintech professional with over 17 years of rich experience. He has worked across almost all major services in the fintech industry and holds an MBA in Sales and Marketing, giving him deep knowledge of strong business strategy and customer management. He has efficiently led large teams across North India, exceeding business targets time and again. Results-oriented, innovative, and confident, he is committed to leveraging his experience and knowledge to take the organization to new heights.",
             linkedin: "#"
         },
         {
-            name: "Ajay Kumar",
-            role: "Founder & CEO",
+            name: "Parvin Nagar",
+            role: "Co-Founder",
             image: AjayImg,
-            bio: "Ajay brings 20+ years of fintech and digital payments experience, specializing in secure payment systems and digital infrastructure. He oversees our Marketing operations and innovation, ensuring robust and scalable solutions for our partners.",
+            bio: "Co-Founder of UjjwalPay Fintech Pvt Ltd, is a seasoned technocrat and entrepreneur with deep experience in BPO, Telecom, Insurance, Mobile and Electronics industries. They have been active in the fintech industry since 2016, where they have collaborated with many companies to provide high level services. His technical proficiency and business experience have enabled him to build his own retail network and better serve his customers.",
             linkedin: "#"
         },
-        {
-            name: "Saurav Anand",
-            role: "Operations Director & Co-Founder",
-            image: SauravImg,
-            bio: "Being an IITian With extensive experience in operations and software development, Saurav ensures smooth execution of our services across PanIndia. His focus on partner success and operational excellence drives our commitment to quality service delivery.",
-            linkedin: "#"
-        }
     ];
 
-    const coreTeam = [
-        {
-            name: "Vikram Desai",
-            role: "Head of Technology",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-            linkedin: "#"
-        },
-        {
-            name: "Priya Singh",
-            role: "Operations Manager",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
-            linkedin: "#"
-        },
-        {
-            name: "Rajesh Kumar",
-            role: "Sales Head",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-            linkedin: "#"
-        },
-        {
-            name: "Anjali Gupta",
-            role: "Compliance Head",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop",
-            linkedin: "#"
-        }
-    ];
 
     return (
         <div className="leadership-root">
@@ -99,33 +66,9 @@ const Leadership = () => {
                                 </div>
                                 <div className="leader-info">
                                     <p className="leader-bio">{leader.bio}</p>
-                                    <a href={leader.linkedin} className="leader-linkedin">
+                                    <a href={leader.linkedin || '#'} className="leader-linkedin">
                                         <span className="linkedin-icon">in</span> Connect on LinkedIn
                                     </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Core Team Section */}
-            <section className="core-team-section">
-                <div className="leadership-container">
-                    <div className="section-center-head">
-                        <h2 className="leadership-h1 small">Our Core Team</h2>
-                        <p className="leadership-sub">The dedicated professionals driving our day-to-day excellence</p>
-                    </div>
-                    <div className="core-grid">
-                        {coreTeam.map((member, idx) => (
-                            <div key={idx} className="core-card">
-                                <div className="core-image-wrapper">
-                                    <img src={member.image} alt={member.name} className="core-image" />
-                                </div>
-                                <div className="core-info">
-                                    <h4 className="core-name">{member.name}</h4>
-                                    <p className="core-role">{member.role}</p>
-                                    <a href={member.linkedin} className="core-linkedin">in</a>
                                 </div>
                             </div>
                         ))}

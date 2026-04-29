@@ -369,11 +369,11 @@ const SuperAdminLogin = () => {
             <div className="flex bg-slate-100 p-1.5 rounded-2xl">
                 <button onClick={() => setLoginMethod('password')}
                     className={`flex-1 py-3 text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all ${loginMethod === 'password' ? 'bg-white text-indigo-600 shadow-sm border border-slate-200' : 'text-slate-500'}`}>
-                    Password
+                    {t('password_placeholder') || 'Password'}
                 </button>
                 <button onClick={() => setLoginMethod('otp')}
                     className={`flex-1 py-3 text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all ${loginMethod === 'otp' ? 'bg-white text-indigo-600 shadow-sm border border-slate-200' : 'text-slate-500'}`}>
-                    Secure OTP
+                    {t('otp_login') || 'Secure OTP'}
                 </button>
             </div>
 
@@ -384,7 +384,7 @@ const SuperAdminLogin = () => {
                     <div className="absolute left-0 top-0 bottom-0 w-12 flex items-center justify-center text-slate-400 border-r border-slate-200 bg-slate-50/50 rounded-l-2xl group-focus-within:text-indigo-600 group-focus-within:bg-indigo-50 transition-colors">
                         <Smartphone size={18} />
                     </div>
-                    <input type="text" placeholder="Mobile / System ID"
+                    <input type="text" placeholder={t('username_placeholder') || 'Mobile / System ID'}
                         value={loginForm.username} onChange={e => setLoginForm({ ...loginForm, username: e.target.value })} required
                         className="w-full pl-14 pr-4 py-4 bg-white border-2 border-slate-100 rounded-2xl focus:border-indigo-500 outline-none text-sm font-bold text-slate-900 transition-all" />
                 </div>
@@ -395,7 +395,7 @@ const SuperAdminLogin = () => {
                             <div className="absolute left-0 top-0 bottom-0 w-12 flex items-center justify-center text-slate-400 border-r border-slate-200 bg-slate-50/50 rounded-l-2xl group-focus-within:text-indigo-600 group-focus-within:bg-indigo-50 transition-colors">
                                 <Lock size={18} />
                             </div>
-                            <input type={showPassword ? 'text' : 'password'} placeholder="System Password"
+                            <input type={showPassword ? 'text' : 'password'} placeholder={t('password_placeholder') || 'System Password'}
                                 value={loginForm.password} onChange={e => setLoginForm({ ...loginForm, password: e.target.value })} required
                                 className="w-full pl-14 pr-12 py-4 bg-white border-2 border-slate-100 rounded-2xl focus:border-indigo-500 outline-none text-sm font-bold text-slate-900 transition-all" />
                             <button type="button" onClick={() => setShowPassword(!showPassword)}
@@ -408,7 +408,7 @@ const SuperAdminLogin = () => {
 
                 <button type="submit" disabled={isLoading}
                     className="w-full bg-gradient-to-r from-[#312e81] to-[#4338ca] hover:shadow-indigo-500/25 text-white font-black py-4 rounded-2xl text-[11px] uppercase tracking-[0.2em] shadow-xl shadow-indigo-500/20 flex items-center justify-center gap-3 transition-all active:scale-[0.98] disabled:opacity-60">
-                    {isLoading ? <><span className="animate-spin w-4 h-4 border-2 border-white/30 border-t-white rounded-full" /> Authenticating...</> : <>Enter Master Portal <ArrowRight size={16} /></>}
+                    {isLoading ? <><span className="animate-spin w-4 h-4 border-2 border-white/30 border-t-white rounded-full" /> {t('signing_in') || 'Authenticating...'}</> : <>{t('login_btn') || 'Enter Master Portal'} <ArrowRight size={16} /></>}
                 </button>
 
                 <div className="flex items-center gap-4 py-2">
@@ -424,7 +424,7 @@ const SuperAdminLogin = () => {
                     </button>
                     <button type="button" onClick={() => setMode('forgot')}
                         className="bg-slate-50 text-slate-500 font-black py-3 rounded-xl text-[10px] uppercase tracking-widest transition-all hover:bg-slate-100">
-                        Forgot?
+                        {t('forgot_password') || 'Forgot?'}
                     </button>
                 </div>
             </form>

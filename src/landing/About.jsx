@@ -602,6 +602,56 @@ function PartnershipBenefitsSection() {
     );
 }
 
+const MV_CARDS_L = [
+    {
+        id: 'mission',
+        title: 'Our Mission',
+        icon: Target,
+        bg: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)',
+        text: 'Our mission is to bridge the gap between financial services and underserved communities by providing secure, innovative, and easy-to-use digital payment solutions. We aim to create employment opportunities for youth and support individuals without income by enabling them to start and grow their own digital business through our platform.',
+    },
+    {
+        id: 'vision',
+        title: 'Our Vision',
+        icon: Eye,
+        bg: 'linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%)',
+        text: 'To build a financially inclusive digital ecosystem by delivering reliable and accessible fintech services across rural and urban India, empowering individuals and enabling sustainable livelihood opportunities for every aspiring entrepreneur.',
+    },
+];
+
+function MissionVisionSlider() {
+    const [idx, setIdx] = useState(0);
+    const [dir, setDir] = useState(1);
+    const card = MV_CARDS_L[idx];
+    const Icon = card.icon;
+    const go = (next) => { setDir(next > idx ? 1 : -1); setIdx(next); };
+    return (
+        <section id="mission-vision" style={{ padding: '80px 20px', background: '#f8fafc' }}>
+            <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '32px' }}>
+                    {MV_CARDS_L.map((c, i) => (
+                        <button key={c.id} onClick={() => go(i)} style={{ width: i === idx ? '32px' : '10px', height: '10px', borderRadius: '6px', border: 'none', cursor: 'pointer', background: i === idx ? '#2563eb' : '#cbd5e1', transition: 'all 0.3s' }} />
+                    ))}
+                </div>
+                <AnimatePresence mode="wait" custom={dir}>
+                    <motion.div key={card.id} custom={dir} initial={{ opacity: 0, x: dir * 80 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: dir * -80 }} transition={{ duration: 0.35, ease: 'easeInOut' }}
+                        style={{ background: card.bg, borderRadius: '24px', padding: '48px 40px', color: '#fff', boxShadow: '0 20px 60px rgba(30,64,175,0.25)', minHeight: '220px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+                        <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <Icon size={32} strokeWidth={2} color="#fff" />
+                        </div>
+                        <h3 style={{ fontSize: '1.75rem', fontWeight: '900', margin: 0 }}>{card.title}</h3>
+                        <p style={{ fontSize: '1.05rem', lineHeight: '1.75', margin: 0, maxWidth: '580px', opacity: 0.92 }}>{card.text}</p>
+                    </motion.div>
+                </AnimatePresence>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '28px' }}>
+                    <button onClick={() => go((idx - 1 + MV_CARDS_L.length) % MV_CARDS_L.length)} style={{ padding: '10px 24px', borderRadius: '50px', border: '2px solid #2563eb', background: '#fff', color: '#2563eb', fontWeight: '800', fontSize: '0.85rem', cursor: 'pointer', transition: 'all 0.2s' }}>← Prev</button>
+                    <button onClick={() => go((idx + 1) % MV_CARDS_L.length)} style={{ padding: '10px 24px', borderRadius: '50px', border: '2px solid #2563eb', background: '#2563eb', color: '#fff', fontWeight: '800', fontSize: '0.85rem', cursor: 'pointer', transition: 'all 0.2s' }}>Next →</button>
+                </div>
+            </div>
+        </section>
+    );
+}
+
 const About = () => {
     const navigate = useNavigate();
     const [scrolled, setScrolled] = useState(false);
@@ -622,12 +672,12 @@ const About = () => {
     const missionScale = useTransform(smoothProgress, [0.15, 0.45], [1, 0.85]);
     const missionY = useTransform(smoothProgress, [0.15, 0.45], [0, -100]);
     const missionOpacity = useTransform(smoothProgress, [0.15, 0.45], [1, 0]);
-    const missionBlur = useTransform(smoothProgress, [0.15, 0.45], ["blur(0px)", "blur(15px)"]);
+    const missionBlur = "blur(0px)";
 
     const visionScale = useTransform(smoothProgress, [0.15, 0.5], [0.85, 1]);
     const visionY = useTransform(smoothProgress, [0.15, 0.5], [80, 0]);
     const visionOpacity = useTransform(smoothProgress, [0.15, 0.45], [0, 1]);
-    const visionBlur = useTransform(smoothProgress, [0.15, 0.5], ["blur(15px)", "blur(0px)"]);
+    const visionBlur = "blur(0px)";
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -800,56 +850,7 @@ const About = () => {
                 </div>
             </header>
 
-            <section className="about-section light-bg mv-section-tight" id="mission-vision">
-                <div className="about-container">
-                    <div className="mv-scroll-stack" ref={mvContainerRef}>
-                        <div className="mv-sticky-wrapper">
-                            <motion.div
-                                className="mv-card-premium mission"
-                                style={{
-                                    scale: missionScale,
-                                    y: missionY,
-                                    opacity: missionOpacity,
-                                    filter: missionBlur,
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: '50%',
-                                    x: '-50%',
-                                    zIndex: 30
-                                }}
-                            >
-                                <div className="mv-icon-box">
-                                    <Target size={32} strokeWidth={2.5} />
-                                </div>
-                                <div className="mv-content-box">
-                                    <h3>Our Mission</h3>
-                                    <p>To empower businesses and individuals across India with accessible, secure, and innovative digital financial solutions that drive growth.</p>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                className="mv-card-premium vision"
-                                style={{
-                                    scale: visionScale,
-                                    y: visionY,
-                                    opacity: visionOpacity,
-                                    filter: visionBlur,
-                                    position: 'relative',
-                                    zIndex: 10
-                                }}
-                            >
-                                <div className="mv-icon-box">
-                                    <Eye size={32} strokeWidth={2.5} />
-                                </div>
-                                <div className="mv-content-box">
-                                    <h3>Our Vision</h3>
-                                    <p>To become India's most trusted financial services platform, creating a seamless digital ecosystem that connects everyone nationwide.</p>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <MissionVisionSlider />
 
             <section className="values-section">
                 <div className="about-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>

@@ -16,7 +16,7 @@ export const LanguageProvider = ({ children }) => {
     };
 
     const toggleLanguage = (lang) => {
-        if (lang === 'en' || lang === 'hi') {
+        if (lang === 'en' || lang === 'hi' || lang === 'gu') {
             setLanguage(lang);
         } else {
             setLanguage(prev => prev === 'en' ? 'hi' : 'en');

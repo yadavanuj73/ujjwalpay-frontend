@@ -51,10 +51,10 @@ export const DEFAULT_CONTENT = {
 
     // ─── CONTACT / FOOTER ────────────────────────────────────────────────
     contact: {
-        phone: '+91 98765 43210',
+        phone: '+91 9958835146',
         email: 'support@UjjwalPay.in',
-        address: 'UjjwalPay Fintech Pvt. Ltd., India',
-        whatsapp: '+91 98765 43210',
+        address: 'RZA-108, Shop No 01, Nihal Vihar, Nangloi, New Delhi - 110041',
+        whatsapp: '+91 9958835146',
     },
 
     // ─── COMPANY INFO ────────────────────────────────────────────────────

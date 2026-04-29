@@ -72,6 +72,7 @@ export const translations = {
         email_label: 'Email',
         agreement: 'I agree to receive communication over whatsapp, RCS service, mobile & email.',
         otp_sent: 'OTP sent to your registered mobile number',
+        otp_login: 'OTP Login',
         signing_in: 'Signing In...',
 
         // Partners Section
@@ -170,6 +171,7 @@ export const translations = {
         email_label: 'ईमेल',
         agreement: 'मैं व्हाट्सएप, RCS सेवा, मोबाइल और ईमेल पर संचार प्राप्त करने के लिए सहमत हूँ।',
         otp_sent: 'ओटीपी आपके पंजीकृत मोबाइल नंबर पर भेज दिया गया है',
+        otp_login: 'OTP लॉगिन',
         signing_in: 'साइन इन हो रहा है...',
 
         // Partners Section
@@ -194,5 +196,104 @@ export const translations = {
         PARTNER_INDIVIDUAL_H2: 'शून्य निवेश',
         PARTNER_INDIVIDUAL_H3: 'सीधा प्रशिक्षण',
         PARTNER_INDIVIDUAL_CATS: 'रेफरल,माइक्रो-ATM,DMT,मोबाइल रिचार्ज',
+    },
+    gu: {
+        // Sidebar
+        RETAILERS: 'રિટેલર્સ',
+        TRANSACTIONS: 'વ્યવહારો',
+        REPORTS: 'અહેવાલો',
+        PLAN_RATES: 'યોજના અને દરો',
+        INVOICE: 'ઇન્વૉઇસ',
+        ACCOUNTS: 'એકાઉન્ટ્સ',
+        PROMOTIONS: 'પ્રમોશન',
+        SUPPORT: 'સહાય',
+        OLD_FINANCIAL_YEAR_REPORT: 'જૂના નાણાકીય વર્ષનો અહેવાલ',
+        GO_BACK_OLD_PANEL: 'જૂના પેનલ પર પાછા જાઓ',
+        CUSTOMER_SUPPORT: 'ગ્રાહક સહાય',
+        FOLLOW_US: 'અમને ફોલો કરો:',
+
+        // Header
+        SEARCH_PLACEHOLDER: 'શોધો...',
+        BUY_IT_DEVICES: 'IT ઉપકરણો ખરીદો',
+        WELCOME_MSG: 'UjjwalPay પોર્ટલમાં આપનું સ્વાગત છે!',
+
+        // Dashboard Tabs
+        DASHBOARD: 'ડેશબોર્ડ',
+        ALL_SERVICES: 'તમામ સેવાઓ',
+        TRAINING_PROMOTIONS: 'તાલીમ અને પ્રમોશન',
+
+        // Stats
+        TODAY_ACTIVE_RETAILERS: 'આજના સક્રિય રિટેલર્સ',
+        WEEKLY_ACTIVE_RETAILERS: 'સાપ્તાહિક સક્રિય રિટેલર્સ',
+        MONTHLY_ACTIVE_RETAILERS: 'માસિક સક્રિય રિટેલર્સ',
+        DEBIT_SERVICE_SALE: 'ડેબિટ સર્વિસ વેચાણ',
+        TRADING_ACTIVE: 'ટ્રેડિંગ સક્રિય રિટેલર્સ',
+        WEEKLY_ACTIVE: 'સાપ્તાહિક સક્રિય રિટેલર્સ',
+        MONTHLY_ACTIVE: 'માસિક સક્રિય રિટેલર્સ',
+
+        // Onboarding & Requests
+        RETAILER_ONBOARDING: 'રિટેલર ઓનબોર્ડિંગ',
+        LEAD: 'લીડ',
+        MIN_KYC: 'ન્યૂનતમ KYC',
+        FULL_KYC: 'સંપૂર્ણ KYC',
+        ONBOARDED: 'ઓનબોર્ડ થયેલ',
+        SERVICE_ACTIVATION_REQUESTS: 'સેવા સક્રિયકરણ વિનંતી',
+        CREDIT_SERVICE_SALE: 'ક્રેડિટ સર્વિસ વેચાણ',
+
+        // Actions
+        RETAILER_RECEIPT: 'રિટેલર રસીદ',
+        CREATE_RETAILER_RECEIPT: 'અહીંથી રિટેલર રસીદ બનાવો',
+        DISTRIBUTOR_RECEIPT: 'ડિસ્ટ્રિબ્યૂટર રસીદ',
+        CREATE_DISTRIBUTOR_RECEIPT: 'અહીંથી ડિસ્ટ્રિબ્યૂટર રસીદ બનાવો',
+        REDEEM_PLANS: 'પ્લાન રિડીમ કરો',
+        GET_PURCHASED_PLANS: 'ખરીદેલ યોજનાઓની યાદી અહીં મેળવો',
+        PURCHASE_PLANS: 'પ્લાન ખરીદો',
+        PURCHASE_EXCITING_PLANS: 'અહીંથી રોમાંચક પ્લાન ખરીદો',
+
+        // Charts
+        ACTIVE_RETAILERS_7_DAYS: 'સક્રિય રિટેલર્સ (છેલ્લા 7 દિવસ)',
+        SALES: 'વેચાણ*',
+        LAST_3_MONTHS: 'છેલ્લા 3 મહિના',
+        LAST_6_MONTHS: 'છેલ્લા 6 મહિના',
+
+        // Auth
+        login_btn: 'લૉગિન',
+        register_btn: 'નોંધણી',
+        submit_btn: 'સબમિટ કરો',
+        forgot_password: 'પાસવર્ડ ભૂલ્યા?',
+        username_placeholder: 'મોબાઇલ નંબર',
+        password_placeholder: 'પાસવર્ડ',
+        mobile_placeholder: 'મોબાઇલ નંબર દાખલ કરો',
+        register_p: 'આજે જ મફત એકાઉન્ટ બનાવો અને ટ્રાન્ઝેક્શન શરૂ કરો',
+        mobile_label: 'મોબાઇલ નંબર',
+        name_label: 'પૂરું નામ',
+        email_label: 'ઇમેઇલ',
+        agreement: 'હું WhatsApp, RCS સેવા, મોબાઇલ અને ઇમેઇલ પર સંચાર મેળવવા સંમત છું.',
+        otp_sent: 'OTP તમારા નોંધાયેલ મોબાઇલ નંબર પર મોકલ્યો છે',
+        otp_login: 'OTP લૉગિન',
+        signing_in: 'સાઇન ઇન થઈ રહ્યું છે...',
+
+        // Partners Section
+        PARTNER_TAG: 'ભાગીદારો',
+        PARTNER_TITLE: 'તમારું સફળતા મૉડલ પસંદ કરો',
+        PARTNER_SUB: 'ડિજિટલ નાણાકીય ક્રાંતિમાં ભાગ લેવા તમામ કદના વ્યવસાયોને સક્ષમ બનાવવું.',
+        PARTNER_RETAILER: 'રિટેલર',
+        PARTNER_RETAILER_DESC: 'તમારી દુકાનને ડિજિટલ બેન્કમાં ફેરવો અને સ્થાનિક સમુદાયને 50+ સેવાઓ આપો.',
+        PARTNER_RETAILER_H1: 'વધુ ગ્રાહકો',
+        PARTNER_RETAILER_H2: 'દૈનિક આવક',
+        PARTNER_RETAILER_H3: 'સંપૂર્ણ સહાય',
+        PARTNER_RETAILER_CATS: 'બેન્કિંગ,ઉપયોગિતા,મુસાફરી,વીમો,લોન',
+        PARTNER_DISTRIBUTOR: 'ડિસ્ટ્રિબ્યૂટર',
+        PARTNER_DISTRIBUTOR_DESC: 'તમારા વિસ્તારમાં રિટેલર્સનું નેટવર્ક બનાવો અને સંચાલિત કરો.',
+        PARTNER_DISTRIBUTOR_H1: 'નેટવર્ક નિયંત્રણ',
+        PARTNER_DISTRIBUTOR_H2: 'બલ્ક કમિશન',
+        PARTNER_DISTRIBUTOR_H3: 'સીધું સંચાલન',
+        PARTNER_DISTRIBUTOR_CATS: 'નેટવર્ક મેનેજ,ઇન્વેન્ટરી,અહેવાલ,પેઆઉટ',
+        PARTNER_INDIVIDUAL: 'વ્યક્તિગત',
+        PARTNER_INDIVIDUAL_DESC: 'સ્વતંત્ર એજન્ટ તરીકે શરૂ કરો અને દરેક ટ્રાન્ઝેક્શન પર કમાઓ.',
+        PARTNER_INDIVIDUAL_H1: 'ઘરેથી કામ',
+        PARTNER_INDIVIDUAL_H2: 'શૂન્ય રોકાણ',
+        PARTNER_INDIVIDUAL_H3: 'સીધી તાલીમ',
+        PARTNER_INDIVIDUAL_CATS: 'રેફરલ,માઇક્રો-ATM,DMT,મોબાઇલ રિચાર્જ',
     }
 };

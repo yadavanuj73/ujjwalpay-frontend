@@ -2,6 +2,7 @@ import './ElectricCards.css';
 import aepsLogo from '../assets/images/aeps_logo.png';
 import moneyTransferLogo from '../assets/images/money_transfer.png';
 import utilityServicesLogo from '../assets/images/utility_services.png';
+import correspondentImg from '../assets/Correspondent.avif';
 
 const ElectricCards = () => {
     return (
@@ -154,30 +155,6 @@ const ElectricCards = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card-wrapper-4">
-                    <div className="inner-wrapper-4">
-                        <div className="border-layer-4">
-                            <div className="card-main-4"></div>
-                        </div>
-                        <div className="glow-4-layer-1"></div>
-                        <div className="glow-4-layer-2"></div>
-                    </div>
-                    <div className="overlay-4-1"></div>
-                    <div className="background-glow-4"></div>
-                    <div className="card-content">
-                        <div className="content-header">
-                            <div className="glass-badge">0%</div>
-                            <div className="card-logo-container">
-                                <div style={{fontSize: '90px', display: 'flex', alignItems: 'center', height: '100%'}}>💻</div>
-                            </div>
-                            <p className="card-title">Setup</p>
-                        </div>
-                        <hr className="card-divider" />
-                        <div className="content-footer">
-                            <p className="card-description">Payment Gateway with Instant Settlements 🚀</p>
-                        </div>
-                    </div>
-                </div>
 
                 <div className="card-wrapper-5">
                     <div className="inner-wrapper-5">
@@ -193,7 +170,7 @@ const ElectricCards = () => {
                         <div className="content-header">
                             <div className="glass-badge">Best</div>
                             <div className="card-logo-container">
-                                <div style={{fontSize: '90px', display: 'flex', alignItems: 'center', height: '100%'}}>✈️</div>
+                                <img src={correspondentImg} alt="Margins" className="card-logo-img" style={{objectFit: 'cover', borderRadius: '12px'}} />
                             </div>
                             <p className="card-title">Margins</p>
                         </div>

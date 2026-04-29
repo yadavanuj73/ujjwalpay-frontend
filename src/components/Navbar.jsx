@@ -60,6 +60,9 @@ export default function Navbar() {
                     <button type="button" className={linkCls('/contact')} onClick={() => navigate('/contact')}>
                         Contact
                     </button>
+                    <button type="button" className={linkCls('/leadership')} onClick={() => navigate('/leadership')}>
+                        Leadership
+                    </button>
                 </div>
 
                 <div className="rp-nav__actions">
@@ -175,7 +178,7 @@ const NAV_CSS = `
 .rp-nav__brand-tagline-hi { font-size: 0.65rem; font-weight: 700; color: #334155; margin-top: 2px; line-height: 1.2; }
 
 .rp-nav__center { display: flex; align-items: center; justify-content: center; gap: 4px; justify-self: center; }
-.rp-nav__link { background: none; border: none; font-family: inherit; font-size: 0.92rem; font-weight: 700; color: #334155; cursor: pointer; padding: 10px 14px; border-radius: 10px; transition: all 0.2s; letter-spacing: -0.2px; white-space: nowrap; }
+.rp-nav__link { background: none; border: none; font-family: inherit; font-size: 0.88rem; font-weight: 700; color: #334155; cursor: pointer; padding: 8px 10px; border-radius: 10px; transition: all 0.2s; letter-spacing: -0.2px; white-space: nowrap; }
 .rp-nav__link:hover { color: #2563eb; background: transparent; }
 .rp-nav__link.active { color: #2563eb; background: transparent; font-weight: 800; }
 

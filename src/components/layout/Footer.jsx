@@ -56,7 +56,7 @@ const Footer = () => {
             <h4 className="text-white font-medium mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li>Email: support@ujjwalpay.com</li>
-              <li>Phone: +91 98765 43210</li>
+              <li>Phone: +91 9958835146</li>
             </ul>
           </div>
         </div>
