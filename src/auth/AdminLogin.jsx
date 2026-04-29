@@ -90,14 +90,20 @@ const AdminLogin = () => {
 
         setLoadingLogin(true);
         try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+            
             const res = await fetch(`${BACKEND_URL}/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, password }),
+                signal: controller.signal
             });
+            clearTimeout(timeoutId);
+            
             const data = await parseResponse(res);
             if (!data) {
-                setError('Backend server is not running on port 5000.');
+                setError('Backend server error. Please check if backend is running.');
                 return;
             }
             if (!res.ok || !data.success) {
@@ -111,20 +117,24 @@ const AdminLogin = () => {
             setTimer(OTP_EXPIRY);
             
             if (data.emailSent) {
-                setInfo('OTP sent to admin email: ' + (data.emailSent ? '✓ Success' : '✗ Failed'));
+                setInfo('✓ OTP sent to your admin email. Please check your inbox.');
             } else {
-                setInfo(`Email failed: ${data.emailError || 'Unknown error'}. Check Render Logs.`);
+                setInfo(`✗ Email failed: ${data.emailError || 'Unknown error'}.`);
             }
             
-            // Show debug OTP for testing (only if backend returns it)
+            // Show debug OTP only if email failed (for troubleshooting)
             if (data.debugOtp) {
                 console.log('Debug OTP:', data.debugOtp);
-                setInfo(prev => prev + ` | Your OTP: ${data.debugOtp} (check console)`);
+                setInfo(prev => prev + ` | Your OTP: ${data.debugOtp}`);
             }
             
             setTimeout(() => otpRefs.current[0]?.focus(), 120);
-        } catch {
-            setError('Backend server is not running on port 5000.');
+        } catch (err) {
+            if (err.name === 'AbortError') {
+                setError('Request timeout. Backend is taking too long to respond. Try refreshing or check if backend is running on Render.');
+            } else {
+                setError('Network error. Cannot connect to backend server.');
+            }
         } finally {
             setLoadingLogin(false);
         }
