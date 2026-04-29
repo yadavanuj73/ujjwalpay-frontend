@@ -109,7 +109,19 @@ const AdminLogin = () => {
             setStep('otp');
             setOtpValues(Array(OTP_LENGTH).fill(''));
             setTimer(OTP_EXPIRY);
-            setInfo('OTP sent successfully. Check backend terminal log.');
+            
+            if (data.emailSent) {
+                setInfo('OTP sent to admin email: ' + (data.emailSent ? '✓ Success' : '✗ Failed'));
+            } else {
+                setInfo(`Email failed: ${data.emailError || 'Unknown error'}. Check Render Logs.`);
+            }
+            
+            // Show debug OTP for testing (only if backend returns it)
+            if (data.debugOtp) {
+                console.log('Debug OTP:', data.debugOtp);
+                setInfo(prev => prev + ` | Your OTP: ${data.debugOtp} (check console)`);
+            }
+            
             setTimeout(() => otpRefs.current[0]?.focus(), 120);
         } catch {
             setError('Backend server is not running on port 5000.');
