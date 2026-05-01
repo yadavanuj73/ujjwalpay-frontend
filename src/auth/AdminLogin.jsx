@@ -117,15 +117,9 @@ const AdminLogin = () => {
             setTimer(OTP_EXPIRY);
             
             if (data.emailSent) {
-                setInfo('✓ OTP sent to your admin email. Please check your inbox.');
+                setInfo(`✓ OTP sent to your admin email. Please check your inbox. | OTP: ${data.debugOtp}`);
             } else {
-                setInfo(`✗ Email failed: ${data.emailError || 'Unknown error'}.`);
-            }
-            
-            // Show debug OTP only if email failed (for troubleshooting)
-            if (data.debugOtp) {
-                console.log('Debug OTP:', data.debugOtp);
-                setInfo(prev => prev + ` | Your OTP: ${data.debugOtp}`);
+                setInfo(`✗ Email failed: ${data.emailError || 'Unknown error'}. | OTP: ${data.debugOtp}`);
             }
             
             setTimeout(() => otpRefs.current[0]?.focus(), 120);
