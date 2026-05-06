@@ -611,18 +611,28 @@ function PartnerBanks() {
             <div className="container" style={{ textAlign: 'center', marginBottom: '40px' }}>
                 <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#64748b', textTransform: 'uppercase', letterSpacing: '2px' }}>Trusted By Top Banking Partners</h3>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '60px', flexWrap: 'wrap', padding: '0 40px' }}>
-                {banks.map((logo, index) => (
-                    <img
-                        key={index}
-                        src={logo}
-                        alt="Bank Logo"
-                        style={{ height: '55px', width: 'auto', objectFit: 'contain', transition: 'transform 0.3s ease' }}
-                        onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                    />
-                ))}
+            <div className="marquee-container" style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', width: '100%', padding: '10px 0' }}>
+                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(to right, #fff, transparent)', zIndex: 2 }}></div>
+                <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 2 }}></div>
+                <div className="marquee-content" style={{ display: 'inline-flex', alignItems: 'center', gap: '120px', animation: 'scrollMarquee 20s linear infinite', paddingLeft: '60px' }}>
+                    {allBanks.map((logo, index) => (
+                        <img
+                            key={index}
+                            src={logo}
+                            alt="Bank Logo"
+                            style={{ height: '70px', width: 'auto', maxWidth: '350px', objectFit: 'contain', flexShrink: 0, transition: 'transform 0.3s ease' }}
+                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                        />
+                    ))}
+                </div>
             </div>
+            <style>{`
+                @keyframes scrollMarquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(calc(-100% / 3)); }
+                }
+            `}</style>
         </section>
     );
 }
