@@ -159,7 +159,7 @@ const NAV_CSS = `
 .dogma-topbar__container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 8px 60px;
+    padding: 5px 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,13 +173,13 @@ const NAV_CSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 150px;
+    min-width: 120px;
 }
 
 .dogma-logo__img {
-    height: 80px;
+    height: 70px;
     width: auto;
-    max-width: 180px;
+    max-width: 160px;
     object-fit: contain;
 }
 
@@ -195,7 +195,7 @@ const NAV_CSS = `
 }
 
 .dogma-brand__title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #c41e3a;
     margin: 0;
@@ -204,20 +204,20 @@ const NAV_CSS = `
 }
 
 .dogma-brand__tagline {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #374151;
-    margin: 6px 0 4px 0;
+    margin: 4px 0 2px 0;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
 .dogma-brand__reg {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     vertical-align: super;
 }
 
 .dogma-brand__subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #6b7280;
     margin: 0;
@@ -228,30 +228,30 @@ const NAV_CSS = `
 .dogma-contact {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     flex-shrink: 0;
-    min-width: 250px;
+    min-width: 220px;
     justify-content: flex-end;
 }
 
 .dogma-contact__icon-wrapper {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: #c41e3a;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .dogma-contact__icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     color: #ffffff;
 }
 
 .dogma-contact__number-large {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #c41e3a;
     letter-spacing: 1px;
