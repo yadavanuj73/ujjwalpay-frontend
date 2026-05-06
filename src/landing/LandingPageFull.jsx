@@ -624,7 +624,7 @@ function PartnerBanks() {
                             key={index}
                             src={logo}
                             alt="Bank Logo"
-                            style={{ height: '45px', objectFit: 'contain', transition: 'transform 0.3s ease' }}
+                            style={{ height: '60px', width: 'auto', minWidth: '180px', objectFit: 'contain', transition: 'transform 0.3s ease' }}
                             onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
                         />
