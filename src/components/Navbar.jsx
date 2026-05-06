@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import brandLogo from '../assets/UjjwalPay_brand_logo.png';
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -22,133 +21,118 @@ export default function Navbar() {
     };
 
     const linkCls = (path) =>
-        `dogma-nav__link ${location.pathname === path ? 'active' : ''}`;
+        `dogma-link ${location.pathname === path ? 'dogma-link--active' : ''}`;
 
-    const isAbout = location.pathname === '/about';
     const isHome = location.pathname === '/';
 
     return (
-        <nav className="dogma-nav">
+        <nav className="dogma-navbar">
             <style>{NAV_CSS}</style>
             
-            {/* Top Header Section */}
-            <div className="dogma-header">
-                <div className="dogma-header__inner">
+            {/* Top Header with Logo, Brand, Contact */}
+            <div className="dogma-topbar">
+                <div className="dogma-topbar__container">
                     {/* Logo */}
-                    <div className="dogma-header__logo" onClick={handleLogoClick}>
-                        <img
-                            src="/ujjwalpay logo.png"
-                            alt="UjjwalPay"
-                            className="dogma-header__logo-img"
-                            width={100}
-                            height={80}
-                            decoding="async"
+                    <div className="dogma-logo" onClick={handleLogoClick}>
+                        <img 
+                            src="/ujjwalpay%20logo.png" 
+                            alt="UjjwalPay Logo" 
+                            className="dogma-logo__img"
+                            onError={(e) => {e.target.style.display='none'}}
                         />
                     </div>
                     
-                    {/* Brand Text */}
-                    <div className="dogma-header__brand">
-                        <h1 className="dogma-header__brand-title">UjjwalPay</h1>
-                        <p className="dogma-header__brand-tagline">ग्राहक नहीं दोस्त बनाते हैं हम</p>
-                        <p className="dogma-header__brand-subtitle">Digital Banking & Fintech Solutions</p>
+                    {/* Brand Name & Taglines */}
+                    <div className="dogma-brand">
+                        <h1 className="dogma-brand__title">UjjwalPay</h1>
+                        <p className="dogma-brand__tagline">ग्राहक नहीं दोस्त बनाते हैं हम<span className="dogma-brand__reg">®</span></p>
+                        <p className="dogma-brand__subtitle">Digital Banking & Fintech Solutions</p>
                     </div>
                     
-                    {/* Contact */}
-                    <div className="dogma-header__contact">
-                        <div className="dogma-header__contact-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="#c41e3a">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    {/* Contact with Phone Icon */}
+                    <div className="dogma-contact">
+                        <div className="dogma-contact__icon-wrapper">
+                            <svg className="dogma-contact__icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
                         </div>
-                        <div className="dogma-header__contact-info">
-                            <span className="dogma-header__contact-label">Call Us</span>
-                            <span className="dogma-header__contact-number">+91 88628 08140</span>
+                        <div className="dogma-contact__info">
+                            <span className="dogma-contact__label">CALL US</span>
+                            <span className="dogma-contact__number">+91 88628 08140</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            {/* Navigation Strip */}
-            <div className="dogma-strip">
-                <div className="dogma-strip__inner">
-                    <div className="dogma-strip__nav">
-                        <button type="button" className={linkCls('/')} onClick={() => navigate('/')}>
+            {/* Navigation Menu Bar */}
+            <div className="dogma-menubar">
+                <div className="dogma-menubar__container">
+                    <div className="dogma-menubar__nav">
+                        <button className={linkCls('/')} onClick={() => navigate('/')}>
                             Home
                         </button>
-                        <button type="button" className={linkCls('/services')} onClick={() => navigate('/services')}>
+                        <button className={linkCls('/services')} onClick={() => navigate('/services')}>
                             Services
                         </button>
-                        <button type="button" className={linkCls('/about')} onClick={() => navigate('/about')}>
+                        <button className={linkCls('/about')} onClick={() => navigate('/about')}>
                             About
                         </button>
-                        <button type="button" className={linkCls('/leadership')} onClick={() => navigate('/leadership')}>
+                        <button className={linkCls('/leadership')} onClick={() => navigate('/leadership')}>
                             Leadership
                         </button>
-                        <button type="button" className={linkCls('/contact')} onClick={() => navigate('/contact')}>
+                        <button className={linkCls('/contact')} onClick={() => navigate('/contact')}>
                             Contact
                         </button>
                     </div>
                     
-                    <div className="dogma-strip__actions">
-                        <button
-                            type="button"
-                            className={`dogma-btn dogma-btn--login ${isAbout ? 'dogma-btn--login-about' : ''} ${isHome ? 'dogma-btn--login-home' : ''}`}
+                    <div className="dogma-menubar__actions">
+                        <button 
+                            className={`dogma-btn dogma-btn--outline ${isHome ? 'dogma-btn--red' : ''}`}
                             onClick={() => navigate('/portal')}
                         >
                             Login
                         </button>
-                        <button type="button" className="dogma-btn dogma-btn--primary" onClick={() => navigate('/portal')}>
+                        <button 
+                            className="dogma-btn dogma-btn--red"
+                            onClick={() => navigate('/portal')}
+                        >
                             Get Started
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Button */}
             <button
                 type="button"
                 className={`dogma-burger ${menu ? 'dogma-burger--active' : ''}`}
                 onClick={() => setMenu((m) => !m)}
                 aria-label="Toggle menu"
             >
-                <span />
-                <span />
-                <span />
+                <span /><span /><span />
             </button>
 
             {/* Mobile Menu */}
             <div className={`dogma-mobile ${menu ? 'dogma-mobile--open' : ''}`}>
-                <div className="dogma-mobile__inner">
-                    <button type="button" className="dogma-mobile__link" onClick={() => go('/')}>
-                        Home
-                    </button>
-                    <button type="button" className="dogma-mobile__link" onClick={() => go('/services')}>
-                        Services
-                    </button>
-                    <button type="button" className="dogma-mobile__link" onClick={() => go('/about')}>
-                        About
-                    </button>
-                    <button type="button" className="dogma-mobile__link" onClick={() => go('/leadership')}>
-                        Leadership
-                    </button>
-                    <button type="button" className="dogma-mobile__link" onClick={() => go('/contact')}>
-                        Contact
-                    </button>
+                <div className="dogma-mobile__content">
+                    <button className="dogma-mobile__link" onClick={() => go('/')}>Home</button>
+                    <button className="dogma-mobile__link" onClick={() => go('/services')}>Services</button>
+                    <button className="dogma-mobile__link" onClick={() => go('/about')}>About</button>
+                    <button className="dogma-mobile__link" onClick={() => go('/leadership')}>Leadership</button>
+                    <button className="dogma-mobile__link" onClick={() => go('/contact')}>Contact</button>
+                    
                     <div className="dogma-mobile__contact">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#c41e3a">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#c41e3a">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
                         <span>+91 88628 08140</span>
                     </div>
+                    
                     <div className="dogma-mobile__actions">
-                        <button
-                            type="button"
-                            className={`dogma-btn dogma-btn--login dogma-btn--block ${isHome ? 'dogma-btn--login-home' : ''}`}
-                            onClick={() => go('/portal')}
-                        >
+                        <button className="dogma-btn dogma-btn--outline dogma-btn--block" onClick={() => go('/portal')}>
                             Login
                         </button>
-                        <button type="button" className="dogma-btn dogma-btn--primary dogma-btn--block" onClick={() => go('/portal')}>
+                        <button className="dogma-btn dogma-btn--red dogma-btn--block" onClick={() => go('/portal')}>
                             Get Started
                         </button>
                     </div>
@@ -159,74 +143,75 @@ export default function Navbar() {
 }
 
 const NAV_CSS = `
-/* Main Navigation Container */
-.dogma-nav { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    z-index: 200; 
-    background: #ffffff; 
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+.dogma-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Top Header Section */
-.dogma-header {
+/* Top Bar */
+.dogma-topbar {
+    background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
-    padding: 8px 0;
 }
 
-.dogma-header__inner {
-    max-width: 100%;
+.dogma-topbar__container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 8px 40px;
+    padding: 10px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
 }
 
 /* Logo */
-.dogma-header__logo {
+.dogma-logo {
     cursor: pointer;
     flex-shrink: 0;
 }
 
-.dogma-header__logo-img {
-    height: 80px;
+.dogma-logo__img {
+    height: 70px;
     width: auto;
+    max-width: 150px;
     object-fit: contain;
 }
 
-/* Brand Text */
-.dogma-header__brand {
+/* Brand Section */
+.dogma-brand {
     text-align: center;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-.dogma-header__brand-title {
-    font-size: 2rem;
+.dogma-brand__title {
+    font-size: 2.5rem;
     font-weight: 700;
     color: #c41e3a;
     margin: 0;
     letter-spacing: 1px;
-    font-family: 'Georgia', serif;
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
-.dogma-header__brand-tagline {
-    font-size: 1rem;
+.dogma-brand__tagline {
+    font-size: 1.1rem;
     font-weight: 600;
     color: #374151;
-    margin: 4px 0 2px 0;
-    font-family: 'Georgia', serif;
+    margin: 5px 0 3px 0;
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
-.dogma-header__brand-subtitle {
-    font-size: 0.75rem;
+.dogma-brand__reg {
+    font-size: 0.8rem;
+    vertical-align: super;
+}
+
+.dogma-brand__subtitle {
+    font-size: 0.8rem;
     font-weight: 500;
     color: #6b7280;
     margin: 0;
@@ -234,61 +219,70 @@ const NAV_CSS = `
 }
 
 /* Contact Section */
-.dogma-header__contact {
+.dogma-contact {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
 }
 
-.dogma-header__contact-icon {
-    color: #c41e3a;
+.dogma-contact__icon-wrapper {
+    width: 45px;
+    height: 45px;
+    background: #c41e3a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.dogma-header__contact-info {
+.dogma-contact__icon {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+}
+
+.dogma-contact__info {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.dogma-header__contact-label {
+.dogma-contact__label {
     font-size: 0.7rem;
     color: #6b7280;
-    text-transform: uppercase;
+    font-weight: 600;
     letter-spacing: 0.5px;
 }
 
-.dogma-header__contact-number {
-    font-size: 1rem;
+.dogma-contact__number {
+    font-size: 1.1rem;
     font-weight: 700;
     color: #c41e3a;
 }
 
-/* Navigation Strip */
-.dogma-strip {
+/* Menu Bar */
+.dogma-menubar {
     background: #6b7280;
-    padding: 0;
 }
 
-.dogma-strip__inner {
-    max-width: 100%;
+.dogma-menubar__container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 44px;
+    justify-content: center;
+    height: 48px;
 }
 
-.dogma-strip__nav {
+.dogma-menubar__nav {
     display: flex;
     align-items: center;
     gap: 0;
-    flex: 1;
-    justify-content: center;
 }
 
-.dogma-nav__link {
+.dogma-link {
     background: none;
     border: none;
     font-family: inherit;
@@ -296,32 +290,32 @@ const NAV_CSS = `
     font-weight: 600;
     color: #ffffff;
     cursor: pointer;
-    padding: 12px 20px;
+    padding: 14px 24px;
     transition: all 0.2s;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-right: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.15);
 }
 
-.dogma-nav__link:first-child {
-    border-left: 1px solid rgba(255,255,255,0.1);
+.dogma-link:first-child {
+    border-left: 1px solid rgba(255,255,255,0.15);
 }
 
-.dogma-nav__link:hover {
+.dogma-link:hover {
     background: rgba(255,255,255,0.1);
 }
 
-.dogma-nav__link.active {
-    background: #c41e3a;
+.dogma-link--active {
+    background: #c41e3a !important;
     color: #ffffff;
 }
 
-.dogma-strip__actions {
+.dogma-menubar__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    margin-left: 20px;
+    gap: 12px;
+    position: absolute;
+    right: 30px;
 }
 
 /* Buttons */
@@ -329,56 +323,35 @@ const NAV_CSS = `
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s;
-    font-family: inherit;
-    font-size: 0.8rem;
     padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.dogma-btn--primary {
-    background: #c41e3a;
+.dogma-btn--outline {
+    background: transparent;
+    border: 2px solid #ffffff;
     color: #ffffff;
 }
 
-.dogma-btn--primary:hover {
-    background: #a01830;
-}
-
-.dogma-btn--login {
+.dogma-btn--outline:hover {
     background: #ffffff;
     color: #374151;
-    border: 1px solid #d1d5db;
 }
 
-.dogma-btn--login:hover {
-    background: #f3f4f6;
-}
-
-.dogma-btn--login-home {
+.dogma-btn--red {
     background: #c41e3a;
     color: #ffffff;
-    border-color: #c41e3a;
 }
 
-.dogma-btn--login-home:hover {
+.dogma-btn--red:hover {
     background: #a01830;
-}
-
-.dogma-btn--login-about {
-    background: #fbbf24;
-    color: #92400e;
-    border-color: #fbbf24;
-}
-
-.dogma-btn--login-about:hover {
-    background: #f59e0b;
 }
 
 .dogma-btn--block {
@@ -397,12 +370,10 @@ const NAV_CSS = `
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 35px;
     right: 20px;
-    transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .dogma-burger span {
@@ -426,43 +397,37 @@ const NAV_CSS = `
     position: fixed;
     inset: 0;
     background: #ffffff;
-    z-index: 150;
-    clip-path: circle(0% at 90% 5%);
-    transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1050;
+    clip-path: circle(0% at calc(100% - 40px) 50px);
+    transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
     visibility: hidden;
     overflow-y: auto;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .dogma-mobile--open {
-    clip-path: circle(150% at 90% 5%);
+    clip-path: circle(150% at calc(100% - 40px) 50px);
     visibility: visible;
 }
 
-.dogma-mobile__inner {
-    min-height: 100%;
+.dogma-mobile__content {
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
-    padding: 40px 24px;
-    gap: 8px;
+    gap: 5px;
 }
 
 .dogma-mobile__link {
     background: none;
     border: none;
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #374151;
-    padding: 14px 0;
+    padding: 12px 0;
     border-bottom: 1px solid #e5e7eb;
     cursor: pointer;
-    transition: all 0.2s;
     text-transform: uppercase;
-}
-
-.dogma-mobile__link:active {
-    color: #c41e3a;
 }
 
 .dogma-mobile__contact {
@@ -471,66 +436,81 @@ const NAV_CSS = `
     gap: 10px;
     padding: 20px 0;
     color: #c41e3a;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .dogma-mobile__actions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     padding-top: 20px;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .dogma-header__brand-title {
-        font-size: 1.5rem;
+@media (max-width: 1100px) {
+    .dogma-topbar__container {
+        padding: 10px 20px;
     }
-    .dogma-header__brand-tagline {
-        font-size: 0.85rem;
+    
+    .dogma-brand__title {
+        font-size: 2rem;
     }
-    .dogma-header__contact {
+    
+    .dogma-brand__tagline {
+        font-size: 0.9rem;
+    }
+    
+    .dogma-contact {
         display: none;
     }
-    .dogma-strip__inner {
-        padding: 0 18px;
+    
+    .dogma-menubar__container {
+        padding: 0 20px;
     }
-    .dogma-nav__link {
-        padding: 12px 14px;
-        font-size: 0.8rem;
+    
+    .dogma-menubar__actions {
+        position: static;
+        margin-left: auto;
     }
 }
 
 @media (max-width: 900px) {
-    .dogma-strip__nav {
-        display: none;
-    }
-    .dogma-strip__actions {
-        display: none;
-    }
-    .dogma-burger {
-        display: flex;
-    }
-    .dogma-header__inner {
-        padding: 0 18px;
-        position: relative;
-    }
-    .dogma-header__logo-img {
+    .dogma-logo__img {
         height: 50px;
     }
-    .dogma-strip__inner {
-        justify-content: flex-end;
+    
+    .dogma-brand__title {
+        font-size: 1.5rem;
+    }
+    
+    .dogma-brand__tagline {
+        font-size: 0.75rem;
+    }
+    
+    .dogma-menubar__nav {
+        display: none;
+    }
+    
+    .dogma-menubar__actions {
+        display: none;
+    }
+    
+    .dogma-burger {
+        display: flex;
     }
 }
 
 @media (max-width: 480px) {
-    .dogma-header__brand-title {
+    .dogma-brand__title {
         font-size: 1.2rem;
     }
-    .dogma-header__brand-tagline {
-        font-size: 0.7rem;
+    
+    .dogma-brand__tagline {
+        font-size: 0.6rem;
     }
-    .dogma-header__logo-img {
+    
+    .dogma-logo__img {
         height: 40px;
     }
 }
