@@ -45,7 +45,7 @@ export default function Navbar() {
                     {/* Brand Name & Taglines */}
                     <div className="dogma-brand">
                         <h1 className="dogma-brand__title">UjjwalPay</h1>
-                        <p className="dogma-brand__tagline">ग्राहक नहीं दोस्त बनाते हैं हम<span className="dogma-brand__reg">®</span></p>
+                        <p className="dogma-brand__tagline">हर Transaction विश्वास<span className="dogma-brand__reg">®</span></p>
                         <p className="dogma-brand__subtitle">Digital Banking & Fintech Solutions</p>
                     </div>
                     
