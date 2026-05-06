@@ -51,14 +51,11 @@ export default function Navbar() {
                     
                     {/* Contact with Phone Icon */}
                     <div className="dogma-contact">
+                        <div className="dogma-contact__number-large">+91 9958835146</div>
                         <div className="dogma-contact__icon-wrapper">
                             <svg className="dogma-contact__icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
-                        </div>
-                        <div className="dogma-contact__info">
-                            <span className="dogma-contact__label">CALL US</span>
-                            <span className="dogma-contact__number">+91 88628 08140</span>
                         </div>
                     </div>
                 </div>
@@ -125,7 +122,7 @@ export default function Navbar() {
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="#c41e3a">
                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
-                        <span>+91 88628 08140</span>
+                        <span>+91 9958835146</span>
                     </div>
                     
                     <div className="dogma-mobile__actions">
@@ -162,103 +159,95 @@ const NAV_CSS = `
 .dogma-topbar__container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 10px 30px;
+    padding: 12px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
 }
 
-/* Logo */
+/* Logo - Enlarged */
 .dogma-logo {
     cursor: pointer;
     flex-shrink: 0;
 }
 
 .dogma-logo__img {
-    height: 70px;
+    height: 100px;
     width: auto;
-    max-width: 150px;
+    max-width: 200px;
     object-fit: contain;
 }
 
-/* Brand Section */
+/* Brand Section - Enlarged */
 .dogma-brand {
     text-align: center;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .dogma-brand__title {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     font-weight: 700;
     color: #c41e3a;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
 .dogma-brand__tagline {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #374151;
-    margin: 5px 0 3px 0;
+    margin: 8px 0 5px 0;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
 .dogma-brand__reg {
-    font-size: 0.8rem;
+    font-size: 1rem;
     vertical-align: super;
 }
 
 .dogma-brand__subtitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #6b7280;
     margin: 0;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
-/* Contact Section */
+/* Contact Section - Enlarged */
 .dogma-contact {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     flex-shrink: 0;
 }
 
 .dogma-contact__icon-wrapper {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     background: #c41e3a;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .dogma-contact__icon {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     color: #ffffff;
 }
 
-.dogma-contact__info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.dogma-contact__label {
-    font-size: 0.7rem;
-    color: #6b7280;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.dogma-contact__number {
-    font-size: 1.1rem;
+.dogma-contact__number-large {
+    font-size: 1.8rem;
     font-weight: 700;
     color: #c41e3a;
+    letter-spacing: 1px;
 }
 
 /* Menu Bar */
