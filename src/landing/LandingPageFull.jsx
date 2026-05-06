@@ -599,16 +599,15 @@ function Partners() {
 
 function PartnerBanks() {
     const banks = [
-        "https://upload.wikimedia.org/wikipedia/en/5/58/State_Bank_of_India_logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Airtel_Payments_Bank_logo.svg/1200px-Airtel_Payments_Bank_logo.svg.png",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Fino_Payments_Bank_logo.png/640px-Fino_Payments_Bank_logo.png",
-        "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/NSDL_Payments_Bank_logo.svg/1200px-NSDL_Payments_Bank_logo.svg.png",
+        { name: "SBI", src: "https://upload.wikimedia.org/wikipedia/en/5/58/State_Bank_of_India_logo.svg" },
+        { name: "ICICI Bank", src: "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg" },
+        { name: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg" },
+        { name: "Airtel Payments Bank", src: null, color: "#e40000" },
+        { name: "Fino Payments Bank", src: null, color: "#003b8e" },
+        { name: "NSDL Payments Bank", src: null, color: "#0055a5" },
     ];
 
-    // Double the array to ensure smooth infinite scrolling
-    const marqueeBanks = [...banks, ...banks, ...banks];
+    const allBanks = [...banks, ...banks, ...banks];
 
     return (
         <section className="partner-banks-wrapper" style={{ padding: '60px 0', background: '#fff', borderTop: '1px solid #f1f5f9' }}>
@@ -616,29 +615,38 @@ function PartnerBanks() {
                 <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#64748b', textTransform: 'uppercase', letterSpacing: '2px' }}>Trusted By Top Banking Partners</h3>
             </div>
             <div className="marquee-container" style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', width: '100%' }}>
-                {/* Gradient Masks for smooth fade edges */}
                 <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '150px', background: 'linear-gradient(to right, #fff, transparent)', zIndex: 2 }}></div>
                 <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '150px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 2 }}></div>
 
                 <div className="marquee-content" style={{ display: 'inline-flex', alignItems: 'center', gap: '80px', animation: 'scrollMarquee 30s linear infinite' }}>
-                    {marqueeBanks.map((logo, index) => (
-                        <img
-                            key={index}
-                            src={logo}
-                            alt="Bank Logo"
-                            className="partner-bank-logo"
-                            style={{
-                                height: '45px',
-                                objectFit: 'contain',
-                                transition: 'transform 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'scale(1.08)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'scale(1)';
-                            }}
-                        />
+                    {allBanks.map((bank, index) => (
+                        bank.src ? (
+                            <img
+                                key={index}
+                                src={bank.src}
+                                alt={bank.name}
+                                style={{ height: '45px', objectFit: 'contain', transition: 'transform 0.3s ease' }}
+                                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                            />
+                        ) : (
+                            <span
+                                key={index}
+                                style={{
+                                    fontSize: '1.4rem',
+                                    fontWeight: '800',
+                                    color: bank.color,
+                                    whiteSpace: 'nowrap',
+                                    letterSpacing: '1px',
+                                    transition: 'transform 0.3s ease',
+                                    cursor: 'default'
+                                }}
+                                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                            >
+                                {bank.name}
+                            </span>
+                        )
                     ))}
                 </div>
             </div>
