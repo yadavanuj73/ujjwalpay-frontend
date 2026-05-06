@@ -183,7 +183,7 @@ const NAV_CSS = `
     object-fit: contain;
 }
 
-/* Brand Section - Much Larger */
+/* Brand Section - Wider to stretch */
 .dogma-brand {
     text-align: center;
     flex: 1;
@@ -191,7 +191,8 @@ const NAV_CSS = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 400px;
+    min-width: 500px;
+    max-width: 600px;
 }
 
 .dogma-brand__title {
@@ -199,16 +200,21 @@ const NAV_CSS = `
     font-weight: 700;
     color: #c41e3a;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     font-family: Georgia, 'Times New Roman', serif;
+    width: 100%;
+    text-align: center;
 }
 
 .dogma-brand__tagline {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #374151;
     margin: 4px 0 2px 0;
     font-family: Georgia, 'Times New Roman', serif;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 .dogma-brand__reg {
@@ -217,11 +223,13 @@ const NAV_CSS = `
 }
 
 .dogma-brand__subtitle {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: #6b7280;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    width: 100%;
+    text-align: center;
 }
 
 /* Contact Section */
