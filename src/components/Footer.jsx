@@ -85,6 +85,41 @@ export default function Footer() {
                                     Credit Card Bill
                                 </Link>
                             </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    PAN Center
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    Taxation
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    mPOS
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    Travel
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    Insurance
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    Micro Loans
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-blue-400">
+                                    E-Commerce
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <div>
