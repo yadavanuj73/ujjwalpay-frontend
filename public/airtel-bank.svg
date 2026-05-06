@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 100" width="750" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100">
   <path d="M25 80 C25 35, 50 12, 62 12 C74 12, 78 24, 68 40 C58 56, 36 62, 25 80Z" fill="#cc0000"/>
   <text x="82" y="72" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#cc0000">airtel</text>
-  <text x="340" y="48" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#cc0000">Payments</text>
-  <text x="340" y="80" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#cc0000">Bank</text>
+  <text x="330" y="48" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#cc0000">Payments</text>
+  <text x="330" y="82" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#cc0000">Bank</text>
 </svg>
