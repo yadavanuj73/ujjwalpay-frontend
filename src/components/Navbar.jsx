@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 import brandLogo from '../assets/UjjwalPay_brand_logo.png';
 
 export default function Navbar() {
@@ -38,10 +37,10 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="dogma-header__logo" onClick={handleLogoClick}>
                         <img
-                            src={brandLogo}
+                            src="/ujjwalpay logo.png"
                             alt="UjjwalPay"
                             className="dogma-header__logo-img"
-                            width={80}
+                            width={100}
                             height={80}
                             decoding="async"
                         />
@@ -57,7 +56,9 @@ export default function Navbar() {
                     {/* Contact */}
                     <div className="dogma-header__contact">
                         <div className="dogma-header__contact-icon">
-                            <Phone size={24} />
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="#c41e3a">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                         </div>
                         <div className="dogma-header__contact-info">
                             <span className="dogma-header__contact-label">Call Us</span>
@@ -174,13 +175,13 @@ const NAV_CSS = `
 }
 
 .dogma-header__inner {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 8px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
 }
 
 /* Logo */
@@ -190,7 +191,7 @@ const NAV_CSS = `
 }
 
 .dogma-header__logo-img {
-    height: 60px;
+    height: 80px;
     width: auto;
     object-fit: contain;
 }
@@ -199,6 +200,10 @@ const NAV_CSS = `
 .dogma-header__brand {
     text-align: center;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .dogma-header__brand-title {
@@ -259,14 +264,14 @@ const NAV_CSS = `
 
 /* Navigation Strip */
 .dogma-strip {
-    background: #4b5563;
+    background: #6b7280;
     padding: 0;
 }
 
 .dogma-strip__inner {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
