@@ -35,7 +35,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="dogma-logo" onClick={handleLogoClick}>
                         <img 
-                            src="/ujjwalpay-logo.png" 
+                            src="/ujjwalpay%20logo%202.png" 
                             alt="UjjwalPay Logo" 
                             className="dogma-logo__img"
                             onError={(e) => {e.target.style.display='none'}}
