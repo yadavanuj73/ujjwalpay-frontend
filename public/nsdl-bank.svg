@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80">
-  <text x="10" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#0055a5">NSDL</text>
-  <text x="140" y="38" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#555">Payments</text>
-  <text x="140" y="58" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#555">Bank</text>
-  <rect x="125" y="15" width="3" height="50" fill="#0055a5" rx="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <text x="15" y="68" font-family="Arial, sans-serif" font-size="58" font-weight="bold" fill="#0055a5">NSDL</text>
+  <rect x="215" y="15" width="4" height="70" fill="#0055a5" rx="2"/>
+  <text x="230" y="48" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#555">Payments</text>
+  <text x="230" y="76" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#555">Bank</text>
 </svg>

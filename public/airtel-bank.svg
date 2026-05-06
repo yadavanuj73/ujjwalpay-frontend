@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
-  <text x="10" y="55" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#e40000">airtel</text>
-  <text x="145" y="38" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#333">Payments</text>
-  <text x="145" y="58" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#333">Bank</text>
-  <circle cx="128" cy="20" r="8" fill="none" stroke="#e40000" stroke-width="3"/>
-  <path d="M128 12 Q138 20 128 28" fill="none" stroke="#e40000" stroke-width="2.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <text x="15" y="68" font-family="Arial, sans-serif" font-size="58" font-weight="bold" fill="#e40000">airtel</text>
+  <circle cx="210" cy="28" r="10" fill="none" stroke="#e40000" stroke-width="4"/>
+  <path d="M210 18 Q222 28 210 38" fill="none" stroke="#e40000" stroke-width="3"/>
+  <text x="230" y="50" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#333">Payments</text>
+  <text x="230" y="76" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#333">Bank</text>
 </svg>
