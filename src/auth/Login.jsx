@@ -314,7 +314,7 @@ export default function Login() {
                             </div>
 
                             {/* RIGHT — Form */}
-                            <div className="flex flex-1 flex-col justify-center overflow-y-auto bg-white p-6 md:p-8 lg:p-10">
+                            <div className="flex flex-1 flex-col justify-start overflow-y-auto bg-white p-6 pt-8 md:p-8 md:pt-10 lg:p-10 lg:pt-12">
                                 <div className="mx-auto w-full max-w-[380px] space-y-4">
                                     <div className="space-y-1">
                                         <h3 className="text-xl font-black tracking-tight text-slate-900">{meta.title}</h3>
