@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const samarendraImg = '/CO-FOUNDER SAMERNDER.jpeg';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-const AjayImg = '/pravin%20nagar%20image.jpeg';
+const AjayImg = '/pravin-nagar.jpeg';
 
 
 const Leadership = () => {
