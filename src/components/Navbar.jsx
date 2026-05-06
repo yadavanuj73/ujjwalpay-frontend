@@ -157,29 +157,33 @@ const NAV_CSS = `
 }
 
 .dogma-topbar__container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 12px 40px;
+    padding: 15px 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 60px;
 }
 
-/* Logo - Enlarged */
+/* Logo - Much Larger */
 .dogma-logo {
     cursor: pointer;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
 }
 
 .dogma-logo__img {
-    height: 100px;
+    height: 120px;
     width: auto;
-    max-width: 200px;
+    max-width: 250px;
     object-fit: contain;
 }
 
-/* Brand Section - Enlarged */
+/* Brand Section - Much Larger */
 .dogma-brand {
     text-align: center;
     flex: 1;
@@ -187,67 +191,70 @@ const NAV_CSS = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-width: 400px;
 }
 
 .dogma-brand__title {
-    font-size: 3.2rem;
+    font-size: 4rem;
     font-weight: 700;
     color: #c41e3a;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
 .dogma-brand__tagline {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: #374151;
-    margin: 8px 0 5px 0;
+    margin: 10px 0 6px 0;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
 .dogma-brand__reg {
-    font-size: 1rem;
+    font-size: 1.2rem;
     vertical-align: super;
 }
 
 .dogma-brand__subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #6b7280;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-/* Contact Section - Enlarged */
+/* Contact Section - Much Larger */
 .dogma-contact {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     flex-shrink: 0;
+    min-width: 300px;
+    justify-content: flex-end;
 }
 
 .dogma-contact__icon-wrapper {
-    width: 55px;
-    height: 55px;
+    width: 70px;
+    height: 70px;
     background: #c41e3a;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .dogma-contact__icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     color: #ffffff;
 }
 
 .dogma-contact__number-large {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #c41e3a;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 /* Menu Bar */
