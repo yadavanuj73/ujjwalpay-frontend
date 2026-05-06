@@ -742,6 +742,7 @@ const About = () => {
 
             <Navbar />
 
+            <div style={{ paddingTop: '140px' }}></div>
             <header className="about-hero">
                 <div className="about-hero-container">
                     <div className="hero-full-content" style={{ 

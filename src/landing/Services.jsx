@@ -7,8 +7,10 @@ export default function Services() {
     return (
         <div className="min-h-screen bg-[#fdfdfd] font-sans">
             <Navbar />
-            <ServicesPageFull />
-            <Footer />
+            <div style={{ paddingTop: '140px' }}>
+                <ServicesPageFull />
+                <Footer />
+            </div>
         </div>
     );
 }

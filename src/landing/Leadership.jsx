@@ -41,6 +41,7 @@ const Leadership = () => {
 
             <Navbar />
 
+            <div style={{ paddingTop: '140px' }}></div>
             {/* Hero Section */}
             <header className="leadership-hero">
                 <div className="leadership-hero-container">

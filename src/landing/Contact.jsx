@@ -47,6 +47,7 @@ export default function Contact() {
         <div className="min-h-screen overflow-hidden bg-slate-50 font-sans">
             <Navbar />
 
+            <div style={{ paddingTop: '140px' }}></div>
             <div className="relative flex flex-col items-center justify-center overflow-hidden bg-[#050b14] px-4 pb-64 pt-32 text-center">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-[#050b14] to-[#050b14]" />
 
