@@ -599,9 +599,6 @@ function Partners() {
 
 function PartnerBanks() {
     const banks = [
-        "https://upload.wikimedia.org/wikipedia/en/5/58/State_Bank_of_India_logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg",
-        "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg",
         "/airtel-bank.svg",
         "/fino-bank.svg",
         "/nsdl-bank.svg",
