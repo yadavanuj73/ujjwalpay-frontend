@@ -159,7 +159,7 @@ const NAV_CSS = `
 .dogma-topbar__container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 5px 60px;
+    padding: 3px 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -177,9 +177,9 @@ const NAV_CSS = `
 }
 
 .dogma-logo__img {
-    height: 70px;
+    height: 65px;
     width: auto;
-    max-width: 160px;
+    max-width: 150px;
     object-fit: contain;
 }
 
@@ -191,43 +191,43 @@ const NAV_CSS = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 500px;
-    max-width: 600px;
+    min-width: 550px;
+    max-width: 700px;
 }
 
 .dogma-brand__title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #c41e3a;
     margin: 0;
-    letter-spacing: 4px;
+    letter-spacing: 8px;
     font-family: Georgia, 'Times New Roman', serif;
     width: 100%;
     text-align: center;
 }
 
 .dogma-brand__tagline {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #374151;
-    margin: 4px 0 2px 0;
+    margin: 2px 0 1px 0;
     font-family: Georgia, 'Times New Roman', serif;
     width: 100%;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 .dogma-brand__reg {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     vertical-align: super;
 }
 
 .dogma-brand__subtitle {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #6b7280;
     margin: 0;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     width: 100%;
     text-align: center;
 }
@@ -236,15 +236,15 @@ const NAV_CSS = `
 .dogma-contact {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex-shrink: 0;
     min-width: 220px;
     justify-content: flex-end;
 }
 
 .dogma-contact__icon-wrapper {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     background: #c41e3a;
     border-radius: 8px;
     display: flex;
@@ -253,13 +253,13 @@ const NAV_CSS = `
 }
 
 .dogma-contact__icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     color: #ffffff;
 }
 
 .dogma-contact__number-large {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #c41e3a;
     letter-spacing: 1px;

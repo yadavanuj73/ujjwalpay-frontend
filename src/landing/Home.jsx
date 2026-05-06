@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <div className="flex min-h-screen flex-col bg-gray-50 font-sans">
             <Navbar />
-            <main className="flex-1">
+            <main className="flex-1" style={{ paddingTop: '140px' }}>
                 <LandingPageFull />
             </main>
             <Footer />
