@@ -602,7 +602,9 @@ function PartnerBanks() {
         "https://upload.wikimedia.org/wikipedia/en/5/58/State_Bank_of_India_logo.svg",
         "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg",
         "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg",
-
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Airtel_Payments_Bank_logo.svg/1200px-Airtel_Payments_Bank_logo.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Fino_Payments_Bank_logo.png/640px-Fino_Payments_Bank_logo.png",
+        "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/NSDL_Payments_Bank_logo.svg/1200px-NSDL_Payments_Bank_logo.svg.png",
     ];
 
     // Double the array to ensure smooth infinite scrolling
