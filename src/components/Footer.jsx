@@ -4,11 +4,11 @@ const brandLogo = '/ujjwalpay-logo-2.png';
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0f172a] py-12 text-gray-300">
+        <footer className="bg-[#0f172a] py-6 text-gray-300">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-4 text-left">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-4 text-left">
                     <div className="md:col-span-1">
-                        <div className="mb-6 flex items-center gap-2">
+                        <div className="mb-3 flex items-center gap-2">
                             <div className="rounded-3xl border border-gray-100/10 bg-white px-6 py-4 shadow-lg">
                                 <img
                                     src={brandLogo}
@@ -20,7 +20,7 @@ export default function Footer() {
                                 />
                             </div>
                         </div>
-                        <p className="mb-6 text-sm text-gray-400">
+                        <p className="mb-3 text-sm text-gray-400">
                             Har Transaction Mein Vishwas. All-in-One Fintech Platform for India.
                         </p>
                         <div className="flex items-center gap-4">
@@ -63,8 +63,8 @@ export default function Footer() {
                         </div>
                     </div>
                     <div>
-                        <h4 className="mb-4 font-medium text-white">Services</h4>
-                        <ul className="space-y-2 text-sm">
+                        <h4 className="mb-2 font-medium text-white">Services</h4>
+                        <ul className="space-y-1 text-sm">
                             <li>
                                 <Link to="/services" className="hover:text-blue-400">
                                     Mobile Recharge
@@ -123,8 +123,8 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="mb-4 font-medium text-white">Company</h4>
-                        <ul className="space-y-2 text-sm">
+                        <h4 className="mb-2 font-medium text-white">Company</h4>
+                        <ul className="space-y-1 text-sm">
                             <li>
                                 <Link to="/about" className="hover:text-blue-400">
                                     About Us
@@ -148,14 +148,14 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="mb-4 font-medium text-white">Contact</h4>
-                        <ul className="space-y-2 text-sm">
+                        <h4 className="mb-2 font-medium text-white">Contact</h4>
+                        <ul className="space-y-1 text-sm">
                             <li>Email: support@ujjwalpay.com</li>
                             <li>Phone: +91 9958835146</li>
                         </ul>
                     </div>
                 </div>
-                <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <div className="mt-4 border-t border-gray-800 pt-4 text-center text-sm text-gray-400">
                     © {new Date().getFullYear()} Ujjwal Pay FinTech Pvt Ltd. All rights reserved.
                 </div>
             </div>
