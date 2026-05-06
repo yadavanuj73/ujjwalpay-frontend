@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const samarendraImg = '/CO-FOUNDER SAMERNDER.jpeg';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-const AjayImg = 'https://ui-avatars.com/api/?name=Parvin+Nagar&size=400&background=1e40af&color=fff&bold=true&font-size=0.33';
+const AjayImg = '/pravin%20nagar%20image.jpeg';
 
 
 const Leadership = () => {
