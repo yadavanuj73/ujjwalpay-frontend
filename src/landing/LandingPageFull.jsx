@@ -614,13 +614,13 @@ function PartnerBanks() {
             <div className="marquee-container" style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', width: '100%', padding: '10px 0' }}>
                 <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(to right, #fff, transparent)', zIndex: 2 }}></div>
                 <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 2 }}></div>
-                <div className="marquee-content" style={{ display: 'inline-flex', alignItems: 'center', gap: '120px', animation: 'scrollMarquee 20s linear infinite', paddingLeft: '60px' }}>
+                <div className="marquee-content" style={{ display: 'inline-flex', alignItems: 'center', gap: '100px', animation: 'scrollMarquee 25s linear infinite', paddingLeft: '40px' }}>
                     {allBanks.map((logo, index) => (
                         <img
                             key={index}
                             src={logo}
                             alt="Bank Logo"
-                            style={{ height: '70px', width: 'auto', maxWidth: '350px', objectFit: 'contain', flexShrink: 0, transition: 'transform 0.3s ease' }}
+                            style={{ height: '65px', width: '300px', objectFit: 'contain', flexShrink: 0, transition: 'transform 0.3s ease' }}
                             onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
                         />

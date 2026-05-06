@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
-  <circle cx="38" cy="60" r="28" fill="none" stroke="#d4a017" stroke-width="12" stroke-dasharray="88 88" transform="rotate(-45 38 60)"/>
-  <circle cx="38" cy="60" r="28" fill="none" stroke="#8b1a1a" stroke-width="12" stroke-dasharray="88 88" stroke-dashoffset="-88" transform="rotate(-45 38 60)"/>
-  <text x="78" y="82" font-family="Georgia, serif" font-size="60" font-weight="bold" fill="#8b1a1a">NSDL</text>
-  <text x="280" y="82" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#8b1a1a">Payments Bank</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 100" width="750" height="100">
+  <circle cx="38" cy="50" r="28" fill="none" stroke="#d4a017" stroke-width="12" stroke-dasharray="88 88" transform="rotate(-45 38 50)"/>
+  <circle cx="38" cy="50" r="28" fill="none" stroke="#8b1a1a" stroke-width="12" stroke-dasharray="88 88" stroke-dashoffset="-88" transform="rotate(-45 38 50)"/>
+  <text x="80" y="72" font-family="Georgia, serif" font-size="56" font-weight="bold" fill="#8b1a1a">NSDL Payments Bank</text>
 </svg>
