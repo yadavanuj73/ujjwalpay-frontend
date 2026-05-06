@@ -599,12 +599,12 @@ function Partners() {
 
 function PartnerBanks() {
     const banks = [
-        { name: "SBI", src: "https://upload.wikimedia.org/wikipedia/en/5/58/State_Bank_of_India_logo.svg" },
-        { name: "ICICI Bank", src: "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg" },
-        { name: "HDFC Bank", src: "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg" },
-        { name: "Airtel Payments Bank", src: null, color: "#e40000" },
-        { name: "Fino Payments Bank", src: null, color: "#003b8e" },
-        { name: "NSDL Payments Bank", src: null, color: "#0055a5" },
+        "https://upload.wikimedia.org/wikipedia/en/5/58/State_Bank_of_India_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg",
+        "/airtel-bank.svg",
+        "/fino-bank.svg",
+        "/nsdl-bank.svg",
     ];
 
     const allBanks = [...banks, ...banks, ...banks];
@@ -619,34 +619,15 @@ function PartnerBanks() {
                 <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '150px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 2 }}></div>
 
                 <div className="marquee-content" style={{ display: 'inline-flex', alignItems: 'center', gap: '80px', animation: 'scrollMarquee 30s linear infinite' }}>
-                    {allBanks.map((bank, index) => (
-                        bank.src ? (
-                            <img
-                                key={index}
-                                src={bank.src}
-                                alt={bank.name}
-                                style={{ height: '45px', objectFit: 'contain', transition: 'transform 0.3s ease' }}
-                                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                            />
-                        ) : (
-                            <span
-                                key={index}
-                                style={{
-                                    fontSize: '1.4rem',
-                                    fontWeight: '800',
-                                    color: bank.color,
-                                    whiteSpace: 'nowrap',
-                                    letterSpacing: '1px',
-                                    transition: 'transform 0.3s ease',
-                                    cursor: 'default'
-                                }}
-                                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                            >
-                                {bank.name}
-                            </span>
-                        )
+                    {allBanks.map((logo, index) => (
+                        <img
+                            key={index}
+                            src={logo}
+                            alt="Bank Logo"
+                            style={{ height: '45px', objectFit: 'contain', transition: 'transform 0.3s ease' }}
+                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.08)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                        />
                     ))}
                 </div>
             </div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80">
+  <rect x="5" y="10" width="60" height="60" rx="8" fill="#003b8e"/>
+  <text x="15" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#fff">FP</text>
+  <text x="75" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#003b8e">Fino</text>
+  <text x="75" y="58" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#555">Payments Bank</text>
+</svg>
