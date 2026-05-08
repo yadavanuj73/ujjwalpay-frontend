@@ -623,7 +623,7 @@ function Partners() {
                     ))}
                 </div>
                 <div className="partner-card">
-                    <div className="image-side" style={{ '--color': data[activeTab].color }}><img src={data[activeTab].image} alt="" /></div>
+                    <div className="image-side" style={{ '--color': data[activeTab].color }}><img key={activeTab} src={data[activeTab].image} alt="" style={{ opacity: 0, transition: 'opacity 0.25s ease' }} onLoad={e => { e.target.style.opacity = 1; }} /></div>
                     <div className="info-side">
                         <h3 style={{ color: data[activeTab].color }}>{data[activeTab].title}</h3>
                         <p>{data[activeTab].desc}</p>
@@ -978,7 +978,7 @@ const CSS = `
 .partner-card { display: flex; flex-wrap: wrap; background: #fff; border: 1px solid #eee; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
 .image-side { flex: 1 1 40%; height: 350px; position: relative; }
 .image-side::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--color), transparent); opacity: 0.3; }
-.image-side img { width: 100%; height: 100%; object-fit: cover; }
+.image-side img { width: 100%; height: 100%; object-fit: contain; background: #f8fafc; }
 .info-side { flex: 1 1 60%; padding: 40px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
 .info-side h3 { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; }
 .info-side p { font-size: 1.1rem; color: #64748b; margin-bottom: 30px; line-height: 1.6; }
