@@ -17,14 +17,11 @@ import utilityAsset from '../assets/utility_logo.png';
 import moneyTransferAsset from '../assets/images/money_transfer.png';
 import bbpsAsset from '../assets/bbps_logo.png';
 /* Reference images (assets from ujjwal pr may be absent in repo) */
-const retailerImg =
-    'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1400';
-const distributorImg =
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad4ab?auto=format&fit=crop&q=80&w=1400';
+import retailerImg from '../assets/retailor.png';
+import distributorImg from '../assets/distriburator.png';
 const superDistributorImg =
     'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1400';
-const individualImg =
-    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1400';
+import individualImg from '../assets/indvidual.png';
 import ElectricCards from '../components/ElectricCards';
 import IndiaMap from '../components/IndiaMap';
 
