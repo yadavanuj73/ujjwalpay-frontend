@@ -330,9 +330,11 @@ export default function ServiceDetail() {
                         </div>
                         <div style={{ flex: '1 1 380px', minWidth: '280px', display: 'flex', justifyContent: 'center' }}>
                             <img
+                                key={normalizedSlug}
                                 src={service.image}
                                 alt={service.title}
-                                style={{ width: '100%', maxWidth: '480px', height: 'auto', borderRadius: '24px', boxShadow: '0 30px 60px rgba(0,0,0,0.15)', objectFit: 'contain' }}
+                                style={{ width: '100%', maxWidth: '480px', height: 'auto', borderRadius: '24px', boxShadow: '0 30px 60px rgba(0,0,0,0.15)', objectFit: 'contain', opacity: 0, transition: 'opacity 0.3s ease' }}
+                                onLoad={e => { e.target.style.opacity = 1; }}
                             />
                         </div>
                     </div>
