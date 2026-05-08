@@ -8,6 +8,8 @@ import loansAsset from '../assets/LOANS.avif';
 import cspAsset from '../assets/csp.png';
 import travelAsset from '../assets/TRAVEL.png';
 import rechargeAsset from '../assets/mobile recharge.png';
+import insuranceAsset from '../assets/incurence.png';
+import taxationAsset from '../assets/taxation.png';
 import walletAsset from '../assets/wallet.png';
 import aadhaar3dAsset from '../assets/aadhaar_3d_logo.png';
 import utilityAsset from '../assets/utility_logo.png';
@@ -384,6 +386,24 @@ const HERO_SLIDES = [
         bg: "radial-gradient(50% 50% at 50% 50%, #fdf4ff 0%, #e9d5ff 100%)",
         color: "#9333ea",
         shortLabel: "Recharge"
+    },
+    {
+        title: "Insurance\nProtection",
+        sub: "Life, Health & General Insurance",
+        image: insuranceAsset,
+        services: ["Life Insurance", "Health Insurance", "Vehicle Insurance"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #f0fdfa 0%, #99f6e4 100%)",
+        color: "#0f766e",
+        shortLabel: "Insurance"
+    },
+    {
+        title: "Taxation\nServices",
+        sub: "ITR Filing & GST Services",
+        image: taxationAsset,
+        services: ["ITR Filing", "GST Returns", "Tax Planning"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #f0f9ff 0%, #bae6fd 100%)",
+        color: "#0369a1",
+        shortLabel: "Taxation"
     }
 ];
 
