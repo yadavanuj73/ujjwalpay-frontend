@@ -750,9 +750,10 @@ const CSS = `
 
 .hero-img-logo {
   width: 420px;
-  height: 380px;
-  object-fit: cover;
-  border-radius: 28px;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 20px;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
   animation: floatLogo 3s infinite ease-in-out;
 }
