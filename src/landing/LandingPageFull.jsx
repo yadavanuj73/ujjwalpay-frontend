@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import aepsAsset from '../assets/AEPS.webp';
-import bankingAsset from '../assets/banking.avif';
+import aepsAsset from '../assets/AEPS.png';
+import bankingAsset from '../assets/banking.png';
 import correspondentAsset from '../assets/Correspondent.avif';
-import loansAsset from '../assets/LOANS.avif';
-import cspAsset from '../assets/CSP.jpg';
-import travelAsset from '../assets/TRAVEL.avif';
+import loansAsset from '../assets/wallet.png';
+import cspAsset from '../assets/csp.png';
+import travelAsset from '../assets/TRAVEL.png';
 import walletAsset from '../assets/WALLET.jpg';
 import aadhaar3dAsset from '../assets/aadhaar_3d_logo.png';
 import utilityAsset from '../assets/utility_logo.png';
