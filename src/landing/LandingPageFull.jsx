@@ -8,6 +8,7 @@ import loansAsset from '../assets/LOANS.avif';
 import cspAsset from '../assets/csp.png';
 import travelAsset from '../assets/TRAVEL.png';
 import rechargeAsset from '../assets/mobile recharge.png';
+import ruralUrbanAsset from '../assets/rular and urban.png';
 import insuranceAsset from '../assets/incurence.png';
 import taxationAsset from '../assets/taxation.png';
 import walletAsset from '../assets/wallet.png';
@@ -547,6 +548,13 @@ function Advantage() {
                         className="adv-cards-left"
                     >
                         <ElectricCards />
+                        <div style={{ marginTop: '32px', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.10)', border: '1px solid #e2e8f0' }}>
+                            <img
+                                src={ruralUrbanAsset}
+                                alt="Rural & Urban Banking"
+                                style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
+                            />
+                        </div>
                     </motion.div>
 
                     <motion.div
