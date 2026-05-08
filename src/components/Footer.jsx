@@ -65,61 +65,17 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-2 font-medium text-white">Services</h4>
                         <ul className="space-y-1 text-sm">
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Mobile Recharge
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    AEPS
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Money Transfer
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Credit Card Bill
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    PAN Center
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Taxation
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    mPOS
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Travel
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Insurance
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    Micro Loans
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/services" className="hover:text-blue-400">
-                                    E-Commerce
-                                </Link>
-                            </li>
+                            <li><Link to="/services/mobile-recharge" className="hover:text-blue-400">Mobile Recharge</Link></li>
+                            <li><Link to="/services/aeps" className="hover:text-blue-400">AEPS</Link></li>
+                            <li><Link to="/services/money-transfer" className="hover:text-blue-400">Money Transfer</Link></li>
+                            <li><Link to="/services/credit-card-bill" className="hover:text-blue-400">Credit Card Bill</Link></li>
+                            <li><Link to="/services/pan-center" className="hover:text-blue-400">PAN Center</Link></li>
+                            <li><Link to="/services/taxation" className="hover:text-blue-400">Taxation</Link></li>
+                            <li><Link to="/services/mpos" className="hover:text-blue-400">mPOS</Link></li>
+                            <li><Link to="/services/travel" className="hover:text-blue-400">Travel</Link></li>
+                            <li><Link to="/services/insurance" className="hover:text-blue-400">Insurance</Link></li>
+                            <li><Link to="/services/micro-loans" className="hover:text-blue-400">Micro Loans</Link></li>
+                            <li><Link to="/services/e-commerce" className="hover:text-blue-400">E-Commerce</Link></li>
                         </ul>
                     </div>
                     <div>
