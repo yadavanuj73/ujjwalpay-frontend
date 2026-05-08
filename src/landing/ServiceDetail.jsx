@@ -277,6 +277,10 @@ export default function ServiceDetail() {
     const normalizedSlug = serviceSlug ? serviceSlug.toLowerCase().trim().replace(/\s+/g, '-') : '';
     const service = SERVICES[normalizedSlug];
 
+    React.useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }, [serviceSlug]);
+
     if (!service) {
         return (
             <div>
