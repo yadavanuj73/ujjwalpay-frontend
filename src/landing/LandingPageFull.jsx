@@ -7,6 +7,7 @@ import correspondentAsset from '../assets/Correspondent.avif';
 import loansAsset from '../assets/LOANS.avif';
 import cspAsset from '../assets/csp.png';
 import travelAsset from '../assets/TRAVEL.png';
+import rechargeAsset from '../assets/mobile recharge.png';
 import walletAsset from '../assets/wallet.png';
 import aadhaar3dAsset from '../assets/aadhaar_3d_logo.png';
 import utilityAsset from '../assets/utility_logo.png';
@@ -374,6 +375,15 @@ const HERO_SLIDES = [
         bg: "radial-gradient(50% 50% at 50% 50%, #e0f2fe 0%, #bae6fd 100%)",
         color: "#0369a1",
         shortLabel: "Travel"
+    },
+    {
+        title: "Mobile\nRecharge",
+        sub: "Fast & Easy Mobile Recharge",
+        image: rechargeAsset,
+        services: ["Prepaid Recharge", "Postpaid Bill", "DTH Recharge"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #fdf4ff 0%, #e9d5ff 100%)",
+        color: "#9333ea",
+        shortLabel: "Recharge"
     }
 ];
 
