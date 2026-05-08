@@ -16,14 +16,14 @@ import aadhaar3dAsset from '../assets/aadhaar_3d_logo.png';
 import utilityAsset from '../assets/utility_logo.png';
 import moneyTransferAsset from '../assets/images/money_transfer.png';
 import bbpsAsset from '../assets/bbps_logo.png';
-/* Reference images (assets from ujjwal pr may be absent in repo) */
 import retailerImg from '../assets/retailor.png';
 import distributorImg from '../assets/distriburator.png';
-const superDistributorImg =
-    'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1400';
 import individualImg from '../assets/indvidual.png';
 import ElectricCards from '../components/ElectricCards';
 import IndiaMap from '../components/IndiaMap';
+
+const superDistributorImg =
+    'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1400';
 
 /* ─────────────────────────────────────────────
    Tiny hook: trigger in-view class once element
