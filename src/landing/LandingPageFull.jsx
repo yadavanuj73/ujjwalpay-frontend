@@ -7,7 +7,7 @@ import correspondentAsset from '../assets/Correspondent.avif';
 import loansAsset from '../assets/LOANS.avif';
 import cspAsset from '../assets/csp.png';
 import travelAsset from '../assets/TRAVEL.png';
-import walletAsset from '../assets/WALLET.jpg';
+import walletAsset from '../assets/wallet.png';
 import aadhaar3dAsset from '../assets/aadhaar_3d_logo.png';
 import utilityAsset from '../assets/utility_logo.png';
 import moneyTransferAsset from '../assets/images/money_transfer.png';
