@@ -44,9 +44,9 @@ export default function Navbar() {
                     
                     {/* Brand Name & Taglines */}
                     <div className="dogma-brand">
-                        <h1 className="dogma-brand__title">UjjwalPay</h1>
-                        <p className="dogma-brand__tagline">हर Transaction विश्वास<span className="dogma-brand__reg">®</span></p>
-                        <p className="dogma-brand__subtitle">Digital Banking & Fintech Solutions</p>
+                        <h1 className="dogma-brand__title"><span className="dogma-brand__ujjwal">Ujjwal</span><span className="dogma-brand__pay">Pay</span></h1>
+                        <p className="dogma-brand__subtitle">UjjwalPay FinTech Pvt Limited</p>
+                        <p className="dogma-brand__tagline">हर Transaction में विश्वास<span className="dogma-brand__reg">®</span></p>
                     </div>
                     
                     {/* Contact with Phone Icon */}
@@ -198,13 +198,14 @@ const NAV_CSS = `
 .dogma-brand__title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #c41e3a;
     margin: 0;
     letter-spacing: 8px;
     font-family: Georgia, 'Times New Roman', serif;
     width: 100%;
     text-align: center;
 }
+.dogma-brand__ujjwal { color: #1e40af; }
+.dogma-brand__pay { color: #f97316; }
 
 .dogma-brand__tagline {
     font-size: 1.1rem;
@@ -223,9 +224,9 @@ const NAV_CSS = `
 }
 
 .dogma-brand__subtitle {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #6b7280;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #374151;
     margin: 0;
     letter-spacing: 5px;
     width: 100%;
