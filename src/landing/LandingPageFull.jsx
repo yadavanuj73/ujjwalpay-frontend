@@ -21,6 +21,8 @@ const retailerImg =
     'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1400';
 const distributorImg =
     'https://images.unsplash.com/photo-1486406146926-c627a92ad4ab?auto=format&fit=crop&q=80&w=1400';
+const superDistributorImg =
+    'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=1400';
 const individualImg =
     'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1400';
 import ElectricCards from '../components/ElectricCards';
@@ -608,6 +610,7 @@ function Partners() {
     const data = {
         retailer: { color: '#2563eb', title: 'Retailer', desc: 'Join over 15,00,000 active retailers and earn more than ₹25,000/month.', image: retailerImg },
         distributor: { color: '#10b981', title: 'Distributor', desc: 'Join over 1,00,000 distributors and earn more than 18%/month.', image: distributorImg },
+        superDistributor: { color: '#7c3aed', title: 'Super Distributor', desc: 'Lead a network of distributors across your region. Earn unlimited commission with highest payout slabs.', image: superDistributorImg },
         individual: { color: '#f59e0b', title: 'Individual', desc: 'Run business from home as Digital Pradhan. Earn ₹15,000+/month.', image: individualImg }
     };
     return (
