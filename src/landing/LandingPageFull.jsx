@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import aepsAsset from '../assets/AEPS.png';
 import bankingAsset from '../assets/banking.png';
 import correspondentAsset from '../assets/Correspondent.avif';
-import loansAsset from '../assets/wallet.png';
+import loansAsset from '../assets/LOANS.avif';
 import cspAsset from '../assets/csp.png';
 import travelAsset from '../assets/TRAVEL.png';
 import walletAsset from '../assets/WALLET.jpg';
