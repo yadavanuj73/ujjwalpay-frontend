@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const SUBJECT_OPTIONS = ['Give Feedback', 'Support & Help', 'Partnership', 'Partnership Inquiry', 'Technical Support', 'Other'];
+const SUBJECT_OPTIONS = ['Grievance Support', 'Become a Retailer', 'Become Distributor', 'Become Super Distributor'];
 
 /** Contact page aligned with `ujjwal pr/src/pages/ContactPage.jsx` (hero, form, FAQ, map). */
 export default function Contact() {
