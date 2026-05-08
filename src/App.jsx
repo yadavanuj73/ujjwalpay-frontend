@@ -160,17 +160,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/leadership" element={<Leadership />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/services/mobile-recharge" element={<ServiceDetail />} />
-              <Route path="/services/aeps" element={<ServiceDetail />} />
-              <Route path="/services/money-transfer" element={<ServiceDetail />} />
-              <Route path="/services/credit-card-bill" element={<ServiceDetail />} />
-              <Route path="/services/pan-center" element={<ServiceDetail />} />
-              <Route path="/services/taxation" element={<ServiceDetail />} />
-              <Route path="/services/mpos" element={<ServiceDetail />} />
-              <Route path="/services/travel" element={<ServiceDetail />} />
-              <Route path="/services/insurance" element={<ServiceDetail />} />
-              <Route path="/services/micro-loans" element={<ServiceDetail />} />
-              <Route path="/services/e-commerce" element={<ServiceDetail />} />
+              <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
               <Route path="/portal" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/admin-login" element={<AdminLogin />} />
