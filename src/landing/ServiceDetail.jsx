@@ -274,7 +274,8 @@ const SERVICES = {
 export default function ServiceDetail() {
     const { serviceSlug } = useParams();
     const navigate = useNavigate();
-    const service = SERVICES[serviceSlug];
+    const normalizedSlug = serviceSlug ? serviceSlug.toLowerCase().trim().replace(/\s+/g, '-') : '';
+    const service = SERVICES[normalizedSlug];
 
     if (!service) {
         return (
