@@ -108,6 +108,13 @@ export default function Footer() {
                         <ul className="space-y-1 text-sm">
                             <li>Email: support@ujjwalpay.com</li>
                             <li>Phone: +91 9958835146</li>
+                            <li style={{ marginTop: '8px' }}>
+                                <span style={{ fontWeight: '600', color: '#d1d5db' }}>Address:</span><br />
+                                Ujjwal Pay Pvt Ltd<br />
+                                RZA-108, Shop No 01<br />
+                                Nihal Vihar, Nangloi<br />
+                                New Delhi 110041
+                            </li>
                         </ul>
                     </div>
                 </div>
