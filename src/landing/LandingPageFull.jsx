@@ -654,9 +654,9 @@ function Partners() {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('retailer');
     const data = {
-        retailer: { color: '#2563eb', title: 'Retailer', desc: 'Join over 15,00,000 active retailers and earn more than ₹25,000/month.', image: individualImg },
-        distributor: { color: '#10b981', title: 'Distributor', desc: 'Join over 1,00,000 distributors and earn more than 18%/month.', image: retailerImg },
-        superDistributor: { color: '#7c3aed', title: 'Super Distributor', desc: 'Lead a network of distributors across your region. Earn unlimited commission with highest payout slabs.', image: distributorImg }
+        retailer: { color: '#2563eb', title: 'Retailer', desc: 'Join over 15,00,000 active retailers and earn more than ₹25,000/month.', image: individualImg, bg: '#eff6ff' },
+        distributor: { color: '#10b981', title: 'Distributor', desc: 'Join over 1,00,000 distributors and earn more than 18%/month.', image: retailerImg, bg: '#f0fdf4' },
+        superDistributor: { color: '#7c3aed', title: 'Super Distributor', desc: 'Lead a network of distributors across your region. Earn unlimited commission with highest payout slabs.', image: distributorImg, bg: '#faf5ff' }
     };
     return (
         <section id="partners" className="partners-section">
@@ -670,8 +670,12 @@ function Partners() {
                         <button key={k} className={activeTab === k ? 'active' : ''} style={{ '--color': data[k].color }} onClick={() => setActiveTab(k)}>{data[k].title}</button>
                     ))}
                 </div>
+                {/* Preload all images so switching is instant */}
+                <div style={{ display: 'none' }}>
+                    {Object.values(data).map((d, i) => <img key={i} src={d.image} alt="" />)}
+                </div>
                 <div className="partner-card">
-                    <div className="image-side" style={{ '--color': data[activeTab].color }}><img key={activeTab} src={data[activeTab].image} alt="" style={{ opacity: 0, transition: 'opacity 0.25s ease' }} onLoad={e => { e.target.style.opacity = 1; }} /></div>
+                    <div className="image-side" style={{ '--color': data[activeTab].color, background: data[activeTab].bg || '#f8fafc' }}><img key={activeTab} src={data[activeTab].image} alt="" style={{ opacity: 0, transition: 'opacity 0.2s ease' }} onLoad={e => { e.target.style.opacity = 1; }} /></div>
                     <div className="info-side">
                         <h3 style={{ color: data[activeTab].color }}>{data[activeTab].title}</h3>
                         <p>{data[activeTab].desc}</p>
