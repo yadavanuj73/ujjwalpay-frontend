@@ -171,12 +171,11 @@ export default function Login() {
                     onClick={() => navigate('/')}
                     className="flex min-w-0 cursor-pointer items-center gap-3 text-left"
                 >
-                    <div className="h-11 w-[72px] shrink-0 overflow-hidden rounded-xl md:h-12 md:w-[84px]">
+                    <div className="shrink-0 flex items-center">
                         <img
                             src={brandLogo}
                             alt=""
-                            className="h-11 w-[220px] max-w-none object-cover object-left md:h-12 md:w-[260px]"
-                            width={260}
+                            className="h-12 w-auto object-contain"
                             height={48}
                             decoding="async"
                         />
