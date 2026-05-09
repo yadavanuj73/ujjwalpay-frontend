@@ -654,9 +654,9 @@ function Partners() {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('retailer');
     const data = {
-        retailer: { color: '#2563eb', title: 'Retailer', desc: 'Join over 15,00,000 active retailers and earn more than ₹25,000/month.', image: retailerImg },
-        distributor: { color: '#10b981', title: 'Distributor', desc: 'Join over 1,00,000 distributors and earn more than 18%/month.', image: distributorImg },
-        superDistributor: { color: '#7c3aed', title: 'Super Distributor', desc: 'Lead a network of distributors across your region. Earn unlimited commission with highest payout slabs.', image: superDistributorImg }
+        retailer: { color: '#2563eb', title: 'Retailer', desc: 'Join over 15,00,000 active retailers and earn more than ₹25,000/month.', image: individualImg },
+        distributor: { color: '#10b981', title: 'Distributor', desc: 'Join over 1,00,000 distributors and earn more than 18%/month.', image: retailerImg },
+        superDistributor: { color: '#7c3aed', title: 'Super Distributor', desc: 'Lead a network of distributors across your region. Earn unlimited commission with highest payout slabs.', image: distributorImg }
     };
     return (
         <section id="partners" className="partners-section">
