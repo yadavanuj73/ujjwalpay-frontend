@@ -46,7 +46,7 @@ export default function Navbar() {
                     <div className="dogma-brand">
                         <h1 className="dogma-brand__title"><span className="dogma-brand__ujjwal">Ujjwal</span><span className="dogma-brand__pay">Pay</span></h1>
                         <p className="dogma-brand__subtitle">FinTech Pvt. Ltd</p>
-                        <p className="dogma-brand__tagline">हर Transaction में विश्वास<span className="dogma-brand__reg">®</span></p>
+                        <p className="dogma-brand__tagline">हर ट्रांजैक्शन में विश्वास<span className="dogma-brand__reg">®</span></p>
                     </div>
                     
                     {/* Contact with Phone Icon */}
