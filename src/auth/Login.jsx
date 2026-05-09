@@ -175,8 +175,7 @@ export default function Login() {
                         <img
                             src={brandLogo}
                             alt=""
-                            className="h-12 w-auto object-contain"
-                            height={48}
+                            style={{ height: '48px', width: 'auto', maxWidth: '120px', objectFit: 'contain' }}
                             decoding="async"
                         />
                     </div>
