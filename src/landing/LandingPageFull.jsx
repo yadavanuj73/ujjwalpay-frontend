@@ -19,6 +19,9 @@ import bbpsAsset from '../assets/bbps_logo.png';
 import retailerImg from '../assets/retailor.png';
 import distributorImg from '../assets/distriburator.png';
 import individualImg from '../assets/indvidual.png';
+import panCardAsset from '../assets/pan card.png';
+import mposSlideAsset from '../assets/mpos.png';
+import ecommerceAsset from '../assets/e-commerce.png';
 import ElectricCards from '../components/ElectricCards';
 import IndiaMap from '../components/IndiaMap';
 
@@ -404,6 +407,42 @@ const HERO_SLIDES = [
         bg: "radial-gradient(50% 50% at 50% 50%, #f0f9ff 0%, #bae6fd 100%)",
         color: "#0369a1",
         shortLabel: "Taxation"
+    },
+    {
+        title: "BBPS\nBill Payment",
+        sub: "Bharat Bill Payment System",
+        image: bbpsAsset,
+        services: ["Electricity Bill", "Water Bill", "Gas Bill"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #fefce8 0%, #fef08a 100%)",
+        color: "#ca8a04",
+        shortLabel: "BBPS"
+    },
+    {
+        title: "mPOS\nDevice",
+        sub: "Mobile Point of Sale",
+        image: mposSlideAsset,
+        services: ["Card Payments", "UPI Payments", "QR Code Scan"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #f0fdf4 0%, #bbf7d0 100%)",
+        color: "#15803d",
+        shortLabel: "mPOS"
+    },
+    {
+        title: "PAN Card\nCenter",
+        sub: "NSDL & UTIITSL Authorized",
+        image: panCardAsset,
+        services: ["New PAN Card", "PAN Correction", "e-PAN Download"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #fff7ed 0%, #fed7aa 100%)",
+        color: "#c2410c",
+        shortLabel: "PAN Center"
+    },
+    {
+        title: "E-Commerce\nSolutions",
+        sub: "Online Store & Catalogue",
+        image: ecommerceAsset,
+        services: ["Online Store", "Product Catalogue", "Order Management"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #fdf4ff 0%, #e9d5ff 100%)",
+        color: "#7e22ce",
+        shortLabel: "E-Commerce"
     }
 ];
 
