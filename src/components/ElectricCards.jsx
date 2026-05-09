@@ -2,7 +2,7 @@ import './ElectricCards.css';
 import aepsLogo from '../assets/images/aeps_logo.png';
 import moneyTransferLogo from '../assets/images/money_transfer.png';
 import utilityServicesLogo from '../assets/images/utility_services.png';
-import correspondentImg from '../assets/Correspondent.avif';
+import correspondentImg from '../assets/CORRESPONDENT.png';
 
 const ElectricCards = () => {
     return (
