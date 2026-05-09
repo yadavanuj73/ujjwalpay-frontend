@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import RetailerLogin from '../retailer/components/RetailerLogin';
 import DistributorLogin from '../distributor/components/DistributorLogin';
 import SuperAdminLogin from '../superadmin/components/SuperAdminLogin';
-const brandLogo = '/ujjwalpay-logo-2.png';
+const brandLogo = '/ujjwawal pay logo.jpeg';
 
 /** Full brand lockup — same asset as marketing nav / portal header. */
 function PortalBrandMark() {

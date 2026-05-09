@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
-const brandLogo = '/ujjwalpay-logo-2.png';
+const brandLogo = '/ujjwawal pay logo.jpeg';
 
 export default function Footer() {
     return (

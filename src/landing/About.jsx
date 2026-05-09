@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-const ujjwalPayLogo = '/ujjwalpay-logo-2.png';
+const ujjwalPayLogo = '/ujjwawal pay logo.jpeg';
 import IndiaMapData from '@svg-maps/india';
 import { Zap, ShieldCheck, Users, Target, Eye, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';

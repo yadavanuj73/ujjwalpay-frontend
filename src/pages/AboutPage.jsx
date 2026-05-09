@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Zap, ShieldCheck, Users, Target, Eye, ArrowLeft } from 'lucide-react';
-const ujjwalPayLogo = '/ujjwalpay-logo-2.png';
+const ujjwalPayLogo = '/ujjwawal pay logo.jpeg';
 import IndiaMapData from '@svg-maps/india';
 
 function IndiaMapSVG() {
