@@ -22,6 +22,7 @@ import individualImg from '../assets/indvidual.png';
 import panCardAsset from '../assets/pan card.png';
 import mposSlideAsset from '../assets/mpos.png';
 import ecommerceAsset from '../assets/e-commerce.png';
+import paymentGatewayAsset from '../assets/payment gateway.png';
 import ElectricCards from '../components/ElectricCards';
 import IndiaMap from '../components/IndiaMap';
 
@@ -443,6 +444,15 @@ const HERO_SLIDES = [
         bg: "radial-gradient(50% 50% at 50% 50%, #fdf4ff 0%, #e9d5ff 100%)",
         color: "#7e22ce",
         shortLabel: "E-Commerce"
+    },
+    {
+        title: "Payment\nGateway",
+        sub: "Fast & Secure Online Payments",
+        image: paymentGatewayAsset,
+        services: ["UPI Payments", "Card Payments", "Net Banking"],
+        bg: "radial-gradient(50% 50% at 50% 50%, #f0fdf4 0%, #dcfce7 100%)",
+        color: "#16a34a",
+        shortLabel: "Pay Gateway"
     }
 ];
 
