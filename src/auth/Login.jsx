@@ -6,6 +6,10 @@ import { useLanguage } from '../context/LanguageContext';
 import RetailerLogin from '../retailer/components/RetailerLogin';
 import DistributorLogin from '../distributor/components/DistributorLogin';
 import SuperAdminLogin from '../superadmin/components/SuperAdminLogin';
+import poster1 from '../assets/indvidual.png';
+import poster2 from '../assets/retailor.png';
+import poster3 from '../assets/rular and urban.png';
+
 const brandLogo = '/ujjwawal pay logo.jpeg';
 
 /** Full brand lockup — same asset as marketing nav / portal header. */
@@ -24,20 +28,17 @@ function PortalBrandMark() {
 
 const POSTERS = [
     {
-        image:
-            'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1400',
+        image: poster1,
         title: 'Supercharge your Retail Business',
         desc: 'Activate AEPS, BBPS and Recharge services easily.',
     },
     {
-        image:
-            'https://images.unsplash.com/photo-1590650153855-d9e808231d41?auto=format&fit=crop&q=80&w=1400',
+        image: poster2,
         title: 'Connecting Bharat',
         desc: 'Deliver essential banking services remotely.',
     },
     {
-        image:
-            'https://images.unsplash.com/photo-1486406146926-c627a92ad4ab?auto=format&fit=crop&q=80&w=1400',
+        image: poster3,
         title: 'Grow as a Distributor',
         desc: 'Build your reliable network with 0 setup cost.',
     },
