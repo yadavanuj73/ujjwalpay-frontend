@@ -5,10 +5,10 @@ import {
     MessageSquare, Globe, ChevronRight, ChevronLeft,
     Building2, Users, ArrowRight, Shield
 } from 'lucide-react';
-import logo from '../assets/images/logo.png';
 import connectingBharatImg from '../assets/images/connecting-bharat.jpg';
 import retailerImg from '../assets/images/retailer.jpg';
 import distributorImg from '../assets/images/distributor.jpg';
+const logo = '/ujjwawal pay logo.jpeg';
 const TRANSLATIONS = {
     en: {
         login: "LOGIN",
