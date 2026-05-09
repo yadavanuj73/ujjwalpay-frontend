@@ -96,26 +96,32 @@ const LEADERSHIP_CSS = `
 .leadership-sub { font-size: 1.15rem; color: #64748b; max-width: 700px; margin: 0 auto; line-height: 1.6; font-weight: 500;}
 
 /* Grid */
-.leadership-grid-section { padding: 40px 0 100px; background: #fafafa;}
-.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.leadership-grid-section { padding: 40px 0 100px; background: #f8fafc;}
+.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 28px; }
 
-.leader-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;}
-.leader-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+.leader-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); display: flex; flex-direction: row; align-items: stretch; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #f1f5f9; }
+.leader-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.11); }
 
-.leader-image-wrapper { position: relative; width: 100%; aspect-ratio: 1/1.05; overflow: hidden; }
-.leader-image { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; /* Shifting up slightly to capture faces better */ }
+.leader-image-wrapper { position: relative; width: 200px; min-width: 200px; overflow: hidden; flex-shrink: 0; }
+.leader-image { width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
 
-.leader-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 40%, transparent 70%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
-.leader-name { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 6px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-.leader-role { font-size: 0.95rem; font-weight: 800; color: #4ade80; /* lighter green for dark bg */ margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+.leader-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); padding: 14px 16px; }
+.leader-name { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 2px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+.leader-role { font-size: 0.78rem; font-weight: 700; color: #4ade80; margin: 0; letter-spacing: 0.5px; text-transform: uppercase; }
 
-.leader-info { padding: 30px 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;}
-.leader-bio { font-size: 0.9rem; color: #64748b; line-height: 1.7; margin-bottom: 24px; }
+.leader-info { padding: 24px 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.leader-bio { font-size: 0.84rem; color: #64748b; line-height: 1.75; margin-bottom: 18px; }
 
-.leader-linkedin { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #10b981; font-size: 0.95rem; text-decoration: none; transition: color 0.2s;}
-.leader-linkedin:hover { color: #059669; }
-.linkedin-icon { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: #10b981; color: #fff; border-radius: 4px; font-size: 12px; font-weight: 900; }
-.leader-linkedin:hover .linkedin-icon { background: #059669; }
+.leader-linkedin { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; color: #2563eb; font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
+.leader-linkedin:hover { color: #1d4ed8; }
+.linkedin-icon { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #2563eb; color: #fff; border-radius: 4px; font-size: 11px; font-weight: 900; }
+.leader-linkedin:hover .linkedin-icon { background: #1d4ed8; }
+
+@media(max-width: 600px) {
+  .leaders-grid { grid-template-columns: 1fr; }
+  .leader-card { flex-direction: column; }
+  .leader-image-wrapper { width: 100%; min-width: unset; height: 220px; }
+}
 
 @media(max-width: 900px) {
     .leadership-h1 { font-size: 2.2rem; }
