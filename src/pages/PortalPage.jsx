@@ -5,9 +5,9 @@ import {
     MessageSquare, Globe, ChevronRight, ChevronLeft,
     Building2, Users, ArrowRight, Shield
 } from 'lucide-react';
-import connectingBharatImg from '../assets/images/connecting-bharat.jpg';
-import retailerImg from '../assets/images/retailer.jpg';
-import distributorImg from '../assets/images/distributor.jpg';
+import retailerImg from '../assets/indvidual.png';
+import connectingBharatImg from '../assets/retailor.png';
+import distributorImg from '../assets/rular and urban.png';
 const logo = '/ujjwawal pay logo.jpeg';
 const TRANSLATIONS = {
     en: {
