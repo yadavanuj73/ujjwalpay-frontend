@@ -15,7 +15,7 @@ import walletAsset from '../assets/wallet.png';
 import aadhaar3dAsset from '../assets/aadhaar_3d_logo.png';
 import utilityAsset from '../assets/utility_logo.png';
 import moneyTransferAsset from '../assets/images/money_transfer.png';
-import bbpsAsset from '../assets/bbps_logo.png';
+import bbpsAsset from '../assets/bbps.png';
 import retailerImg from '../assets/retailor.png';
 import distributorImg from '../assets/distriburator.png';
 import individualImg from '../assets/indvidual.png';
@@ -452,7 +452,7 @@ const HERO_SLIDES = [
         services: ["UPI Payments", "Card Payments", "Net Banking"],
         bg: "radial-gradient(50% 50% at 50% 50%, #f0fdf4 0%, #dcfce7 100%)",
         color: "#16a34a",
-        shortLabel: "Pay Gateway"
+        shortLabel: "Payment Gateway"
     }
 ];
 
