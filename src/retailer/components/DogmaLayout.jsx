@@ -34,10 +34,19 @@ const DogmaLayout = ({ children }) => {
 
     // Scroll to top when route changes
     useEffect(() => {
-        const mainContent = document.querySelector('.main-content-area');
-        if (mainContent) {
-            mainContent.scrollTop = 0;
-        }
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+            // Scroll main content area to top
+            const mainContent = document.querySelector('.main-content-area');
+            if (mainContent) {
+                mainContent.scrollTop = 0;
+            }
+            // Also scroll window to top
+            window.scrollTo(0, 0);
+            // Try to find any scrollable container
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }, 50);
     }, [location.pathname]);
 
     const handleLogout = () => {
