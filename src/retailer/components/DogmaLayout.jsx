@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { dataService } from '../../services/dataService';
 import { motion } from 'framer-motion';
@@ -16,6 +16,7 @@ import {
 const DogmaLayout = ({ children }) => {
     const navigate = useNavigate();
     const location = useLocation();
+    const mainContentRef = useRef(null);
     const [balance, setBalance] = useState("0.00");
     const [currentUser, setCurrentUser] = useState(null);
 
@@ -34,19 +35,14 @@ const DogmaLayout = ({ children }) => {
 
     // Scroll to top when route changes
     useEffect(() => {
-        // Small delay to ensure DOM is ready
-        setTimeout(() => {
-            // Scroll main content area to top
-            const mainContent = document.querySelector('.main-content-area');
-            if (mainContent) {
-                mainContent.scrollTop = 0;
-            }
-            // Also scroll window to top
-            window.scrollTo(0, 0);
-            // Try to find any scrollable container
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }, 50);
+        // Use ref for more reliable scrolling
+        if (mainContentRef.current) {
+            mainContentRef.current.scrollTop = 0;
+        }
+        // Also scroll window
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }, [location.pathname]);
 
     const handleLogout = () => {
@@ -194,7 +190,7 @@ const DogmaLayout = ({ children }) => {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="main-content-area flex-1 p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
+                <div ref={mainContentRef} className="main-content-area flex-1 p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
                     {children}
                 </div>
 
