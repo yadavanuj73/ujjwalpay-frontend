@@ -153,23 +153,28 @@ const RetailerLayout = () => {
 
     // KYC checks removed as per request to bypass KYC blocking
 
+    // Dashboard has its own sidebar and header - don't show layout ones
+    const isDashboard = location.pathname === '/dashboard';
+
     return (
-        <div className="h-screen bg-[#f8fafc] font-['Inter',sans-serif] overflow-hidden relative">
-            <Header
-                onAddMoney={() => navigate('/add-money')}
-                onProfileClick={(type) => {
-                    if (type === 'logout') {
-                        dataService.logoutUser();
-                        navigate('/');
-                    } else {
-                        navigate(`/profile?tab=${type}`);
-                    }
-                }}
-                onMenuClick={() => setShowMobileSidebar(!showMobileSidebar)}
-            />
+        <div className={`h-screen bg-[#f8fafc] font-['Inter',sans-serif] overflow-hidden relative ${isDashboard ? '' : ''}`}>
+            {!isDashboard && (
+                <Header
+                    onAddMoney={() => navigate('/add-money')}
+                    onProfileClick={(type) => {
+                        if (type === 'logout') {
+                            dataService.logoutUser();
+                            navigate('/');
+                        } else {
+                            navigate(`/profile?tab=${type}`);
+                        }
+                    }}
+                    onMenuClick={() => setShowMobileSidebar(!showMobileSidebar)}
+                />
+            )}
 
             <AnimatePresence>
-                {showMobileSidebar && (
+                {showMobileSidebar && !isDashboard && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -180,13 +185,15 @@ const RetailerLayout = () => {
                 )}
             </AnimatePresence>
 
-            <Sidebar
-                activeTab={activeTab}
-                setActiveTab={handleTabChange}
-                showMobileSidebar={showMobileSidebar}
-            />
+            {!isDashboard && (
+                <Sidebar
+                    activeTab={activeTab}
+                    setActiveTab={handleTabChange}
+                    showMobileSidebar={showMobileSidebar}
+                />
+            )}
 
-            <div className="h-full flex flex-col overflow-hidden relative pt-[76px] lg:ml-64">
+            <div className={`h-full flex flex-col overflow-hidden relative ${isDashboard ? '' : 'pt-[76px] lg:ml-64'}`}>
                 {/* pb-16 lg:pb-0 ensures content not hidden behind mobile bottom nav */}
                 <main className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 pb-16 lg:pb-0">
                     <AnimatePresence mode="wait">
@@ -204,8 +211,8 @@ const RetailerLayout = () => {
                 </main>
             </div>
 
-            {/* Mobile Bottom Navigation — visible only on < lg screens */}
-            <MobileBottomNav />
+            {/* Mobile Bottom Navigation — visible only on < lg screens, hidden on dashboard */}
+            {!isDashboard && <MobileBottomNav />}
         </div>
     );
 };
