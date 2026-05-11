@@ -37,40 +37,43 @@ const DogmaLayout = ({ children }) => {
         navigate('/portal');
     };
 
-    // Navigation items with their paths
+    // Single consolidated navigation list - NO DUPLICATES
+    // Each item has a unique path - no two items share the same path
     const navItems = [
         { id: 'dashboard', label: 'Home', icon: Home, path: '/dashboard' },
-        { id: 'recharge', label: 'Recharge', icon: Zap, path: '/utility' },
-        { id: 'bbps', label: 'BBPS', icon: FileText, path: '/utility', hasSubmenu: true },
-        { id: 'nsdl_aeps', label: 'NSDL AePS', icon: Fingerprint, path: '/aeps', hasSubmenu: true },
-        { id: 'fino_bank', label: 'Fino Bank', icon: Building2, path: '/aeps', hasSubmenu: true },
-        { id: 'aeps_coupon', label: 'AEPS Coupon', icon: Receipt, path: '/all-services', hasSubmenu: true },
-        { id: 'money_transfer', label: 'Money Transfer', icon: ArrowRightLeft, path: '/all-services', hasSubmenu: true },
-        { id: 'taxation', label: 'TAXATION', icon: FileText, path: '/all-services' },
-        { id: 'insurance', label: 'Insurance', icon: ShieldCheck, path: '/all-services' },
-        { id: 'wallet', label: 'Wallet', icon: Wallet, path: '/add-money' },
-        { id: 'members', label: 'Members', icon: Users, path: '/profile' },
-        { id: 'my_account', label: 'My Account', icon: UserCircle, path: '/profile' },
-    ];
-
-    // Additional nav items for the expanded menu
-    const additionalNavItems = [
         { id: 'all_services', label: 'All Services', icon: LayoutGrid, path: '/all-services' },
-        { id: 'travel_hub', label: 'Travel Hub', icon: Train, path: '/travel' },
         { id: 'utility_hub', label: 'Utility Hub', icon: Zap, path: '/utility' },
+        { id: 'aeps', label: 'NSDL AePS', icon: Fingerprint, path: '/aeps' },
+        { id: 'travel_hub', label: 'Travel Hub', icon: Train, path: '/travel' },
         { id: 'payout_hub', label: 'Payout Hub', icon: BankIcon, path: '/payout-hub' },
         { id: 'loan_hub', label: 'Loan Hub', icon: CreditCard, path: '/loans' },
-        { id: 'reports', label: 'Reports & Ledger', icon: FileSpreadsheet, path: '/reports', hasSubmenu: true },
+        { id: 'matm', label: 'MATM', icon: CreditCard, path: '/matm' },
+        { id: 'reports', label: 'Reports & Ledger', icon: FileSpreadsheet, path: '/reports' },
         { id: 'gst_einvoice', label: 'GST E-Invoice Report', icon: FileCheck, path: '/gst-invoice-report' },
         { id: 'commission', label: 'Commission Plans', icon: BadgePercent, path: '/plans' },
-        { id: 'gst_cert', label: 'GST Certification', icon: Award, path: '/profile?tab=gst_certification' },
-        { id: 'tds_cert', label: 'TDS Certificate', icon: FileCheck, path: '/profile?tab=tds_certificate' },
-        { id: 'retailer_ekyc', label: 'Retailer eKYC', icon: UserCircle, path: '/kyc-verification' },
-        { id: 'icici_ekyc', label: 'ICICI eKYC', icon: UserCircle, path: '/kyc-verification' },
+        { id: 'wallet', label: 'Wallet', icon: Wallet, path: '/add-money' },
+        { id: 'members', label: 'Members', icon: Users, path: '/profile' },
+        { id: 'kyc', label: 'Update KYC', icon: FileCheck, path: '/kyc-verification' },
         { id: 'support', label: 'Help & Support', icon: HelpCircle, path: '/support' },
     ];
 
-    const isActive = (path) => location.pathname === path || location.pathname.startsWith(path);
+    // Active state - exact match or starts with for nested routes
+    const isActive = (item) => {
+        const currentPath = location.pathname;
+        const itemPath = item.path;
+        
+        // Exact match
+        if (currentPath === itemPath) return true;
+        
+        // For /dashboard, only match exact
+        if (itemPath === '/dashboard') return currentPath === '/dashboard';
+        
+        // For other routes, match if current path starts with item path (for sub-routes)
+        // But prevent /all-services from matching /aeps
+        if (currentPath.startsWith(itemPath + '/')) return true;
+        
+        return false;
+    };
 
     const quickLinks = [
         { label: 'Fund Request (Update Payment)', path: '/add-money' },
@@ -146,41 +149,22 @@ const DogmaLayout = ({ children }) => {
                         </div>
                     </div>
 
-                    {/* Main Navigation */}
+                    {/* Main Navigation - Single List, No Duplicates */}
                     <nav className="flex-1 py-2 overflow-y-auto">
-                        <div className="px-4 mb-2 text-xs text-gray-500 uppercase font-semibold">Access Portal</div>
+                        <div className="px-4 mb-2 text-xs text-gray-500 uppercase font-semibold">Menu</div>
                         
                         {navItems.map((item) => (
                             <button 
                                 key={item.id}
                                 onClick={() => navigate(item.path)}
                                 className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${
-                                    isActive(item.path) 
+                                    isActive(item) 
                                         ? 'bg-gray-800 text-white border-l-2 border-blue-500' 
                                         : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                                 }`}
                             >
                                 <item.icon className="w-5 h-5 shrink-0" />
                                 <span className="text-sm">{item.label}</span>
-                                {item.hasSubmenu && <ChevronRight className="w-4 h-4 ml-auto" />}
-                            </button>
-                        ))}
-
-                        <div className="px-4 mt-4 mb-2 text-xs text-gray-500 uppercase font-semibold">Services</div>
-                        
-                        {additionalNavItems.map((item) => (
-                            <button 
-                                key={item.id}
-                                onClick={() => navigate(item.path)}
-                                className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${
-                                    isActive(item.path) 
-                                        ? 'bg-gray-800 text-white border-l-2 border-blue-500' 
-                                        : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-                                }`}
-                            >
-                                <item.icon className="w-5 h-5 shrink-0" />
-                                <span className="text-sm">{item.label}</span>
-                                {item.hasSubmenu && <ChevronRight className="w-4 h-4 ml-auto" />}
                             </button>
                         ))}
                     </nav>
