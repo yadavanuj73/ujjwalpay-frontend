@@ -32,6 +32,14 @@ const DogmaLayout = ({ children }) => {
         fetchData();
     }, []);
 
+    // Scroll to top when route changes
+    useEffect(() => {
+        const mainContent = document.querySelector('.main-content-area');
+        if (mainContent) {
+            mainContent.scrollTop = 0;
+        }
+    }, [location.pathname]);
+
     const handleLogout = () => {
         dataService.logoutUser();
         navigate('/portal');
@@ -177,7 +185,7 @@ const DogmaLayout = ({ children }) => {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="flex-1 p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
+                <div className="main-content-area flex-1 p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
                     {children}
                 </div>
 
