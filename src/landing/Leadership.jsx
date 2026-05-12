@@ -97,7 +97,7 @@ const LEADERSHIP_CSS = `
 
 /* Grid */
 .leadership-grid-section { padding: 40px 0 100px; background: #f8fafc;}
-.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 28px; }
+.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 28px; }
 
 .leader-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.07); display: flex; flex-direction: row; align-items: stretch; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #f1f5f9; }
 .leader-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.11); }
@@ -120,7 +120,8 @@ const LEADERSHIP_CSS = `
 @media(max-width: 600px) {
   .leaders-grid { grid-template-columns: 1fr; }
   .leader-card { flex-direction: column; }
-  .leader-image-wrapper { width: 100%; min-width: unset; height: 220px; }
+  .leader-image-wrapper { width: 100%; min-width: unset; height: auto; aspect-ratio: 4/5; }
+  .leader-image { object-fit: cover; object-position: center top; }
 }
 
 @media(max-width: 900px) {
