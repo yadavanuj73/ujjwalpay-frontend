@@ -4,6 +4,7 @@ import { ShieldCheck, ChevronRight, CheckCircle2, AlertCircle, Camera, FileText 
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { dataService } from '../../services/dataService';
+import RetailerHeader from '../components/RetailerHeader';
 
 const KYCVerification = () => {
     const { user, setUser } = useAuth();
@@ -144,7 +145,9 @@ const KYCVerification = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center p-4">
+        <div className="min-h-screen bg-[#f8fafc] p-4">
+            <RetailerHeader compact />
+            <div className="flex items-center justify-center">
             <div className="absolute top-0 left-0 w-full h-80 bg-slate-900 -z-10 rounded-b-[5rem]" />
             
             <motion.div 
@@ -363,6 +366,7 @@ const KYCVerification = () => {
                     </div>
                 </form>
             </motion.div>
+            </div>
         </div>
     );
 };

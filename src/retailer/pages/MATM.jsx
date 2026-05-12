@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { initSpeech, announceProcessing, announceWarning, announceGrandSuccess } from '../../services/speechService';
 import { dataService } from '../../services/dataService';
+import RetailerHeader from '../components/RetailerHeader';
 
 /* ── Constants ── */
 const NAVY = '#0f2557';
@@ -179,6 +180,7 @@ const MATM = () => {
 
     return (
         <div className="h-full flex flex-col bg-slate-50 overflow-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <RetailerHeader compact />
             {/* Header */}
             <div className="shrink-0 bg-white border-b border-slate-200 px-6 py-4">
                 <div className="flex items-center justify-between mb-4">

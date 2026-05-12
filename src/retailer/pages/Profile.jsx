@@ -1,12 +1,16 @@
 import ProfileDetails from '../components/ProfileDetails';
 import { useLocation } from 'react-router-dom';
+import RetailerHeader from '../components/RetailerHeader';
 
 const ProfilePage = () => {
     const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const tab = queryParams.get('tab') || 'personal';
-
-    return <ProfileDetails activeTab={tab} />;
+    const tab = location.state?.tab || 'profile';
+    return (
+        <div>
+            <RetailerHeader compact />
+            <ProfileDetails activeTab={tab} />
+        </div>
+    );
 };
 
 export default ProfilePage;

@@ -5,6 +5,7 @@ import {
 import { motion } from 'framer-motion';
 import { dataService } from '../../services/dataService';
 import { initSpeech, speak } from '../../services/speechService';
+import RetailerHeader from '../components/RetailerHeader';
 
 const Icon3D = ({ icon: Icon, color, size = 48, shadow }) => (
     <div className="flex items-center justify-center rounded-2xl" style={{
@@ -44,6 +45,7 @@ const Travel = () => {
 
     return (
         <div className="flex flex-col h-full bg-[#f8fafc] font-['Poppins',sans-serif]">
+            <RetailerHeader compact />
             {/* Header */}
             <div className="shrink-0 bg-white border-b border-slate-200 px-6 py-4">
                 <div className="flex items-center justify-between mb-4">

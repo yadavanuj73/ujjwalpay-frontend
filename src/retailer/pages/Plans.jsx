@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { dataService } from '../../services/dataService';
 import { planService } from '../../services/planService';
+import RetailerHeader from '../components/RetailerHeader';
 
 const Icon3D = ({ icon: Icon, color, size = 48, shadow }) => (
     <div className="flex items-center justify-center rounded-2xl" style={{
@@ -78,6 +79,7 @@ const Plans = () => {
 
     return (
         <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8 pb-24 font-['Inter',sans-serif]">
+            <RetailerHeader compact />
             {/* ── Header ── */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm">
                 <div className="flex items-center gap-4">

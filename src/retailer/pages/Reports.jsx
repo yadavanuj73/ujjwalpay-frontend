@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { dataService } from '../../services/dataService';
+import RetailerHeader from '../components/RetailerHeader';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SHARED COMPONENTS
@@ -111,6 +112,7 @@ const GstEInvoiceView = () => {
 
     return (
         <div className="p-4 md:p-8 space-y-6 bg-[#f1f5f9] min-h-[80vh]">
+            <RetailerHeader compact />
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
                 <div className={fetched ? "xl:col-span-5" : "xl:col-span-6 xl:col-start-4"}>
                     <div className="bg-white rounded-[2rem] border border-slate-200 shadow-xl p-8 relative overflow-hidden transition-all duration-500">

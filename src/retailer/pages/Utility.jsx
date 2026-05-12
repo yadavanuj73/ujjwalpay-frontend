@@ -13,6 +13,7 @@ import {
 } from './utilityData';
 import { initSpeech, announceProcessing, speak, announceError, announceWarning, announceGrandSuccess } from '../../services/speechService';
 import UtilityBill from './UtilityBill';
+import RetailerHeader from '../components/RetailerHeader';
 
 const NAVY = '#0f2557';
 const NAVY2 = '#1a3a6b';
@@ -1251,6 +1252,7 @@ export default function Utility({ initialTab = 'mobile' }) {
 
     return (
         <div className="h-full flex flex-col bg-slate-50 overflow-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <RetailerHeader compact />
             {/* ── Top Nav ── */}
             <div className="shrink-0 bg-white border-b border-slate-200 px-6 py-4">
                 <div className="flex items-center justify-between mb-4">

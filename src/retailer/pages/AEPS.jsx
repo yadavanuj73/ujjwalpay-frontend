@@ -11,6 +11,7 @@ import { initSpeech, speak, announceSuccess, announceProcessing, announceError, 
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dataService, BACKEND_URL } from '../../services/dataService';
 import logo from '../../assets/UJJWALPAY_logo.png';
+import RetailerHeader from '../components/RetailerHeader';
 
 /* ── Constants ── */
 const NAVY = '#0f2557';
@@ -429,6 +430,7 @@ const AEPS = () => {
 
     return (
         <div className="h-full flex flex-col bg-slate-50 overflow-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <RetailerHeader compact />
 
             {/* ── Top Header (Exact Utility Copy) ── */}
             <div className="shrink-0 bg-white border-b border-slate-200 px-6 py-4">

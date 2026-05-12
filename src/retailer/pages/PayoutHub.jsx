@@ -1,7 +1,13 @@
 import AddMoney from '../components/banking/AddMoney';
+import RetailerHeader from '../components/RetailerHeader';
 
 const PayoutHub = () => {
-    return <AddMoney mode="payout-hub" />;
+    return (
+        <div>
+            <RetailerHeader compact />
+            <AddMoney mode="payout-hub" />
+        </div>
+    );
 };
 
 export default PayoutHub;
