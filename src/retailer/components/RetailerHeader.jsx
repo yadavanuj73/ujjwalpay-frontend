@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ruralUrbanImg from '../../assets/rular and urban.png';
 import { dataService } from '../../services/dataService';
 import { 
     Youtube, Instagram, Facebook, Phone, 
@@ -133,8 +134,7 @@ const RetailerHeader = ({ compact = false }) => {
                 </div>
 
                 <div className="w-80 rounded-xl overflow-hidden bg-gray-100" style={{minHeight: '140px'}}>
-                    <img src="/src/assets/rular and urban.png" alt="Rural and Urban" className="w-full h-full object-cover" style={{minHeight: '140px'}}
-                        onError={(e) => {e.target.style.display='none'; e.target.parentElement.innerHTML='<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-100 to-green-100 p-4 text-center"><p class="text-sm font-medium text-gray-700">Empowering Rural and Urban India</p></div>';}}/>
+                    <img src={ruralUrbanImg} alt="Rural and Urban" className="w-full h-full object-cover" style={{minHeight: '140px'}}/>
                 </div>
             </div>}
         </div>
