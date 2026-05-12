@@ -7,6 +7,7 @@ import {
     FileBarChart, ScrollText, Calculator, BadgeIndianRupee,
     ChevronRight
 } from 'lucide-react';
+import RetailerHeader from '../components/RetailerHeader';
 
 // Dashboard content only - layout provides sidebar/header
 const RetailerDashboard = () => {
@@ -51,10 +52,8 @@ const RetailerDashboard = () => {
 
     return (
         <div className="space-y-4">
-            {/* Banner */}
-            <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg p-4 text-center">
-                <h2 className="text-lg font-bold">Login To New SSO Portal (Express + E Vyapar)</h2>
-            </div>
+            {/* Dogma-style Header with User Info, Wallet, Social Media */}
+            <RetailerHeader />
 
             {/* Services Grid */}
             <div className="bg-white rounded-lg shadow-sm p-6">
