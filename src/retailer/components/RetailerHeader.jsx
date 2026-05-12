@@ -33,18 +33,22 @@ const RetailerHeader = () => {
 
     return (
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-            {/* Top Section - Logo, Brand, Social Media */}
+            {/* Top Section - Logo, Brand (Center), Social Media */}
             <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
-                <div className="flex items-center gap-4">
+                {/* Left - Logo Only */}
+                <div className="w-32">
                     <img src="/ujjwawal pay logo.jpeg" alt="UjjwalPay" className="w-16 h-16 object-contain rounded-lg"/>
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-900">UjjwalPay</h1>
-                        <p className="text-sm text-gray-600">FinTech Pvt Ltd</p>
-                        <p className="text-sm font-medium text-orange-600">हर ट्रांजैक्शन में विश्वास</p>
-                    </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                {/* Center - Brand Name & Tagline */}
+                <div className="flex-1 text-center">
+                    <h1 className="text-2xl font-bold text-gray-900">UjjwalPay</h1>
+                    <p className="text-sm text-gray-600">FinTech Pvt Ltd</p>
+                    <p className="text-sm font-medium text-orange-600">हर ट्रांजैक्शन में विश्वास</p>
+                </div>
+
+                {/* Right - Social Media */}
+                <div className="flex items-center gap-3 w-32 justify-end">
                     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700">
                         <Youtube className="w-5 h-5"/>
                     </a>
