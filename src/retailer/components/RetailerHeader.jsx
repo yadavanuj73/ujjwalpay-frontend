@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { dataService } from '../../services/dataService';
 import { 
     Youtube, Instagram, Facebook, Phone, 
@@ -7,6 +8,7 @@ import {
 
 // Dogma Soft Inspired Header with user info and wallet
 const RetailerHeader = ({ compact = false }) => {
+    const navigate = useNavigate();
     const [currentUser, setCurrentUser] = useState(null);
     const [balance, setBalance] = useState("0.00");
 
@@ -113,11 +115,11 @@ const RetailerHeader = ({ compact = false }) => {
                     </div>
                     <div className="text-3xl font-bold mb-4">₹{balance}</div>
                     <div className="flex gap-2">
-                        <button className="flex-1 bg-white text-blue-600 py-2 px-3 rounded-lg text-sm font-semibold hover:bg-blue-50 flex items-center justify-center gap-1">
+                        <button onClick={() => navigate('/add-money')} className="flex-1 bg-white text-blue-600 py-2 px-3 rounded-lg text-sm font-semibold hover:bg-blue-50 flex items-center justify-center gap-1">
                             <ArrowRightLeft className="w-4 h-4"/>
                             Add Money
                         </button>
-                        <button className="flex-1 bg-blue-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:bg-blue-400 flex items-center justify-center gap-1">
+                        <button onClick={() => navigate('/add-money')} className="flex-1 bg-blue-500 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:bg-blue-400 flex items-center justify-center gap-1">
                             <Landmark className="w-4 h-4"/>
                             Virtual Account
                         </button>
