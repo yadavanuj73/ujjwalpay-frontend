@@ -36,21 +36,21 @@ const RetailerHeader = () => {
             {/* Top Section - Logo, Brand (Center), Social Media */}
             <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
                 {/* Left - Logo Only */}
-                <div className="w-32">
-                    <img src="/ujjwawal pay logo.jpeg" alt="UjjwalPay" className="w-16 h-16 object-contain rounded-lg"/>
+                <div className="shrink-0">
+                    <img src="/ujjwawal pay logo.jpeg" alt="UjjwalPay" className="w-14 h-14 object-contain rounded-lg"/>
                 </div>
 
                 {/* Center - Brand Name & Tagline */}
-                <div className="flex-1 text-center py-2">
-                    <h1 className="text-5xl font-black" style={{ letterSpacing: '0.15em' }}>
+                <div className="flex-1 text-center">
+                    <h1 className="text-3xl font-black" style={{ letterSpacing: '0.15em' }}>
                         <span className="text-blue-600">Ujjwal</span><span className="text-orange-500">Pay</span>
                     </h1>
-                    <p className="text-xl text-gray-600 font-semibold mt-3">FinTech Pvt Ltd</p>
-                    <p className="text-2xl font-bold text-orange-600 mt-4">हर ट्रांजैक्शन में विश्वास</p>
+                    <p className="text-sm text-gray-600 font-semibold mt-1">FinTech Pvt Ltd</p>
+                    <p className="text-base font-bold text-orange-600 mt-1">हर ट्रांजैक्शन में विश्वास</p>
                 </div>
 
-                {/* Right - Social Media */}
-                <div className="flex items-center gap-4 w-40 justify-end px-2">
+                {/* Right - Social Media - flex-wrap to prevent squeezing */}
+                <div className="flex flex-wrap items-center gap-2 shrink-0" style={{ width: '120px', justifyContent: 'flex-end' }}>
                     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700">
                         <Youtube className="w-5 h-5"/>
                     </a>
