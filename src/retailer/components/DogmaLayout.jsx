@@ -119,22 +119,6 @@ const DogmaLayout = ({ children }) => {
             <div className="flex">
                 {/* Left Sidebar - Dark Theme */}
                 <div className="w-64 bg-[#1e293b] min-h-[calc(100vh-40px)] text-white flex flex-col">
-                    {/* Logo Area */}
-                    <div className="p-4 border-b border-gray-700">
-                        <div className="flex items-center gap-2">
-                            <img 
-                                src="/ujjwawal pay logo.jpeg" 
-                                alt="UjjwalPay" 
-                                className="w-10 h-10 object-contain rounded"
-                            />
-                            <div>
-                                <h1 className="text-lg font-bold text-white">UjjwalPay</h1>
-                                <p className="text-xs text-gray-400">FinTech Pvt Ltd</p>
-                            </div>
-                        </div>
-                        <p className="text-xs text-gray-500 mt-1">हर ट्रांजैक्शन में विश्वास</p>
-                    </div>
-
                     {/* User Info */}
                     <div className="p-4 border-b border-gray-700">
                         <div className="flex items-center gap-2">
