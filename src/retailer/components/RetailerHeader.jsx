@@ -35,13 +35,19 @@ const RetailerHeader = () => {
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
             {/* Top Section - Logo, Brand (Center), Social Media */}
             <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
-                {/* Left - Full Logo (contains brand name + tagline) */}
+                {/* Left - Full Logo */}
                 <div className="shrink-0">
                     <img src="/ujjwawal pay logo.jpeg" alt="UjjwalPay" className="object-contain" style={{ height: '110px', width: 'auto' }}/>
                 </div>
 
-                {/* Center - empty spacer */}
-                <div className="flex-1"></div>
+                {/* Center - Brand Name & Tagline */}
+                <div className="flex-1 text-center">
+                    <h1 className="text-3xl font-black" style={{ letterSpacing: '0.15em' }}>
+                        <span className="text-blue-600">Ujjwal</span><span className="text-orange-500">Pay</span>
+                    </h1>
+                    <p className="text-sm text-gray-600 font-semibold mt-1">FinTech Pvt Ltd</p>
+                    <p className="text-base font-bold text-orange-600 mt-1">हर ट्रांजैक्शन में विश्वास</p>
+                </div>
 
                 {/* Right - Social Media - flex-wrap to prevent squeezing */}
                 <div className="flex flex-wrap items-center gap-2 shrink-0" style={{ width: '120px', justifyContent: 'flex-end' }}>
