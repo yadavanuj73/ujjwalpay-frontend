@@ -7,7 +7,7 @@ import {
     Fingerprint, Plane, CreditCard, UserCircle, Receipt,
     Phone, Landmark, ShieldCheck, CircleDollarSign,
     FileBarChart, ScrollText, Calculator, BadgeIndianRupee,
-    ChevronRight, LogOut, Home, ShoppingBag, Train, 
+    LogOut, Home, Train, 
     FileSpreadsheet, BadgePercent, Award, FileCheck, HelpCircle,
     LayoutGrid, Users, Landmark as BankIcon
 } from 'lucide-react';
@@ -119,22 +119,7 @@ const DogmaLayout = ({ children }) => {
             <div className="flex">
                 {/* Left Sidebar - Dark Theme */}
                 <div className="w-64 bg-[#1e293b] min-h-[calc(100vh-40px)] text-white flex flex-col">
-                    {/* User Info */}
-                    <div className="p-4 border-b border-gray-700">
-                        <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-sm font-bold">
-                                {currentUser?.businessName?.[0] || currentUser?.name?.[0] || 'U'}
-                            </div>
-                            <div className="flex-1">
-                                <p className="text-sm font-medium text-white">
-                                    {currentUser?.businessName || currentUser?.name || 'User'}
-                                </p>
-                                <ChevronRight className="w-4 h-4 text-gray-400 inline" />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Main Navigation - Single List, No Duplicates */}
+                    {/* Main Navigation */}
                     <nav className="flex-1 py-2 overflow-y-auto">
                         <div className="px-4 mb-2 text-xs text-gray-500 uppercase font-semibold">Menu</div>
                         
