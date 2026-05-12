@@ -42,9 +42,9 @@ const RetailerHeader = () => {
 
                 {/* Center - Brand Name & Tagline */}
                 <div className="flex-1 text-center">
-                    <h1 className="text-2xl font-bold text-gray-900">UjjwalPay</h1>
-                    <p className="text-sm text-gray-600">FinTech Pvt Ltd</p>
-                    <p className="text-sm font-medium text-orange-600">हर ट्रांजैक्शन में विश्वास</p>
+                    <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">UjjwalPay</h1>
+                    <p className="text-lg text-gray-600 font-medium mt-1">FinTech Pvt Ltd</p>
+                    <p className="text-xl font-bold text-orange-600 mt-2">हर ट्रांजैक्शन में विश्वास</p>
                 </div>
 
                 {/* Right - Social Media */}
