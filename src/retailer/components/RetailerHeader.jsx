@@ -34,7 +34,7 @@ const RetailerHeader = ({ compact = false }) => {
     return (
         <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
             {/* Top Section - Logo, Brand (Center), Social Media */}
-            <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
+            <div className={`flex items-center justify-between ${compact ? '' : 'mb-4 pb-4 border-b border-gray-200'}`}>
                 {/* Left - Full Logo */}
                 <div className="shrink-0">
                     <img src="/ujjwawal pay logo.jpeg" alt="UjjwalPay" className="object-contain" style={{ height: '110px', width: 'auto' }}/>
