@@ -115,7 +115,13 @@ const RetailerHeader = ({ compact = false }) => {
                     </div>
                     <div className="text-3xl font-bold mb-4">₹{balance}</div>
                     <div className="flex gap-2">
-                        <button onClick={() => navigate('/add-money')} className="flex-1 bg-white text-blue-700 py-2 px-3 rounded-lg text-sm font-semibold hover:bg-blue-100 hover:text-blue-800 flex items-center justify-center gap-1">
+                        <button 
+                            onClick={() => navigate('/add-money')} 
+                            className="flex-1 py-2 px-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-1 transition-all"
+                            style={{ backgroundColor: '#ffffff', color: '#1d4ed8', border: '2px solid #bfdbfe' }}
+                            onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#dbeafe'; e.currentTarget.style.color = '#1e40af'; }}
+                            onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffffff'; e.currentTarget.style.color = '#1d4ed8'; }}
+                        >
                             <ArrowRightLeft className="w-4 h-4"/>
                             Add Money
                         </button>
