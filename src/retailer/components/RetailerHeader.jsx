@@ -45,8 +45,8 @@ const RetailerHeader = () => {
                     <h1 className="text-3xl font-black" style={{ letterSpacing: '0.15em' }}>
                         <span className="text-blue-600">Ujjwal</span><span className="text-orange-500">Pay</span>
                     </h1>
-                    <p className="text-sm text-gray-600 font-semibold mt-1">FinTech Pvt Ltd</p>
-                    <p className="text-base font-bold text-orange-600 mt-1">हर ट्रांजैक्शन में विश्वास</p>
+                    <p className="text-sm text-gray-600 font-semibold mt-4">FinTech Pvt Ltd</p>
+                    <p className="text-base font-bold text-orange-600 mt-4">हर ट्रांजैक्शन में विश्वास</p>
                 </div>
 
                 {/* Right - Social Media - flex-wrap to prevent squeezing */}
