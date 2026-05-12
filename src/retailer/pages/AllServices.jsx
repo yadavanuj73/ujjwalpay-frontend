@@ -184,7 +184,7 @@ const AllServices = ({ readOnly = false }) => {
 
     return (
         <div className="p-4 md:p-7 lg:p-10 max-w-[1600px] mx-auto min-h-screen">
-            <RetailerHeader />
+            <RetailerHeader compact />
             <div className="rounded-3xl border border-slate-200 bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900 text-white px-5 md:px-8 py-6 md:py-7 shadow-[0_22px_45px_rgba(15,23,42,0.35)]">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>

@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 // Dogma Soft Inspired Header with user info and wallet
-const RetailerHeader = () => {
+const RetailerHeader = ({ compact = false }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [balance, setBalance] = useState("0.00");
 
@@ -68,8 +68,8 @@ const RetailerHeader = () => {
                 </div>
             </div>
 
-            {/* User Info & Wallet Section */}
-            <div className="flex gap-4">
+            {/* User Info & Wallet Section - only shown when not compact */}
+            {!compact && <div className="flex gap-4">
                 <div className="flex-1 grid grid-cols-2 gap-4">
                     <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
                         <div className="flex items-start gap-3 mb-3">
@@ -128,7 +128,7 @@ const RetailerHeader = () => {
                     <img src="/src/assets/rular and urban.png" alt="Rural and Urban" className="w-full h-full object-cover" style={{minHeight: '140px'}}
                         onError={(e) => {e.target.style.display='none'; e.target.parentElement.innerHTML='<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-100 to-green-100 p-4 text-center"><p class="text-sm font-medium text-gray-700">Empowering Rural and Urban India</p></div>';}}/>
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };
