@@ -88,18 +88,6 @@ const DogmaLayout = ({ children }) => {
         return false;
     };
 
-    const quickLinks = [
-        { label: 'Fund Request (Update Payment)', path: '/add-money' },
-        { label: 'Move to Bank', path: '/payout-hub' },
-        { label: 'Wallet to Wallet Transfer', path: '/all-services' },
-        { label: 'Update KYC', path: '/kyc-verification' },
-        { label: 'Request New Service / Pay for Service', path: '/all-services' },
-        { label: 'Update GST Info', path: '/profile' },
-        { label: 'E-vyapar - Buy Now', path: '/all-services' },
-        { label: 'Used Vehicle Loans', path: '/loans' },
-        { label: 'Courier Service', path: '/all-services' },
-    ];
-
     return (
         <div className="min-h-screen bg-[#f5f5f5] font-sans">
             <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');`}</style>
@@ -189,52 +177,9 @@ const DogmaLayout = ({ children }) => {
                     </div>
                 </div>
 
-                {/* Main Content Area */}
+                {/* Main Content Area - Full Width */}
                 <div ref={mainContentRef} className="main-content-area flex-1 p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
                     {children}
-                </div>
-
-                {/* Right Sidebar - Quick Links */}
-                <div className="w-72 bg-white p-4 shadow-sm overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
-                    {/* Wallet Info */}
-                    <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                        <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-gray-600">Wallet Balance :</span>
-                            <span className="text-green-600 font-bold">₹{balance}</span>
-                        </div>
-                        <div className="text-xs text-gray-500 mb-1">
-                            {currentUser?.name || 'User'} ({currentUser?.mobile || ''})
-                        </div>
-                        <div className="text-xs text-gray-500 space-y-0.5">
-                            <div>Fin Year : 2021-2022</div>
-                            <div>Commission : Rs 51.80 | TDS : Rs 2.59</div>
-                        </div>
-                        <button 
-                            onClick={() => navigate('/add-money')}
-                            className="mt-3 bg-red-600 text-white text-xs px-4 py-2 rounded hover:bg-red-700 w-full"
-                        >
-                            Claim Now
-                        </button>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div className="mb-4">
-                        <div className="bg-red-600 text-white text-center py-2 font-bold text-sm mb-2">
-                            Quick Links
-                        </div>
-                        <ul className="space-y-1">
-                            {quickLinks.map((link, idx) => (
-                                <li key={idx}>
-                                    <button
-                                        onClick={() => navigate(link.path)}
-                                        className="w-full text-left text-xs text-gray-600 hover:bg-gray-100 px-2 py-2 rounded transition-colors"
-                                    >
-                                        {link.label}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
