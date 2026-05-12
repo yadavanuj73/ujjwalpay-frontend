@@ -42,7 +42,7 @@ const RetailerHeader = () => {
 
                 {/* Center - Brand Name & Tagline */}
                 <div className="flex-1 text-center py-2">
-                    <h1 className="text-5xl font-black tracking-tight">
+                    <h1 className="text-5xl font-black" style={{ letterSpacing: '0.15em' }}>
                         <span className="text-blue-600">Ujjwal</span><span className="text-orange-500">Pay</span>
                     </h1>
                     <p className="text-xl text-gray-600 font-semibold mt-3">FinTech Pvt Ltd</p>
