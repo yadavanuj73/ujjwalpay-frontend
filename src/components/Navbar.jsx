@@ -506,17 +506,43 @@ const NAV_CSS = `
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .dogma-topbar__container {
+        gap: 8px;
+        padding: 6px 12px;
+    }
+
+    .dogma-brand {
+        min-width: 0;
+        max-width: unset;
+        flex: 1;
+        overflow: hidden;
+    }
+
     .dogma-brand__title {
         font-size: 1.2rem;
+        letter-spacing: 4px;
+        white-space: nowrap;
     }
-    
+
+    .dogma-brand__subtitle {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
+
     .dogma-brand__tagline {
         font-size: 0.6rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
     }
-    
+
+    .dogma-logo {
+        min-width: unset;
+    }
+
     .dogma-logo__img {
-        height: 40px;
+        height: 38px;
     }
 }
 `;
