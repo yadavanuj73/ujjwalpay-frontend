@@ -41,14 +41,16 @@ const RetailerHeader = () => {
                 </div>
 
                 {/* Center - Brand Name & Tagline */}
-                <div className="flex-1 text-center">
-                    <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">UjjwalPay</h1>
-                    <p className="text-lg text-gray-600 font-medium mt-1">FinTech Pvt Ltd</p>
-                    <p className="text-xl font-bold text-orange-600 mt-2">हर ट्रांजैक्शन में विश्वास</p>
+                <div className="flex-1 text-center py-2">
+                    <h1 className="text-5xl font-black tracking-tight">
+                        <span className="text-blue-600">Ujjwal</span><span className="text-orange-500">Pay</span>
+                    </h1>
+                    <p className="text-xl text-gray-600 font-semibold mt-3">FinTech Pvt Ltd</p>
+                    <p className="text-2xl font-bold text-orange-600 mt-4">हर ट्रांजैक्शन में विश्वास</p>
                 </div>
 
                 {/* Right - Social Media */}
-                <div className="flex items-center gap-3 w-32 justify-end">
+                <div className="flex items-center gap-4 w-40 justify-end px-2">
                     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700">
                         <Youtube className="w-5 h-5"/>
                     </a>
