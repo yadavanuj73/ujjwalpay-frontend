@@ -54,7 +54,7 @@ const RetailerHeader = ({ compact = false }) => {
 
                 {/* Right - Social Media icons (non-compact) OR Wallet Card (compact) */}
                 {compact ? (
-                    <div className="shrink-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-3 text-white" style={{ minWidth: '180px' }}>
+                    <div className="shrink-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-3 text-white" style={{ width: '220px', minWidth: '220px' }}>
                         <div className="flex items-center justify-between mb-1">
                             <span className="text-xs text-blue-100 font-semibold uppercase tracking-wider">Express Balance</span>
                             <Wallet className="w-4 h-4 text-blue-200"/>
