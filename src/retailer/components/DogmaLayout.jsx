@@ -148,35 +148,6 @@ const DogmaLayout = ({ children }) => {
 
                 {/* Main Content Area - Full Width */}
                 <div ref={mainContentRef} className="main-content-area flex-1 p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 40px)' }}>
-                    {/* Wallet Card - shown on all pages except NSDL AePS, Members, KYC, Support */}
-                    {![ '/dashboard', '/aeps', '/profile', '/kyc-verification', '/support' ].includes(location.pathname) && (
-                        <div className="w-64 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-4 text-white mb-4">
-                            <div className="flex items-center justify-between mb-1">
-                                <span className="text-xs text-blue-100 font-semibold uppercase tracking-wider">Express Balance</span>
-                                <Wallet className="w-4 h-4 text-blue-200"/>
-                            </div>
-                            <div className="text-2xl font-bold mb-3">₹{balance}</div>
-                            <div className="flex gap-2">
-                                <button
-                                    onClick={() => navigate('/add-money')}
-                                    className="flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold flex items-center justify-center gap-1 transition-all"
-                                    style={{ backgroundColor: '#ffffff', color: '#1d4ed8' }}
-                                    onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#dbeafe'; }}
-                                    onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffffff'; }}
-                                >
-                                    <ArrowRightLeft className="w-3 h-3"/>
-                                    Add Money
-                                </button>
-                                <button
-                                    onClick={() => navigate('/add-money')}
-                                    className="flex-1 bg-blue-500 text-white py-1.5 px-2 rounded-lg text-xs font-semibold hover:bg-blue-400 flex items-center justify-center gap-1"
-                                >
-                                    <Landmark className="w-3 h-3"/>
-                                    Virtual A/C
-                                </button>
-                            </div>
-                        </div>
-                    )}
                     {children}
                 </div>
             </div>
