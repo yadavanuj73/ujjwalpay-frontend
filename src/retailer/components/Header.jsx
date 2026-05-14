@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Wallet, Bell, ChevronDown, Menu, User, CreditCard, Settings, MoreVertical, Plus } from 'lucide-react';
 import { dataService } from '../../services/dataService';
-import mainLogo from '../../assets/UJJWALPAY_logo.png';
+import mainLogo from '../../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 

@@ -10,7 +10,7 @@ import { BANK_LIST } from './aepsData';
 import { initSpeech, speak, announceSuccess, announceProcessing, announceError, announceWarning, announceGrandSuccess } from '../../services/speechService';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dataService, BACKEND_URL } from '../../services/dataService';
-import logo from '../../assets/UJJWALPAY_logo.png';
+import logo from '../../assets/images/logo.png';
 import RetailerHeader from '../components/RetailerHeader';
 
 /* ── Constants ── */

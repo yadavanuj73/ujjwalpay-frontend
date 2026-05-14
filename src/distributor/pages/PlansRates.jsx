@@ -4,7 +4,7 @@ import {
     ShieldCheck, Zap, Crown, Check, ArrowRight, X,
     Info, Users, Building2, HelpCircle, Sparkles
 } from 'lucide-react';
-import logo from '../../assets/UJJWALPAY_logo.png';
+import logo from '../../assets/images/logo.png';
 import { sharedDataService } from '../../services/sharedDataService';
 import { getDistributorPlan, PLAN_CONFIG } from '../config/planConfig';
 import { planService } from '../../services/planService';

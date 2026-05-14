@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Plus, Bell, Menu, LogOut, ChevronDown, Wallet, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { sharedDataService } from '../../services/sharedDataService';
-import logo from '../../assets/UJJWALPAY_new_logo.png';
+import logo from '../../assets/images/logo.png';
 
 const DistributorTopBar = ({ onMenuClick }) => {
     const navigate = useNavigate();

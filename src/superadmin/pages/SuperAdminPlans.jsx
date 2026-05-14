@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, CheckCircle2, Zap, X, Sparkles, Building2 } from 'lucide-react';
 import { planService } from '../../services/planService';
-import logo from '../../assets/UJJWALPAY_logo.png';
+import logo from '../../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 
 const SuperAdminPlans = () => {

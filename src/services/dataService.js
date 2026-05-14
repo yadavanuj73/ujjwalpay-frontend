@@ -3,7 +3,7 @@ import { BACKEND_URL } from './config';
 import { generateUniquePartyCode } from '../database/partyCode';
 import { mockApiService } from '../database/mockApiService';
 import { sharedDataService } from './sharedDataService';
-import mainLogo from '../assets/UJJWALPAY_logo.png';
+import mainLogo from '../assets/images/logo.png';
 export { BACKEND_URL };
 
 // ── Safe JSON parser: prevents "Unexpected end of JSON input" crashes ──────
