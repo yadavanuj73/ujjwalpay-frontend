@@ -10,8 +10,8 @@ import { sharedDataService } from '../../services/sharedDataService';
 import { dataService } from '../../services/dataService';
 import { getDistributorPlan, getRemainingRetailerSlots } from '../config/planConfig';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid,
-    Tooltip, ResponsiveContainer
+    BarChart, Bar, XAxis, YAxis, CartesianGrid,
+    Tooltip, ResponsiveContainer, Cell
 } from 'recharts';
 
 /* ─── Static demo data ──────────────────────────────────────── */
@@ -212,7 +212,17 @@ const DistributorDashboard = () => {
                                 </div>
                             </div>
                             <ResponsiveContainer width="100%" height={240}>
-                                <LineChart data={financeData} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
+                                <BarChart data={financeData} margin={{ top: 5, right: 10, left: -15, bottom: 0 }} barCategoryGap="25%" barGap={4}>
+                                    <defs>
+                                        <linearGradient id="creditGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="#6366f1" stopOpacity={1} />
+                                            <stop offset="100%" stopColor="#818cf8" stopOpacity={0.7} />
+                                        </linearGradient>
+                                        <linearGradient id="debitGrad" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="#f43f5e" stopOpacity={1} />
+                                            <stop offset="100%" stopColor="#fb7185" stopOpacity={0.7} />
+                                        </linearGradient>
+                                    </defs>
                                     <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
                                     <XAxis
                                         dataKey="date"
@@ -224,18 +234,10 @@ const DistributorDashboard = () => {
                                         axisLine={false} tickLine={false}
                                         tickFormatter={v => `₹${v}`}
                                     />
-                                    <Tooltip content={<ChartTooltip />} cursor={{ stroke: '#e2e8f0', strokeWidth: 2 }} />
-                                    <Line
-                                        type="monotone" dataKey="credit" stroke="#6366f1"
-                                        strokeWidth={2.5} dot={false}
-                                        activeDot={{ r: 5, fill: '#6366f1', strokeWidth: 0 }}
-                                    />
-                                    <Line
-                                        type="monotone" dataKey="debit" stroke="#f87171"
-                                        strokeWidth={2.5} dot={false} strokeDasharray="0"
-                                        activeDot={{ r: 5, fill: '#f87171', strokeWidth: 0 }}
-                                    />
-                                </LineChart>
+                                    <Tooltip content={<ChartTooltip />} cursor={{ fill: 'rgba(99,102,241,0.05)', radius: 6 }} />
+                                    <Bar dataKey="credit" fill="url(#creditGrad)" radius={[6, 6, 0, 0]} maxBarSize={22} />
+                                    <Bar dataKey="debit" fill="url(#debitGrad)" radius={[6, 6, 0, 0]} maxBarSize={22} />
+                                </BarChart>
                             </ResponsiveContainer>
                         </motion.div>
 
