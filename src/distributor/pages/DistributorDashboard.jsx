@@ -211,7 +211,7 @@ const DistributorDashboard = () => {
                                     </span>
                                 </div>
                             </div>
-                            <ResponsiveContainer width="100%" height={220}>
+                            <ResponsiveContainer width="100%" height={240}>
                                 <LineChart data={financeData} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
                                     <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
                                     <XAxis
@@ -288,67 +288,6 @@ const DistributorDashboard = () => {
 
                     {/* ════════════ RIGHT COLUMN ════════════ */}
                     <div className="space-y-5">
-
-                        {/* My Card */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.15 }}
-                            className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-[var(--brand-color)] transition-all"
-                            style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.05)` }}
-                        >
-                            <div className="flex items-center justify-between mb-4">
-                                <h2 className="text-base font-black text-slate-900">My Card</h2>
-                                <button onClick={() => navigate('/distributor/transactions/add-money')}
-                                    className="bg-slate-900 hover:bg-slate-700 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5">
-                                    <Plus size={11} /> Add Card
-                                </button>
-                            </div>
-
-                            {/* Card carousel */}
-                            <div className="relative overflow-hidden">
-                                <AnimatePresence mode="wait">
-                                    <motion.div
-                                        key={cardIdx}
-                                        initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: -30 }}
-                                        transition={{ duration: 0.25 }}
-                                        className={`bg-gradient-to-br ${cards[cardIdx].bg} rounded-2xl p-5 text-white shadow-xl relative overflow-hidden`}
-                                        style={{ minHeight: 150 }}
-                                    >
-                                        {/* Decorative circles */}
-                                        <div className="absolute -right-8 -top-8 w-32 h-32 bg-white/5 rounded-full" />
-                                        <div className="absolute -right-2 top-10 w-20 h-20 bg-white/5 rounded-full" />
-
-                                        <div className="flex justify-between items-start mb-6">
-                                            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                                                <Wallet size={14} />
-                                            </div>
-                                            <CreditCard size={18} className="text-white/50" />
-                                        </div>
-                                        <p className="text-[10px] font-black text-white/60 tracking-widest mb-1">WALLET BALANCE</p>
-                                        <p className="text-xl font-black text-white mb-4">₹ {walletBal}</p>
-                                        <div className="flex justify-between items-end">
-                                            <p className="text-[9px] font-black text-white/50 tracking-widest uppercase">{distId}</p>
-                                            <p className="text-[10px] font-black text-white/70">{cards[cardIdx].exp}</p>
-                                        </div>
-                                    </motion.div>
-                                </AnimatePresence>
-
-                                {/* Carousel dot indicators */}
-                                <div className="flex items-center justify-between mt-3">
-                                    <div className="flex gap-1.5">
-                                        {cards.map((_, i) => (
-                                            <button key={i} onClick={() => setCardIdx(i)}
-                                                className={`h-1.5 rounded-full transition-all ${i === cardIdx ? 'w-4 bg-slate-800' : 'w-1.5 bg-slate-200'}`} />
-                                        ))}
-                                    </div>
-                                    <button onClick={() => setCardIdx(i => (i + 1) % cards.length)}
-                                        className="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-all">
-                                        <ChevronRight size={14} className="text-slate-600" />
-                                    </button>
-                                </div>
-                            </div>
-                        </motion.div>
 
                         {/* Managed Retailers */}
                         <motion.div

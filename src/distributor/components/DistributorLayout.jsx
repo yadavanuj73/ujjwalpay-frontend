@@ -3,7 +3,7 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { sharedDataService } from '../../services/sharedDataService';
 import { dataService } from '../../services/dataService';
 import { menuItems } from '../data/menuItems';
-import { ChevronDown, ChevronRight, LogOut, ArrowLeft, LayoutDashboard, Wallet, ArrowRightLeft, Landmark, Phone, User, Youtube, Instagram, Facebook } from 'lucide-react';
+import { ChevronDown, ChevronRight, LogOut, LayoutDashboard, Wallet, ArrowRightLeft, Landmark, Phone, User, Youtube, Instagram, Facebook } from 'lucide-react';
 import ruralUrbanImg from '../../assets/rular and urban.png';
 
 const DistributorLayout = () => {
@@ -134,15 +134,8 @@ const DistributorLayout = () => {
                         })}
                     </nav>
 
-                    {/* Back to Retailer + Security Notice */}
+                    {/* Security Notice */}
                     <div>
-                        <button
-                            onClick={() => navigate('/dashboard')}
-                            className="w-full flex items-center gap-2 px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white text-xs transition-colors border-t border-gray-700"
-                        >
-                            <ArrowLeft className="w-4 h-4 shrink-0" />
-                            Back to Retailer Panel
-                        </button>
                         <div className="p-4 bg-gray-900 text-xs text-gray-500 border-t border-gray-700">
                             <p className="font-semibold text-gray-400 mb-1">SECURITY NOTICE</p>
                             <p>Please ensure you are on ujjwalpay.com. Never share your OTP with anyone.</p>
