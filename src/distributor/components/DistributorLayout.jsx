@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { sharedDataService } from '../../services/sharedDataService';
+import { dataService } from '../../services/dataService';
 import { menuItems } from '../data/menuItems';
 import { ChevronDown, ChevronRight, LogOut, ArrowLeft, LayoutDashboard, Wallet, ArrowRightLeft, Landmark, Phone, User, Youtube, Instagram, Facebook } from 'lucide-react';
 import ruralUrbanImg from '../../assets/rular and urban.png';
@@ -19,7 +20,9 @@ const DistributorLayout = () => {
         const fresh = sharedDataService.getDistributorById(session.id) || session;
         if (fresh) sharedDataService.setCurrentDistributor(fresh);
         setDist(fresh);
-        setBalance(fresh?.wallet?.balance || '0.00');
+        dataService.getWalletBalance(session.id).then(bal => {
+            setBalance(bal || fresh?.wallet?.balance || fresh?.balance || '0.00');
+        });
     }, [navigate]);
 
     useEffect(() => {
