@@ -128,7 +128,7 @@ const ContactPage = () => {
           </div>
           <h3 className="text-2xl font-black text-slate-900 mb-2">Our Office</h3>
           <p className="text-sm font-bold text-slate-600 leading-relaxed uppercase tracking-wide">
-            Ujjwal Pay Pvt Ltd<br/>
+            Ujjwalpay Fintech Pvt Ltd<br/>
             RZA-108, Shop No 01<br/>
             Nihal Vihar, Nangloi<br/>
             New Delhi - 110041

@@ -245,7 +245,7 @@ export default function Contact() {
                     </div>
                     <h3 className="mb-2 text-2xl font-black text-slate-900">Our Office</h3>
                     <p className="text-sm font-bold uppercase leading-relaxed tracking-wide text-slate-600">
-                        Ujjwal Pay Pvt Ltd
+                        Ujjwalpay Fintech Pvt Ltd
                         <br />
                         RZA-108, Shop No 01
                         <br />

@@ -110,7 +110,7 @@ export default function Footer() {
                             <li>Phone: +91 9958835146</li>
                             <li style={{ marginTop: '8px' }}>
                                 <span style={{ fontWeight: '600', color: '#d1d5db' }}>Address:</span><br />
-                                Ujjwal Pay Pvt Ltd<br />
+                                Ujjwalpay Fintech Pvt Ltd<br />
                                 RZA-108, Shop No 01<br />
                                 Nihal Vihar, Nangloi<br />
                                 New Delhi 110041
