@@ -238,8 +238,8 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                 </span>
             </motion.div>
             
-            {/* 8 Separate Mini Charts Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* 8 Separate Mini Charts Grid - 2 per row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {serviceCharts.map((service, i) => (
                     <ServiceMiniChart key={service.key} service={service} index={i} />
                 ))}
