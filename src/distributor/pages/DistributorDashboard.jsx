@@ -133,13 +133,16 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                 transition={{ delay: 0.28 }}
                 className="flex items-center justify-between"
             >
-                <h2 className="text-base font-black text-slate-900">Service Analytics</h2>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    {hasData ? 'Live Data' : 'Demo Data'}
+                <div>
+                    <h2 className="text-base font-black text-slate-900">Service Analytics</h2>
+                    <p className="text-[9px] text-slate-400 mt-0.5">Resets every 7 days • {hasData ? 'Live' : 'Demo'} Data</p>
+                </div>
+                <span className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest bg-indigo-50 px-2 py-1 rounded-md">
+                    7 Days
                 </span>
             </motion.div>
             
-            {/* Horizontal Bar Chart - All Services */}
+            {/* Horizontal Bar Chart - All Services Overview */}
             <motion.div
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -147,16 +150,11 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                 style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.03)` }}
             >
                 <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                        <h3 className="text-sm font-black text-slate-900">Services Overview</h3>
-                        <span className="text-[9px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 font-bold">
-                            {hasData ? 'Live' : 'Demo'}
-                        </span>
-                    </div>
-                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Transactions</span>
+                    <h3 className="text-sm font-black text-slate-900">Services Overview</h3>
+                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">By Volume</span>
                 </div>
                 
-                <ResponsiveContainer width="100%" height={220}>
+                <ResponsiveContainer width="100%" height={200}>
                     <BarChart
                         data={displayServices.map(s => ({ 
                             name: s.title, 
@@ -165,8 +163,8 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                             fill: s.color 
                         }))}
                         layout="vertical"
-                        margin={{ top: 5, right: 60, left: 70, bottom: 5 }}
-                        barSize={16}
+                        margin={{ top: 5, right: 60, left: 60, bottom: 5 }}
+                        barSize={18}
                     >
                         <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
                         <XAxis 
@@ -181,7 +179,7 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                             tick={{ fontSize: 10, fontWeight: 700, fill: '#475569' }} 
                             axisLine={false} 
                             tickLine={false}
-                            width={65}
+                            width={55}
                         />
                         <Tooltip 
                             cursor={{ fill: 'rgba(99,102,241,0.05)' }}
@@ -197,74 +195,42 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                                 );
                             }}
                         />
-                        <Bar dataKey="count" radius={[0, 8, 8, 0]}>
+                        <Bar dataKey="count" radius={[0, 6, 6, 0]}>
                             {displayServices.map((s, i) => (
                                 <Cell key={s.key} fill={s.color} />
                             ))}
                         </Bar>
                     </BarChart>
                 </ResponsiveContainer>
-                
-                {/* Legend Pills */}
-                <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-slate-100">
-                    {displayServices.map((s) => (
-                        <div key={s.key} className="flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full" style={{ background: s.color }} />
-                            <span className="text-[10px] font-medium text-slate-500">{s.title}</span>
-                            <span className="text-[9px] font-bold text-slate-400 ml-0.5">({s.count})</span>
-                        </div>
-                    ))}
-                </div>
             </motion.div>
             
-            {/* Service Performance Chart */}
-            <motion.div
-                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"
-                style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.03)` }}
-            >
-                <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-black text-slate-900">Service Performance</h3>
-                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Last 7 Days</span>
-                </div>
-                <ResponsiveContainer width="100%" height={180}>
-                    <BarChart 
-                        data={displayServices.map(s => ({ name: s.title.substring(0, 6), count: s.count, color: s.color }))}
-                        margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
-                        barSize={20}
+            {/* Individual Service Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {displayServices.map((data, i) => (
+                    <motion.div
+                        key={data.key}
+                        initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + i * 0.05 }}
+                        whileHover={{ y: -3, scale: 1.02 }}
+                        className={`bg-gradient-to-br ${data.bg} rounded-2xl p-4 text-white shadow-md relative overflow-hidden cursor-pointer`}
                     >
-                        <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                        <XAxis 
-                            dataKey="name" 
-                            tick={{ fontSize: 9, fontWeight: 700, fill: '#64748b' }} 
-                            axisLine={false} 
-                            tickLine={false}
-                        />
-                        <YAxis 
-                            tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} 
-                            axisLine={false} 
-                            tickLine={false}
-                        />
-                        <Tooltip 
-                            contentStyle={{ 
-                                background: '#1e293b', 
-                                border: 'none', 
-                                borderRadius: '12px', 
-                                fontSize: '10px',
-                                color: '#fff'
-                            }}
-                            itemStyle={{ color: '#fff', fontWeight: 700 }}
-                            formatter={(value) => [`${value} txn`, 'Transactions']}
-                        />
-                        <Bar dataKey="count" radius={[6, 6, 0, 0]}>
-                            {displayServices.map((s, i) => (
-                                <Cell key={s.key} fill={s.color} />
-                            ))}
-                        </Bar>
-                    </BarChart>
-                </ResponsiveContainer>
-            </motion.div>
+                        {/* Subtle background decoration */}
+                        <div className="absolute -right-6 -top-6 w-24 h-24 bg-white/5 rounded-full" />
+                        
+                        <div className="relative z-10">
+                            <div className="flex items-center justify-between mb-2">
+                                <span className="text-xl">{data.icon}</span>
+                                <span className="text-[9px] font-black bg-white/15 px-1.5 py-0.5 rounded">
+                                    {data.count}
+                                </span>
+                            </div>
+                            
+                            <p className="text-[10px] font-bold text-white/70 uppercase tracking-wider">{data.title}</p>
+                            <p className="text-base font-black mt-0.5">₹{(data.amount / 1000).toFixed(1)}k</p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
         </div>
     );
 };
