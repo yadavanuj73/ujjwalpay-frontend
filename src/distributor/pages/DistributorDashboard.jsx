@@ -109,22 +109,118 @@ const ServiceAnalyticsCards = ({ transactions }) => {
 
     const hasData = Object.values(serviceStats).some(s => s.count > 0);
     
-    // Dummy data for demo (shown when no real data)
-    const dummyServices = [
-        { key: 'aeps', title: 'AEPS', icon: '🏛️', count: 156, amount: 893400, color: '#6366f1', bg: 'from-indigo-500 to-blue-600' },
-        { key: 'travel', title: 'Travel', icon: '✈️', count: 89, amount: 256800, color: '#10b981', bg: 'from-emerald-500 to-cyan-500' },
-        { key: 'mobile', title: 'Mobile', icon: '📱', count: 342, amount: 68400, color: '#f59e0b', bg: 'from-orange-500 to-amber-500' },
-        { key: 'dth', title: 'DTH', icon: '📺', count: 78, amount: 23400, color: '#ec4899', bg: 'from-pink-500 to-rose-500' },
-        { key: 'utility', title: 'Bills', icon: '⚡', count: 124, amount: 186000, color: '#8b5cf6', bg: 'from-violet-500 to-fuchsia-500' },
-        { key: 'money', title: 'Transfer', icon: '💸', count: 203, amount: 1250000, color: '#06b6d4', bg: 'from-cyan-500 to-blue-500' },
-        { key: 'pos', title: 'mPOS', icon: '💳', count: 45, amount: 112500, color: '#f43f5e', bg: 'from-rose-500 to-red-500' },
-        { key: 'cms', title: 'CMS', icon: '🏦', count: 67, amount: 567000, color: '#84cc16', bg: 'from-lime-500 to-green-500' },
+    // Dummy 7-day data for each service (like Finances chart)
+    const weekDates = ['1 Feb', '2 Feb', '3 Feb', '4 Feb', '5 Feb', '6 Feb', '7 Feb', '8 Feb'];
+    
+    const serviceCharts = [
+        { 
+            key: 'aeps', title: 'AEPS', icon: '🏛️', color: '#6366f1', bg: 'from-indigo-500 to-blue-600',
+            data: weekDates.map((date, i) => ({ date, success: [12, 18, 15, 22, 19, 25, 28, 17][i], failed: [2, 1, 3, 0, 2, 1, 0, 1][i] })),
+            total: 156, amount: '₹8,93,400'
+        },
+        { 
+            key: 'travel', title: 'Travel', icon: '✈️', color: '#10b981', bg: 'from-emerald-500 to-cyan-500',
+            data: weekDates.map((date, i) => ({ date, success: [8, 12, 10, 15, 11, 14, 13, 6][i], failed: [1, 0, 2, 1, 0, 1, 0, 1][i] })),
+            total: 89, amount: '₹2,56,800'
+        },
+        { 
+            key: 'mobile', title: 'Mobile', icon: '📱', color: '#f59e0b', bg: 'from-orange-500 to-amber-500',
+            data: weekDates.map((date, i) => ({ date, success: [35, 42, 48, 55, 38, 44, 52, 28][i], failed: [3, 4, 2, 5, 3, 4, 3, 2][i] })),
+            total: 342, amount: '₹68,400'
+        },
+        { 
+            key: 'dth', title: 'DTH', icon: '📺', color: '#ec4899', bg: 'from-pink-500 to-rose-500',
+            data: weekDates.map((date, i) => ({ date, success: [8, 12, 9, 11, 13, 10, 8, 7][i], failed: [1, 2, 1, 0, 1, 2, 1, 0][i] })),
+            total: 78, amount: '₹23,400'
+        },
+        { 
+            key: 'utility', title: 'Bills', icon: '⚡', color: '#8b5cf6', bg: 'from-violet-500 to-fuchsia-500',
+            data: weekDates.map((date, i) => ({ date, success: [14, 18, 16, 20, 15, 19, 14, 8][i], failed: [2, 1, 3, 2, 1, 2, 1, 0][i] })),
+            total: 124, amount: '₹1,86,000'
+        },
+        { 
+            key: 'money', title: 'Transfer', icon: '💸', color: '#06b6d4', bg: 'from-cyan-500 to-blue-500',
+            data: weekDates.map((date, i) => ({ date, success: [22, 28, 25, 32, 27, 30, 26, 13][i], failed: [3, 2, 4, 1, 2, 3, 1, 2][i] })),
+            total: 203, amount: '₹12,50,000'
+        },
+        { 
+            key: 'pos', title: 'mPOS', icon: '💳', color: '#f43f5e', bg: 'from-rose-500 to-red-500',
+            data: weekDates.map((date, i) => ({ date, success: [5, 8, 6, 9, 7, 5, 4, 1][i], failed: [1, 0, 1, 0, 1, 0, 0, 0][i] })),
+            total: 45, amount: '₹1,12,500'
+        },
+        { 
+            key: 'cms', title: 'CMS', icon: '🏦', color: '#84cc16', bg: 'from-lime-500 to-green-500',
+            data: weekDates.map((date, i) => ({ date, success: [7, 10, 9, 12, 8, 11, 7, 3][i], failed: [0, 1, 0, 1, 0, 1, 0, 0][i] })),
+            total: 67, amount: '₹5,67,000'
+        },
     ];
     
-    // Use real data if available, else dummy
-    const displayServices = hasData 
-        ? Object.entries(serviceStats).filter(([_, d]) => d.count > 0).map(([k, d]) => ({...d, key: k}))
-        : dummyServices;
+    const ServiceMiniChart = ({ service, index }) => {
+        const gradientId = `grad-${service.key}`;
+        return (
+            <motion.div
+                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + index * 0.05 }}
+                className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 hover:border-slate-200 transition-all"
+                style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.02)` }}
+            >
+                {/* Header */}
+                <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                        <span className="text-lg">{service.icon}</span>
+                        <div>
+                            <h4 className="text-xs font-black text-slate-800">{service.title}</h4>
+                            <p className="text-[10px] text-slate-400">{service.total} txn • {service.amount}</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[9px]">
+                        <span className="flex items-center gap-1 text-slate-500">
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ background: service.color }} />
+                            Success
+                        </span>
+                        <span className="flex items-center gap-1 text-slate-400">
+                            <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                            Failed
+                        </span>
+                    </div>
+                </div>
+                
+                {/* Mini Chart */}
+                <ResponsiveContainer width="100%" height={100}>
+                    <BarChart data={service.data} margin={{ top: 2, right: 2, left: -20, bottom: 0 }} barSize={8} barGap={2}>
+                        <defs>
+                            <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stopColor={service.color} stopOpacity={1} />
+                                <stop offset="100%" stopColor={service.color} stopOpacity={0.6} />
+                            </linearGradient>
+                        </defs>
+                        <XAxis 
+                            dataKey="date" 
+                            tick={{ fontSize: 7, fontWeight: 600, fill: '#94a3b8' }} 
+                            axisLine={false} 
+                            tickLine={false}
+                            interval={1}
+                        />
+                        <Tooltip 
+                            content={({ active, payload }) => {
+                                if (!active || !payload?.length) return null;
+                                const d = payload[0].payload;
+                                return (
+                                    <div className="bg-[#1e293b] text-white rounded-lg px-2 py-1.5 shadow-lg text-[9px]">
+                                        <p className="text-white/60 mb-0.5">{d.date}</p>
+                                        <p style={{ color: service.color }}>Success: {d.success}</p>
+                                        <p className="text-slate-400">Failed: {d.failed}</p>
+                                    </div>
+                                );
+                            }}
+                        />
+                        <Bar dataKey="success" fill={`url(#${gradientId})`} radius={[3, 3, 0, 0]} />
+                        <Bar dataKey="failed" fill="#cbd5e1" radius={[3, 3, 0, 0]} />
+                    </BarChart>
+                </ResponsiveContainer>
+            </motion.div>
+        );
+    };
 
     return (
         <div className="space-y-4">
@@ -142,93 +238,10 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                 </span>
             </motion.div>
             
-            {/* Horizontal Bar Chart - All Services Overview */}
-            <motion.div
-                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"
-                style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.03)` }}
-            >
-                <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-black text-slate-900">Services Overview</h3>
-                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">By Volume</span>
-                </div>
-                
-                <ResponsiveContainer width="100%" height={200}>
-                    <BarChart
-                        data={displayServices.map(s => ({ 
-                            name: s.title, 
-                            count: s.count, 
-                            amount: s.amount,
-                            fill: s.color 
-                        }))}
-                        layout="vertical"
-                        margin={{ top: 5, right: 60, left: 60, bottom: 5 }}
-                        barSize={18}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
-                        <XAxis 
-                            type="number" 
-                            tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} 
-                            axisLine={false} 
-                            tickLine={false}
-                        />
-                        <YAxis 
-                            type="category" 
-                            dataKey="name" 
-                            tick={{ fontSize: 10, fontWeight: 700, fill: '#475569' }} 
-                            axisLine={false} 
-                            tickLine={false}
-                            width={55}
-                        />
-                        <Tooltip 
-                            cursor={{ fill: 'rgba(99,102,241,0.05)' }}
-                            content={({ active, payload }) => {
-                                if (!active || !payload?.length) return null;
-                                const d = payload[0].payload;
-                                return (
-                                    <div className="bg-[#1e293b] text-white rounded-xl px-3 py-2 shadow-xl text-[10px] border border-white/10">
-                                        <p className="font-black mb-1">{d.name}</p>
-                                        <p className="text-white/70">Count: <span className="font-bold text-white">{d.count}</span></p>
-                                        <p className="text-white/70">Amount: <span className="font-bold text-emerald-400">₹{d.amount.toLocaleString('en-IN')}</span></p>
-                                    </div>
-                                );
-                            }}
-                        />
-                        <Bar dataKey="count" radius={[0, 6, 6, 0]}>
-                            {displayServices.map((s, i) => (
-                                <Cell key={s.key} fill={s.color} />
-                            ))}
-                        </Bar>
-                    </BarChart>
-                </ResponsiveContainer>
-            </motion.div>
-            
-            {/* Individual Service Cards */}
+            {/* 8 Separate Mini Charts Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {displayServices.map((data, i) => (
-                    <motion.div
-                        key={data.key}
-                        initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 + i * 0.05 }}
-                        whileHover={{ y: -3, scale: 1.02 }}
-                        className={`bg-gradient-to-br ${data.bg} rounded-2xl p-4 text-white shadow-md relative overflow-hidden cursor-pointer`}
-                    >
-                        {/* Subtle background decoration */}
-                        <div className="absolute -right-6 -top-6 w-24 h-24 bg-white/5 rounded-full" />
-                        
-                        <div className="relative z-10">
-                            <div className="flex items-center justify-between mb-2">
-                                <span className="text-xl">{data.icon}</span>
-                                <span className="text-[9px] font-black bg-white/15 px-1.5 py-0.5 rounded">
-                                    {data.count}
-                                </span>
-                            </div>
-                            
-                            <p className="text-[10px] font-bold text-white/70 uppercase tracking-wider">{data.title}</p>
-                            <p className="text-base font-black mt-0.5">₹{(data.amount / 1000).toFixed(1)}k</p>
-                        </div>
-                    </motion.div>
+                {serviceCharts.map((service, i) => (
+                    <ServiceMiniChart key={service.key} service={service} index={i} />
                 ))}
             </div>
         </div>
