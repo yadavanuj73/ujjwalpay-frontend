@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Bell, ChevronRight, Plus,
@@ -63,6 +63,102 @@ const AnimNum = ({ n, prefix = '' }) => {
         return () => clearInterval(t);
     }, [n]);
     return <>{prefix}{v.toLocaleString('en-IN')}</>;
+};
+
+/* ─── Service Analytics Component ─────────────────────────── */
+const ServiceAnalytics = ({ transactions }) => {
+    const serviceData = useMemo(() => {
+        if (!transactions || transactions.length === 0) return [];
+        
+        const serviceStats = {};
+        transactions.forEach(t => {
+            const service = t.service_type || 'Other';
+            if (!serviceStats[service]) {
+                serviceStats[service] = { count: 0, amount: 0 };
+            }
+            serviceStats[service].count += 1;
+            serviceStats[service].amount += parseFloat(t.amount || 0);
+        });
+        
+        return Object.entries(serviceStats)
+            .map(([name, stats]) => ({
+                name: name.length > 15 ? name.substring(0, 15) + '...' : name,
+                fullName: name,
+                count: stats.count,
+                amount: stats.amount
+            }))
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 8);
+    }, [transactions]);
+
+    const serviceColors = [
+        '#6366f1', '#ec4899', '#10b981', '#f59e0b', '#8b5cf6',
+        '#06b6d4', '#f43f5e', '#84cc16'
+    ];
+
+    const ServiceTooltip = ({ active, payload }) => {
+        if (!active || !payload?.length) return null;
+        const data = payload[0].payload;
+        return (
+            <div className="bg-[#1e293b] text-white rounded-xl px-4 py-3 shadow-2xl text-[10px] border border-white/10">
+                <p className="font-black text-white mb-1">{data.fullName}</p>
+                <p className="text-white/70">Transactions: <span className="font-bold text-white">{data.count}</span></p>
+                <p className="text-white/70">Amount: <span className="font-bold text-emerald-400">₹{data.amount.toLocaleString('en-IN')}</span></p>
+            </div>
+        );
+    };
+
+    if (serviceData.length === 0) return null;
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28 }}
+            className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:border-[var(--brand-color)] transition-all"
+            style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.05)` }}
+        >
+            <div className="flex items-center justify-between mb-5">
+                <h2 className="text-base font-black text-slate-900">Service Analytics</h2>
+                <div className="flex items-center gap-4 text-[10px] font-black">
+                    <span className="flex items-center gap-1.5 text-slate-500">
+                        <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block" />
+                        By Volume
+                    </span>
+                </div>
+            </div>
+            <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={serviceData} layout="vertical" margin={{ top: 5, right: 30, left: 60, bottom: 5 }} barSize={18}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
+                    <XAxis type="number" tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
+                    <YAxis 
+                        type="category" 
+                        dataKey="name" 
+                        tick={{ fontSize: 9, fontWeight: 700, fill: '#475569' }} 
+                        axisLine={false} 
+                        tickLine={false}
+                        width={55}
+                    />
+                    <Tooltip content={<ServiceTooltip />} cursor={{ fill: 'rgba(99,102,241,0.05)' }} />
+                    <Bar dataKey="count" radius={[0, 6, 6, 0]}>
+                        {serviceData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={serviceColors[index % serviceColors.length]} />
+                        ))}
+                    </Bar>
+                </BarChart>
+            </ResponsiveContainer>
+            
+            {/* Service Pills */}
+            <div className="flex flex-wrap gap-2 mt-4">
+                {serviceData.map((s, i) => (
+                    <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-100 shadow-sm">
+                        <span className="w-2 h-2 rounded-full" style={{ background: serviceColors[i % serviceColors.length] }} />
+                        <span className="text-[10px] font-bold text-slate-600">{s.name}</span>
+                        <span className="text-[9px] font-black text-slate-400 ml-1">{s.count}</span>
+                    </div>
+                ))}
+            </div>
+        </motion.div>
+    );
 };
 
 /* ═══════════════════════ MAIN ═══════════════════════════════ */
@@ -240,6 +336,9 @@ const DistributorDashboard = () => {
                                 </BarChart>
                             </ResponsiveContainer>
                         </motion.div>
+
+                        {/* Service-wise Analytics */}
+                        <ServiceAnalytics transactions={transactions} />
 
                         {/* Transaction History */}
                         <motion.div
