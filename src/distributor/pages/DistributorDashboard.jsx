@@ -108,7 +108,6 @@ const ServiceAnalyticsCards = ({ transactions }) => {
     }, [transactions]);
 
     const hasData = Object.values(serviceStats).some(s => s.count > 0);
-    if (!hasData) return null;
 
     return (
         <div className="space-y-4">
@@ -122,43 +121,67 @@ const ServiceAnalyticsCards = ({ transactions }) => {
             </motion.div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {Object.entries(serviceStats)
-                    .filter(([_, data]) => data.count > 0)
-                    .map(([key, data], i) => (
-                    <motion.div
-                        key={key}
-                        initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + i * 0.05 }}
-                        whileHover={{ y: -3, scale: 1.02 }}
-                        className={`bg-gradient-to-br ${data.bg} rounded-2xl p-4 text-white shadow-lg relative overflow-hidden cursor-pointer`}
-                    >
-                        {/* Background decoration */}
-                        <div className="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full" />
-                        <div className="absolute right-2 top-6 w-10 h-10 bg-white/5 rounded-full" />
-                        
-                        <div className="relative z-10">
-                            <div className="flex items-start justify-between mb-3">
-                                <span className="text-2xl">{data.icon}</span>
-                                <span className="text-[10px] font-black bg-white/20 px-2 py-0.5 rounded-full">
-                                    {data.count} txn
-                                </span>
-                            </div>
+                {hasData ? (
+                    Object.entries(serviceStats)
+                        .filter(([_, data]) => data.count > 0)
+                        .map(([key, data], i) => (
+                        <motion.div
+                            key={key}
+                            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 + i * 0.05 }}
+                            whileHover={{ y: -3, scale: 1.02 }}
+                            className={`bg-gradient-to-br ${data.bg} rounded-2xl p-4 text-white shadow-lg relative overflow-hidden cursor-pointer`}
+                        >
+                            {/* Background decoration */}
+                            <div className="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full" />
+                            <div className="absolute right-2 top-6 w-10 h-10 bg-white/5 rounded-full" />
                             
-                            <p className="text-[10px] font-bold text-white/80 uppercase tracking-wider mb-1">{data.title}</p>
-                            <p className="text-lg font-black">₹{data.amount.toLocaleString('en-IN')}</p>
-                            
-                            {/* Mini progress bar */}
-                            <div className="mt-3 bg-white/20 rounded-full h-1.5 overflow-hidden">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${Math.min(100, (data.count / 20) * 100)}%` }}
-                                    transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
-                                    className="h-full bg-white/80 rounded-full"
-                                />
+                            <div className="relative z-10">
+                                <div className="flex items-start justify-between mb-3">
+                                    <span className="text-2xl">{data.icon}</span>
+                                    <span className="text-[10px] font-black bg-white/20 px-2 py-0.5 rounded-full">
+                                        {data.count} txn
+                                    </span>
+                                </div>
+                                
+                                <p className="text-[10px] font-bold text-white/80 uppercase tracking-wider mb-1">{data.title}</p>
+                                <p className="text-lg font-black">₹{data.amount.toLocaleString('en-IN')}</p>
+                                
+                                {/* Mini progress bar */}
+                                <div className="mt-3 bg-white/20 rounded-full h-1.5 overflow-hidden">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${Math.min(100, (data.count / 20) * 100)}%` }}
+                                        transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
+                                        className="h-full bg-white/80 rounded-full"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                ))}
+                        </motion.div>
+                    ))
+                ) : (
+                    // Placeholder cards when no data
+                    ['AEPS', 'Travel', 'Recharge', 'Bills'].map((title, i) => (
+                        <motion.div
+                            key={title}
+                            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 + i * 0.05 }}
+                            className="bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl p-4 text-slate-500 shadow-sm relative overflow-hidden"
+                        >
+                            <div className="relative z-10">
+                                <div className="flex items-start justify-between mb-3">
+                                    <span className="text-2xl opacity-50">📊</span>
+                                    <span className="text-[10px] font-black bg-slate-400/20 px-2 py-0.5 rounded-full">0 txn</span>
+                                </div>
+                                <p className="text-[10px] font-bold text-slate-600 uppercase tracking-wider mb-1">{title}</p>
+                                <p className="text-lg font-black text-slate-600">₹0</p>
+                                <div className="mt-3 bg-slate-400/20 rounded-full h-1.5 overflow-hidden">
+                                    <div className="h-full w-0 bg-slate-400 rounded-full" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))
+                )}
             </div>
             
             {/* Service Performance Chart */}
@@ -172,45 +195,55 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                     <h3 className="text-sm font-black text-slate-900">Service Performance</h3>
                     <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Last 7 Days</span>
                 </div>
-                <ResponsiveContainer width="100%" height={180}>
-                    <BarChart 
-                        data={Object.entries(serviceStats)
-                            .filter(([_, d]) => d.count > 0)
-                            .map(([k, d]) => ({ name: d.title.split(' ')[0], count: d.count, amount: d.amount }))}
-                        margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
-                        barSize={24}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                        <XAxis 
-                            dataKey="name" 
-                            tick={{ fontSize: 9, fontWeight: 700, fill: '#64748b' }} 
-                            axisLine={false} 
-                            tickLine={false}
-                        />
-                        <YAxis 
-                            tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} 
-                            axisLine={false} 
-                            tickLine={false}
-                        />
-                        <Tooltip 
-                            contentStyle={{ 
-                                background: '#1e293b', 
-                                border: 'none', 
-                                borderRadius: '12px', 
-                                fontSize: '10px',
-                                color: '#fff'
-                            }}
-                            itemStyle={{ color: '#fff', fontWeight: 700 }}
-                        />
-                        <Bar dataKey="count" radius={[6, 6, 0, 0]}>
-                            {Object.entries(serviceStats)
+                {hasData ? (
+                    <ResponsiveContainer width="100%" height={180}>
+                        <BarChart 
+                            data={Object.entries(serviceStats)
                                 .filter(([_, d]) => d.count > 0)
-                                .map(([k, d], i) => (
-                                    <Cell key={k} fill={d.color} />
-                                ))}
-                        </Bar>
-                    </BarChart>
-                </ResponsiveContainer>
+                                .map(([k, d]) => ({ name: d.title.split(' ')[0], count: d.count, amount: d.amount }))}
+                            margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
+                            barSize={24}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+                            <XAxis 
+                                dataKey="name" 
+                                tick={{ fontSize: 9, fontWeight: 700, fill: '#64748b' }} 
+                                axisLine={false} 
+                                tickLine={false}
+                            />
+                            <YAxis 
+                                tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} 
+                                axisLine={false} 
+                                tickLine={false}
+                            />
+                            <Tooltip 
+                                contentStyle={{ 
+                                    background: '#1e293b', 
+                                    border: 'none', 
+                                    borderRadius: '12px', 
+                                    fontSize: '10px',
+                                    color: '#fff'
+                                }}
+                                itemStyle={{ color: '#fff', fontWeight: 700 }}
+                            />
+                            <Bar dataKey="count" radius={[6, 6, 0, 0]}>
+                                {Object.entries(serviceStats)
+                                    .filter(([_, d]) => d.count > 0)
+                                    .map(([k, d], i) => (
+                                        <Cell key={k} fill={d.color} />
+                                    ))}
+                            </Bar>
+                        </BarChart>
+                    </ResponsiveContainer>
+                ) : (
+                    <div className="h-[180px] flex flex-col items-center justify-center text-slate-400">
+                        <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-3">
+                            <span className="text-xl">📈</span>
+                        </div>
+                        <p className="text-xs font-bold text-slate-500">No service data yet</p>
+                        <p className="text-[10px] text-slate-400 mt-1">Start transacting to see analytics</p>
+                    </div>
+                )}
             </motion.div>
         </div>
     );
