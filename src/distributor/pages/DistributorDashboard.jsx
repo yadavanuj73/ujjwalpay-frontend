@@ -139,43 +139,83 @@ const ServiceAnalyticsCards = ({ transactions }) => {
                 </span>
             </motion.div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {displayServices.map((data, i) => (
-                    <motion.div
-                        key={data.key}
-                        initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + i * 0.05 }}
-                        whileHover={{ y: -3, scale: 1.02 }}
-                        className={`bg-gradient-to-br ${data.bg} rounded-2xl p-4 text-white shadow-lg relative overflow-hidden cursor-pointer`}
+            {/* Horizontal Bar Chart - All Services */}
+            <motion.div
+                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"
+                style={{ backgroundColor: `rgba(var(--brand-color-rgb), 0.03)` }}
+            >
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                        <h3 className="text-sm font-black text-slate-900">Services Overview</h3>
+                        <span className="text-[9px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 font-bold">
+                            {hasData ? 'Live' : 'Demo'}
+                        </span>
+                    </div>
+                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Transactions</span>
+                </div>
+                
+                <ResponsiveContainer width="100%" height={220}>
+                    <BarChart
+                        data={displayServices.map(s => ({ 
+                            name: s.title, 
+                            count: s.count, 
+                            amount: s.amount,
+                            fill: s.color 
+                        }))}
+                        layout="vertical"
+                        margin={{ top: 5, right: 60, left: 70, bottom: 5 }}
+                        barSize={16}
                     >
-                        {/* Background decoration */}
-                        <div className="absolute -right-4 -top-4 w-20 h-20 bg-white/10 rounded-full" />
-                        <div className="absolute right-2 top-6 w-10 h-10 bg-white/5 rounded-full" />
-                        
-                        <div className="relative z-10">
-                            <div className="flex items-start justify-between mb-3">
-                                <span className="text-2xl">{data.icon}</span>
-                                <span className="text-[10px] font-black bg-white/20 px-2 py-0.5 rounded-full">
-                                    {data.count} txn
-                                </span>
-                            </div>
-                            
-                            <p className="text-[10px] font-bold text-white/80 uppercase tracking-wider mb-1">{data.title}</p>
-                            <p className="text-lg font-black">₹{data.amount.toLocaleString('en-IN')}</p>
-                            
-                            {/* Mini progress bar */}
-                            <div className="mt-3 bg-white/20 rounded-full h-1.5 overflow-hidden">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${Math.min(100, (data.count / 400) * 100)}%` }}
-                                    transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
-                                    className="h-full bg-white/80 rounded-full"
-                                />
-                            </div>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
+                        <XAxis 
+                            type="number" 
+                            tick={{ fontSize: 9, fontWeight: 700, fill: '#94a3b8' }} 
+                            axisLine={false} 
+                            tickLine={false}
+                        />
+                        <YAxis 
+                            type="category" 
+                            dataKey="name" 
+                            tick={{ fontSize: 10, fontWeight: 700, fill: '#475569' }} 
+                            axisLine={false} 
+                            tickLine={false}
+                            width={65}
+                        />
+                        <Tooltip 
+                            cursor={{ fill: 'rgba(99,102,241,0.05)' }}
+                            content={({ active, payload }) => {
+                                if (!active || !payload?.length) return null;
+                                const d = payload[0].payload;
+                                return (
+                                    <div className="bg-[#1e293b] text-white rounded-xl px-3 py-2 shadow-xl text-[10px] border border-white/10">
+                                        <p className="font-black mb-1">{d.name}</p>
+                                        <p className="text-white/70">Count: <span className="font-bold text-white">{d.count}</span></p>
+                                        <p className="text-white/70">Amount: <span className="font-bold text-emerald-400">₹{d.amount.toLocaleString('en-IN')}</span></p>
+                                    </div>
+                                );
+                            }}
+                        />
+                        <Bar dataKey="count" radius={[0, 8, 8, 0]}>
+                            {displayServices.map((s, i) => (
+                                <Cell key={s.key} fill={s.color} />
+                            ))}
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+                
+                {/* Legend Pills */}
+                <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-slate-100">
+                    {displayServices.map((s) => (
+                        <div key={s.key} className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full" style={{ background: s.color }} />
+                            <span className="text-[10px] font-medium text-slate-500">{s.title}</span>
+                            <span className="text-[9px] font-bold text-slate-400 ml-0.5">({s.count})</span>
                         </div>
-                    </motion.div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </motion.div>
             
             {/* Service Performance Chart */}
             <motion.div
