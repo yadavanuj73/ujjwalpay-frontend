@@ -207,7 +207,7 @@ function App() {
 
               {/* Protected Distributor Routes */}
               <Route path="/distributor-plans" element={<ProtectedRoute role="DISTRIBUTOR"><DistributorPlans /></ProtectedRoute>} />
-              <Route path="/distributor" element={<ProtectedRoute role="DISTRIBUTOR"><DistributorLayout /></ProtectedRoute>}>
+              <Route path="/distributor/*" element={<ProtectedRoute role="DISTRIBUTOR"><DistributorLayout /></ProtectedRoute>}>
                 <Route index element={<DistributorDashboard />} />
                 <Route path="all-services" element={<AllServices readOnly />} />
                 <Route path="distributors" element={<SuperAdminDistributors />} />
@@ -251,7 +251,7 @@ function App() {
 
               {/* Protected SuperAdmin Routes */}
               <Route path="/superadmin-plans" element={<ProtectedRoute role="SUPERADMIN"><SuperAdminPlans /></ProtectedRoute>} />
-              <Route path="/superadmin" element={<ProtectedRoute role="SUPERADMIN"><SuperAdminLayout /></ProtectedRoute>}>
+              <Route path="/superadmin/*" element={<ProtectedRoute role="SUPERADMIN"><SuperAdminLayout /></ProtectedRoute>}>
                 <Route index element={<SuperAdminDashboard />} />
                 <Route path="all-services" element={<AllServices readOnly />} />
                 <Route path="members" element={<SuperAdminMembers />} />
